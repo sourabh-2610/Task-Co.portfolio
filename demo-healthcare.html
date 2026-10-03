@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DENTISTS • SMALL CLINICS • VETS | CareFirst Family Clinic & Pet Care (Demo by TASK & CO)</title>
+  <meta name="description" content="Compassionate family medicine, modern painless dentistry, and dedicated veterinary animal care. A live interactive demo website crafted by TASK & CO.">
+
+  <!-- Google Fonts: DM Sans (Clinical Authority) & Nunito Sans (Comforting Healthcare) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700;800&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-light: #f6fafc;
+      --bg-card: #ffffff;
+      --border: #e2edf2;
+      --accent-teal: #0d9488;
+      --accent-teal-dark: #0f766e;
+      --accent-blue: #0284c7;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --font-display: 'DM Sans', sans-serif;
+      --font-sans: 'Nunito Sans', sans-serif;
+      --radius: 12px;
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-family: var(--font-sans); background: var(--bg-light); color: var(--text-main); }
+    body { line-height: 1.6; overflow-x: hidden; position: relative; }
+    h1, h2, h3, h4, .brand-wrap, .super-banner-h1, .dept-title { font-family: var(--font-display); }
+
+    /* =========================================================================
+       UNIQUE BACKGROUND ANIMATION: Calming Bio-Spheres & Subtle ECG Pulse
+       ========================================================================= */
+    .healthcare-bubble-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.6;
+    }
+    .bio-bubble {
+      position: absolute;
+      border-radius: 50%;
+      will-change: transform, opacity;
+      animation: bubbleFloat 16s infinite ease-in-out;
+    }
+    .bubble-1 {
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.12) 0%, transparent 70%);
+      border: 1px solid rgba(13, 148, 136, 0.15);
+      bottom: -100px; left: 12%;
+      animation-duration: 20s; animation-delay: 0s;
+    }
+    .bubble-2 {
+      width: 160px; height: 160px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.1) 0%, transparent 70%);
+      border: 1px solid rgba(2, 132, 199, 0.12);
+      bottom: -80px; left: 55%;
+      animation-duration: 17s; animation-delay: 3s;
+    }
+    .bubble-3 {
+      width: 110px; height: 110px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.14) 0%, transparent 70%);
+      border: 1px solid rgba(13, 148, 136, 0.18);
+      bottom: -50px; left: 82%;
+      animation-duration: 14s; animation-delay: 6s;
+    }
+    .ecg-line {
+      position: absolute;
+      top: 35%;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(13, 148, 136, 0.3) 50%, transparent 100%);
+      animation: ecgPulse 8s infinite ease-in-out;
+    }
+    @keyframes bubbleFloat {
+      0% { transform: translate3d(0, 0, 0) scale(0.9); opacity: 0; }
+      20% { opacity: 0.8; }
+      80% { opacity: 0.7; }
+      100% { transform: translate3d(30px, -110vh, 0) scale(1.1); opacity: 0; }
+    }
+    @keyframes ecgPulse {
+      0%, 100% { opacity: 0.1; }
+      50% { opacity: 0.45; }
+    }
+
+    header, main, footer, .biz-category-super-banner, .studio-demo-bar { position: relative; z-index: 1; }
+
+    /* Studio Demo Bar */
+    .studio-demo-bar {
+      position: sticky; top: 0; left: 0; right: 0;
+      background: linear-gradient(90deg, #0f172a 0%, #0d9488 100%);
+      color: #fff; padding: 10px 20px; display: flex; align-items: center;
+      justify-content: space-between; font-size: 0.84rem; font-weight: 600;
+      z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    .demo-pulse-dot { width: 8px; height: 8px; background-color: #34d399; border-radius: 50%; animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.8; } 50% { transform: scale(1.4); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.8; } }
+    .studio-demo-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-demo-back { color: #e2e8f0; text-decoration: none; font-size: 0.82rem; padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.25); transition: var(--transition); }
+    .btn-demo-back:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+    .btn-demo-hire { background: #fff; color: #0f172a; text-decoration: none; font-size: 0.82rem; font-weight: 700; padding: 5px 14px; border-radius: 6px; transition: var(--transition); }
+    .btn-demo-hire:hover { background: #f1f5f9; }
+
+    /* PROMINENT TOP BUSINESS CATEGORY BANNER */
+    .biz-category-super-banner {
+      background: linear-gradient(135deg, #042f2e 0%, #0f172a 100%);
+      border-bottom: 3px solid var(--accent-teal);
+      padding: 20px 0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+    .super-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .super-banner-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: #5eead4;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .super-banner-h1 {
+      font-size: clamp(1.4rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+      margin-top: 2px;
+    }
+    .super-banner-pill {
+      background: rgba(13, 148, 136, 0.2);
+      border: 1px solid #14b8a6;
+      color: #ccfbf1;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    .site-nav { padding: 20px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .brand-wrap { text-decoration: none; color: var(--text-main); font-weight: 800; font-size: 1.35rem; display: flex; align-items: center; gap: 8px; }
+    .brand-wrap span { color: var(--accent-teal); }
+
+    .nav-links { display: flex; gap: 26px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: var(--transition); }
+    .nav-links a:hover { color: var(--accent-teal); }
+
+    .btn-teal { background: var(--accent-teal); color: #fff; padding: 11px 24px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
+    .btn-teal:hover { background: var(--accent-teal-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35); }
+
+    /* Hero */
+    .hero-sec {
+      position: relative;
+      padding: 90px 0 70px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(248, 250, 252, 0.88) 0%, rgba(248, 250, 252, 0.98) 100%),
+                  url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: #ccfbf1; border: 1px solid #14b8a6; color: #0f766e; padding: 6px 18px; border-radius: 999px; font-size: 0.84rem; font-weight: 700; margin-bottom: 20px; }
+    .hero-h2 { font-size: clamp(2.3rem, 4.8vw, 3.8rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 18px; color: #0f172a; }
+    .hero-h2 span { color: var(--accent-teal); }
+    .hero-desc { color: var(--text-muted); font-size: 1.12rem; max-width: 680px; margin: 0 auto 34px; }
+
+    /* Department Cards with Real Photos */
+    .dept-sec { padding: 80px 0; }
+    .dept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .dept-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: var(--transition); display: flex; flex-direction: column; }
+    .dept-card:hover { transform: translateY(-5px); border-color: var(--accent-teal); box-shadow: 0 12px 30px rgba(13, 148, 136, 0.15); }
+    .dept-img { width: 100%; height: 220px; object-fit: cover; }
+    .dept-body { padding: 22px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+    .dept-title { font-size: 1.3rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+    .dept-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; }
+
+    /* Appointment Booking Form */
+    .booking-sec { padding: 80px 0; background: #f1f5f9; border-top: 1px solid var(--border); }
+    .booking-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; max-width: 760px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+    /* Footer */
+    .clinic-footer { padding: 60px 0 30px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.88rem; }
+
+    @media (max-width: 860px) {
+      .dept-grid { grid-template-columns: 1fr; }
+      .site-nav { flex-direction: column; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIQUE BACKGROUND ANIMATION: Calming Bio-Spheres & Subtle ECG Pulse -->
+  <div class="healthcare-bubble-canvas" aria-hidden="true">
+    <div class="ecg-line"></div>
+    <div class="bio-bubble bubble-1"></div>
+    <div class="bio-bubble bubble-2"></div>
+    <div class="bio-bubble bubble-3"></div>
+  </div>
+
+  <!-- Floating TASK & CO Studio Bar -->
+  <aside class="studio-demo-bar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="demo-pulse-dot"></span>
+      <span>Live Demo Website built by <strong>TASK & CO Studio</strong> (Ready in 3–5 Days) • Dealing in: <strong style="color:#fef08a;">₹ INR &amp; $ USD</strong></span>
+    </div>
+    <div class="studio-demo-actions">
+      <a href="index.html#portfolio" class="btn-demo-back">← Back to Portfolio</a>
+      <a href="index.html#contact" class="btn-demo-hire">Get a Website Like This →</a>
+    </div>
+  </aside>
+
+  <!-- PROMINENT TOP BUSINESS CATEGORY BANNER -->
+  <div class="biz-category-super-banner">
+    <div class="container super-banner-inner">
+      <div>
+        <span class="super-banner-tag">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          INDUSTRY CATEGORY DEMO
+        </span>
+        <h1 class="super-banner-h1">DENTISTS • SMALL CLINICS • VETERINARY CARE</h1>
+      </div>
+      <div class="super-banner-pill">
+        ⚡ 3-in-1 Turnkey Healthcare Solution by TASK & CO
+      </div>
+    </div>
+  </div>
+
+  <header class="container">
+    <nav class="site-nav">
+      <a href="#home" class="brand-wrap">
+        🏥 CAREFIRST <span>CLINIC & VET</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#departments">Departments</a></li>
+        <li><a href="#insurance">Insurances</a></li>
+        <li><a href="#book">Book Appointment</a></li>
+        <li><a href="#emergency">Emergency Care</a></li>
+      </ul>
+
+      <a href="#book" class="btn-teal">Book Visit Online</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-sec" id="home">
+      <div class="container">
+        <span class="hero-badge">🩺 Modern Facilities • Gentle Family Dentistry • Pet Wellness • Dealing in ₹ &amp; $</span>
+        <h2 class="hero-h2">
+          Healthcare for your whole family — <span>including your pets</span>.
+        </h2>
+        <p class="hero-desc">
+          State-of-the-art dental care, comprehensive outpatient family medicine, and compassionate veterinary surgical care under one trusted neighborhood medical center.
+        </p>
+
+        <a href="#book" class="btn-teal" style="font-size: 1rem; padding: 13px 32px;">Schedule an Appointment Online ➔</a>
+      </div>
+    </section>
+
+    <!-- DEPARTMENTS WITH REAL PHOTOGRAPHY -->
+    <section class="dept-sec" id="departments">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h3 style="font-size: 2.2rem; font-weight: 800; color: #0f172a;">Our Medical Specializations</h3>
+          <p style="color: var(--text-muted); margin-top: 6px;">Board-certified doctors, surgeons, and veterinary professionals. Transparent rates in ₹ INR &amp; $ USD.</p>
+        </div>
+
+        <div class="dept-grid">
+          <!-- Department 1: Dentistry -->
+          <div class="dept-card">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Dental Clinic" class="dept-img">
+            <div class="dept-body">
+              <div>
+                <div style="display:inline-flex; align-items:center; gap:6px; background:#f0fdfa; border:1px solid #99f6e4; padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:700; color:#0f766e; margin-bottom:8px;">
+                  Consultation &amp; Digital X-Ray: <strong style="color:#0f172a;">₹1,200 / $65</strong>
+                </div>
+                <h4 class="dept-title">Family &amp; Cosmetic Dentistry</h4>
+                <p class="dept-desc">Painless digital x-rays, laser teeth whitening, clear Invisalign aligners, dental crowns, and gentle pediatric care.</p>
+              </div>
+              <a href="#book" class="btn-teal" style="justify-content: center;">Book Dental Slot</a>
+            </div>
+          </div>
+
+          <!-- Department 2: General Clinic -->
+          <div class="dept-card">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Family Medicine" class="dept-img">
+            <div class="dept-body">
+              <div>
+                <div style="display:inline-flex; align-items:center; gap:6px; background:#f0fdfa; border:1px solid #99f6e4; padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:700; color:#0f766e; margin-bottom:8px;">
+                  General Consultation: <strong style="color:#0f172a;">₹800 / $45</strong>
+                </div>
+                <h4 class="dept-title">Family Medicine &amp; Urgent Care</h4>
+                <p class="dept-desc">Routine wellness physicals, chronic disease management, blood lab panels, pediatric immunizations, and same-day sick visits.</p>
+              </div>
+              <a href="#book" class="btn-teal" style="justify-content: center;">Book Doctor Visit</a>
+            </div>
+          </div>
+
+          <!-- Department 3: Veterinary -->
+          <div class="dept-card">
+            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Veterinary Pet Care" class="dept-img">
+            <div class="dept-body">
+              <div>
+                <div style="display:inline-flex; align-items:center; gap:6px; background:#f0fdfa; border:1px solid #99f6e4; padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:700; color:#0f766e; margin-bottom:8px;">
+                  Pet Wellness Checkup: <strong style="color:#0f172a;">₹1,800 / $75</strong>
+                </div>
+                <h4 class="dept-title">Veterinary Pet Care &amp; Surgery</h4>
+                <p class="dept-desc">Comprehensive dog &amp; cat exams, core vaccinations, dental scaling, spay/neuter surgery, and internal pet wellness care.</p>
+              </div>
+              <a href="#book" class="btn-teal" style="justify-content: center;">Book Pet Checkup</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONLINE APPOINTMENT SCHEDULER -->
+    <section class="booking-sec" id="book">
+      <div class="container">
+        <div class="booking-card">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <h3 style="font-size: 2rem; font-weight: 800; color: #0f172a;">Schedule Your Appointment</h3>
+            <p style="color: var(--text-muted);">Choose department, select date, and receive instant booking confirmation.</p>
+          </div>
+
+          <form onsubmit="handleMedicalBooking(event)">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+              <div>
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#0f766e; margin-bottom:5px;">Department &amp; Consultation Fee *</label>
+                <select id="med-dept" style="width:100%; padding:11px; border:1px solid #cbd5e1; border-radius:8px;">
+                  <option value="Dental Clinic (Dr. Sarah Chen, DDS) — ₹1,200 / $65">Dental Clinic (Dr. Sarah Chen, DDS) — ₹1,200 / $65</option>
+                  <option value="Family Practice (Dr. David Ross, MD) — ₹800 / $45">Family Practice (Dr. David Ross, MD) — ₹800 / $45</option>
+                  <option value="Veterinary Pet Care (Dr. Emily White, DVM) — ₹1,800 / $75">Veterinary Pet Care (Dr. Emily White, DVM) — ₹1,800 / $75</option>
+                </select>
+              </div>
+              <div>
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#0f766e; margin-bottom:5px;">Insurance Provider</label>
+                <select style="width:100%; padding:11px; border:1px solid #cbd5e1; border-radius:8px;">
+                  <option value="BlueCross / BlueShield">BlueCross / BlueShield</option>
+                  <option value="Aetna / Cigna">Aetna / Cigna</option>
+                  <option value="Delta Dental">Delta Dental</option>
+                  <option value="PetPlan / Nationwide Pet">PetPlan / Nationwide Pet</option>
+                  <option value="Self-Pay / Cash Discount">Self-Pay / Cash Discount</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+              <div>
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#0f766e; margin-bottom:5px;">Date *</label>
+                <input type="date" id="med-date" value="2026-09-22" required style="width:100%; padding:11px; border:1px solid #cbd5e1; border-radius:8px;">
+              </div>
+              <div>
+                <label style="display:block; font-size:0.8rem; font-weight:700; color:#0f766e; margin-bottom:5px;">Time Slot *</label>
+                <select id="med-time" style="width:100%; padding:11px; border:1px solid #cbd5e1; border-radius:8px;">
+                  <option value="9:00 AM">9:00 AM</option>
+                  <option value="11:30 AM">11:30 AM</option>
+                  <option value="2:15 PM" selected>2:15 PM</option>
+                  <option value="4:45 PM">4:45 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 18px;">
+              <label style="display:block; font-size:0.8rem; font-weight:700; color:#0f766e; margin-bottom:5px;">Patient / Pet Owner Name & Phone *</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                <input type="text" id="med-name" placeholder="Full Name" required style="width:100%; padding:11px; border:1px solid #cbd5e1; border-radius:8px;">
+                <input type="tel" id="med-phone" placeholder="Phone Number" required style="width:100%; padding:11px; border:1px solid #cbd5e1; border-radius:8px;">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-teal" style="width: 100%; justify-content: center; padding: 13px; font-size: 0.95rem;">
+              Confirm Healthcare Booking ↗
+            </button>
+
+            <div id="med-conf" style="display:none; margin-top: 14px; padding: 12px; border-radius: 8px; background: #ccfbf1; color: #0f766e; font-weight: 700; text-align: center;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="clinic-footer">
+    <div class="container">
+      <div style="font-weight: 800; font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;">CareFirst Family Clinic & Pet Care</div>
+      <p style="margin-bottom: 8px;">340 Health Parkway, Medical Plaza Suite 200 • Phone: (555) 489-0123</p>
+      <p style="color: var(--accent-teal); font-weight: 700;">Open Monday–Saturday: 8:00 AM – 7:00 PM • 24/7 On-Call Emergency Triage</p>
+      <p style="margin-top: 20px; font-size: 0.76rem; opacity: 0.6;">© 2026 TASK & CO Web Studio. HIPAA-ready, patient appointment websites for doctors, dentists, and clinics.</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleMedicalBooking(e) {
+      e.preventDefault();
+      const dept = document.getElementById('med-dept').value;
+      const date = document.getElementById('med-date').value;
+      const time = document.getElementById('med-time').value;
+      const name = document.getElementById('med-name').value;
+      const phone = document.getElementById('med-phone').value;
+
+      const conf = document.getElementById('med-conf');
+      conf.innerHTML = `✅ <strong>Appointment Scheduled!</strong><br>${dept} reserved for <strong>${name}</strong> on ${date} at ${time}. Confirmation SMS sent to ${phone}.`;
+      conf.style.display = 'block';
+
+      setTimeout(() => {
+        const waText = `Hi CareFirst Clinic! I booked an appointment: ${dept} on ${date} at ${time} for ${name}.`;
+        window.open(`https://wa.me/?text=${encodeURIComponent(waText)}`, '_blank');
+      }, 500);
+    }
+  </script>
+</body>
+</html>

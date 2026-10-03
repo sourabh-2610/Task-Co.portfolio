@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TASK & CO | Fast & High-Converting Websites for Local Businesses</title>
+  <meta name="description"
+    content="We build simple, professional, and affordable websites for local businesses in 3-5 days. See demo websites for restaurants, salons, contractors, boutiques, gyms, and more.">
+  <meta name="keywords"
+    content="web designer, local business websites, freelance web designer, rapid website design, small business web design, TASK & CO">
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="TASK & CO | Websites for Local Businesses in 3-5 Days">
+  <meta property="og:description"
+    content="Get your local business online fast with zero agency overhead. View interactive demo websites across 10 industries.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=fresh_coastal_light_v1">
+</head>
+
+<body>
+
+  <!-- Top Reading / Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+
+  <!-- =========================================================================
+       HEADER / NAVIGATION
+       ========================================================================= -->
+  <header class="header" id="site-header">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="TASK & CO Home">
+        <span class="logo-mark">T</span>
+        <span>TASK & CO</span>
+        <span class="logo-tag">STUDIO</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#portfolio" class="nav-link">Demo Work</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Interactive UI Sound Effects Toggle -->
+        <button id="sound-toggle" class="sound-toggle-btn" aria-label="Toggle Audio Effects"
+          title="Toggle Sound Feedback">
+          <svg class="sound-on-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+          </svg>
+          <svg class="sound-off-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+          </svg>
+        </button>
+
+        <!-- Fresh Light Palette Switcher: Sea-Mist Breeze / Warm Sand Dune -->
+        <button id="palette-toggle" class="palette-toggle-btn" aria-label="Toggle Fresh Palette"
+          title="Switch Palette: Sea-Mist Breeze / Warm Sand Dune">
+          <span class="palette-dots-pair">
+            <span class="palette-dot" style="background:#187a8e;"></span>
+            <span class="palette-dot" style="background:#e8b789;"></span>
+          </span>
+          <span class="palette-btn-text" id="palette-btn-text">Sea-Mist Breeze</span>
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm btn-magnetic btn-shimmer">Get Free Mockup</a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-toggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-drawer">
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#portfolio" class="mobile-nav-link">Demo Work</a>
+      <a href="#process" class="mobile-nav-link">Process</a>
+      <a href="#pricing" class="mobile-nav-link">Pricing</a>
+      <a href="#testimonials" class="mobile-nav-link">Reviews</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <div style="margin-top: 10px;">
+        <a href="#contact" class="btn btn-primary btn-shimmer" style="width: 100%;">Get a Free Mockup</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         1. HERO SECTION
+         ======================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="hero-gradient-glow"></div>
+      <div class="container hero-content">
+        <!-- Live Availability Status Pill & HUD Widget -->
+        <div class="hero-status-wrap">
+          <span class="status-pill live-radar-badge">
+            <span class="radar-circle">
+              <span class="radar-ping"></span>
+              <span class="radar-dot"></span>
+            </span>
+            <span class="radar-text">Available for 2 new client websites this week</span>
+          </span>
+          <span class="hud-time-pill" id="hud-clock-pill">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <circle cx="12" cy="12" r="10" stroke-width="2" />
+              <path stroke-width="2" d="M12 6v6l4 2" />
+            </svg>
+            <span id="hero-local-clock">11:28 AM IST</span>
+          </span>
+        </div>
+
+        <!-- Headline & Kinetic Dynamic Tagline -->
+        <h1 class="hero-headline">
+          I build high-converting websites for <span class="kinetic-flip-container"><span
+              class="kinetic-flip-word active" id="kinetic-text">Local Businesses</span></span> in <span
+            class="highlight">3–5 days</span>.
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="hero-subheadline">
+          Fast, mobile-first websites tailored for local businesses. Engineered to turn casual visitors into paying
+          customers.
+        </p>
+
+        <!-- CTA Buttons with Magnetic & Liquid Shimmer Effects -->
+        <div class="hero-cta-group">
+          <a href="#portfolio" class="btn btn-primary btn-magnetic btn-shimmer" id="hero-btn-work">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            See My Work (Demo Sites)
+          </a>
+          <a href="#contact" class="btn btn-secondary btn-magnetic" id="hero-btn-mockup">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Get a Free Mockup
+          </a>
+        </div>
+
+        <!-- 4 Key Proof Metrics -->
+        <div class="hero-metrics-bar">
+          <div class="hero-metric-box">
+            <span class="hero-metric-val">3–5 Days</span>
+            <span class="hero-metric-lbl">Concept to Live</span>
+          </div>
+          <div class="hero-metric-box">
+            <span class="hero-metric-val">100/100</span>
+            <span class="hero-metric-lbl">Google Speed Score</span>
+          </div>
+          <div class="hero-metric-box">
+            <span class="hero-metric-val">10+ Demos</span>
+            <span class="hero-metric-lbl">Live Blueprints</span>
+          </div>
+          <div class="hero-metric-box">
+            <span class="hero-metric-val">Zero Lock-In</span>
+            <span class="hero-metric-lbl">100% Code Ownership</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         INFINITE MARQUEE TICKER (Technologies, Guarantees & Speed)
+         ======================================================================= -->
+    <div class="hero-marquee-wrapper" aria-hidden="true">
+      <div class="marquee-track marquee-track-left">
+        <div class="marquee-group">
+          <span class="marquee-item"><span class="marquee-dot">⚡</span> 100/100 Google PageSpeed</span>
+          <span class="marquee-item"><span class="marquee-dot">📱</span> 100% Mobile & Retina Ready</span>
+          <span class="marquee-item"><span class="marquee-dot">💬</span> WhatsApp 1-Click Ordering</span>
+          <span class="marquee-item"><span class="marquee-dot">🚀</span> 3–5 Days Turnaround</span>
+          <span class="marquee-item"><span class="marquee-dot">🔒</span> 100% Code Ownership • Zero Hostage Fees</span>
+          <span class="marquee-item"><span class="marquee-dot">📍</span> Google Local SEO Schema</span>
+          <span class="marquee-item"><span class="marquee-dot">✨</span> Interactive 3D & Micro-Animations</span>
+          <span class="marquee-item"><span class="marquee-dot">🎯</span> High-Conversion Design</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="marquee-item"><span class="marquee-dot">⚡</span> 100/100 Google PageSpeed</span>
+          <span class="marquee-item"><span class="marquee-dot">📱</span> 100% Mobile & Retina Ready</span>
+          <span class="marquee-item"><span class="marquee-dot">💬</span> WhatsApp 1-Click Ordering</span>
+          <span class="marquee-item"><span class="marquee-dot">🚀</span> 3–5 Days Turnaround</span>
+          <span class="marquee-item"><span class="marquee-dot">🔒</span> 100% Code Ownership • Zero Hostage Fees</span>
+          <span class="marquee-item"><span class="marquee-dot">📍</span> Google Local SEO Schema</span>
+          <span class="marquee-item"><span class="marquee-dot">✨</span> Interactive 3D & Micro-Animations</span>
+          <span class="marquee-item"><span class="marquee-dot">🎯</span> High-Conversion Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         2. ABOUT SECTION (BENTO GRID ARCHITECTURE)
+         ======================================================================= -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="section-header" style="text-align: center; max-width: 780px; margin: 0 auto 40px;">
+          <span class="section-eyebrow">The Studio Philosophy</span>
+          <h2 class="section-title">High-converting websites without agency fluff.</h2>
+          <p class="section-subtitle">
+            You don't need 8-week corporate committee meetings or $5,000 monthly retainer traps. You just need a website
+            that looks trustworthy, works on every smartphone, and brings paying customers to your door.
+          </p>
+        </div>
+
+        <!-- Master Bento Grid -->
+        <div class="about-bento-grid">
+
+          <!-- Bento 1: Main Story & Highlights (Wide) -->
+          <div class="bento-card bento-hero-card" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="bento-badge">Direct Studio Model</div>
+            <h3 class="bento-title">Zero Agency Fluff. Direct Partner Access.</h3>
+            <p class="bento-desc">
+              Work directly with your designer and developer on WhatsApp. Fast turnarounds, transparent flat pricing,
+              and zero middleman runarounds.
+            </p>
+            <div class="about-highlights-list">
+              <div class="about-highlight-item">
+                <div class="highlight-check-icon">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span><strong>Direct WhatsApp Collaboration:</strong> Lightning-quick edits without support
+                  tickets.</span>
+              </div>
+              <div class="about-highlight-item">
+                <div class="highlight-check-icon">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span><strong>3 to 5 Day Delivery:</strong> From initial brief to live production in days.</span>
+              </div>
+              <div class="about-highlight-item">
+                <div class="highlight-check-icon">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span><strong>100% Code Ownership:</strong> You own your code, files, and domain forever.</span>
+              </div>
+            </div>
+            <div style="margin-top: 20px;">
+              <a href="#portfolio" class="btn btn-primary btn-magnetic btn-shimmer">Explore 10 Demo Sites ↓</a>
+            </div>
+          </div>
+
+          <!-- Bento 2: Google Lighthouse 100/100 Audit Card -->
+          <div class="bento-card bento-lighthouse-card" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="bento-badge-green">
+              <span class="pulse-green-dot"></span>
+              Lighthouse Verified
+            </div>
+            <h3 class="bento-title" style="font-size: 1.25rem;">Engineered for 100/100 Speed</h3>
+            <p class="bento-desc" style="font-size: 0.88rem;">
+              Local clients abandon sites that take longer than 3 seconds to load. We handcraft vanilla code for instant
+              load times on every mobile network.
+            </p>
+            <div class="lighthouse-scores-grid">
+              <div class="lighthouse-metric">
+                <div class="score-ring-wrap">
+                  <svg viewBox="0 0 36 36" class="circular-chart green">
+                    <path class="circle-bg"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="circle" stroke-dasharray="100, 100"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <span class="score-val">100</span>
+                </div>
+                <span class="metric-label">Performance</span>
+              </div>
+              <div class="lighthouse-metric">
+                <div class="score-ring-wrap">
+                  <svg viewBox="0 0 36 36" class="circular-chart green">
+                    <path class="circle-bg"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="circle" stroke-dasharray="100, 100"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <span class="score-val">100</span>
+                </div>
+                <span class="metric-label">Accessibility</span>
+              </div>
+              <div class="lighthouse-metric">
+                <div class="score-ring-wrap">
+                  <svg viewBox="0 0 36 36" class="circular-chart green">
+                    <path class="circle-bg"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="circle" stroke-dasharray="100, 100"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <span class="score-val">100</span>
+                </div>
+                <span class="metric-label">Best Practices</span>
+              </div>
+              <div class="lighthouse-metric">
+                <div class="score-ring-wrap">
+                  <svg viewBox="0 0 36 36" class="circular-chart green">
+                    <path class="circle-bg"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="circle" stroke-dasharray="100, 100"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <span class="score-val">100</span>
+                </div>
+                <span class="metric-label">SEO Score</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 3: 3 to 5 Day Sprint Timeline Scrubber -->
+          <div class="bento-card bento-timeline-card" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="bento-badge">Sprint Blueprint</div>
+            <h3 class="bento-title" style="font-size: 1.25rem;">From Brief to Live in 3–5 Days</h3>
+            <div class="sprint-steps-row">
+              <div class="sprint-step-item active">
+                <div class="sprint-day">Day 1</div>
+                <div class="sprint-name">Free Mockup</div>
+                <div class="sprint-sub">Zero Risk Review</div>
+              </div>
+              <div class="sprint-step-item">
+                <div class="sprint-day">Day 2</div>
+                <div class="sprint-name">Refinements</div>
+                <div class="sprint-sub">Content & Colors</div>
+              </div>
+              <div class="sprint-step-item">
+                <div class="sprint-day">Day 3–4</div>
+                <div class="sprint-name">Pixel Code</div>
+                <div class="sprint-sub">Mobile & Speed</div>
+              </div>
+              <div class="sprint-step-item">
+                <div class="sprint-day">Day 5</div>
+                <div class="sprint-name">Go Live</div>
+                <div class="sprint-sub">Domain Handover</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 4: Comparison Table: Studio vs Typical Agency -->
+          <div class="bento-card bento-comparison-card" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="comparison-header">
+              <span class="comparison-col-title taskco-brand">
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                TASK & CO Studio
+              </span>
+              <span class="comparison-col-title agency-col">Typical Agencies</span>
+            </div>
+
+            <div class="comparison-rows">
+              <div class="comparison-row">
+                <div class="comparison-taskco-side">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  Ready in 3 to 5 business days
+                </div>
+                <div class="comparison-agency-side">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  6 to 12 weeks of endless meetings
+                </div>
+              </div>
+
+              <div class="comparison-row">
+                <div class="comparison-taskco-side">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  Direct WhatsApp & Call with Creator
+                </div>
+                <div class="comparison-agency-side">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  Support ticket queues & middle managers
+                </div>
+              </div>
+
+              <div class="comparison-row">
+                <div class="comparison-taskco-side">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  Clear one-time flat investment
+                </div>
+                <div class="comparison-agency-side">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  $3,000+ retainers & hidden fees
+                </div>
+              </div>
+
+              <div class="comparison-row">
+                <div class="comparison-taskco-side">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  100% full code & domain ownership
+                </div>
+                <div class="comparison-agency-side">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  Platform lock-in & hostage fees
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         INTERACTIVE BEFORE / AFTER WEBSITE TRANSFORMATION SLIDER
+         ======================================================================= -->
+    <section class="before-after-section" id="comparison">
+      <div class="container">
+        <div class="before-after-card" data-tilt="true">
+          <div class="card-spotlight"></div>
+          <div class="before-after-header">
+            <span class="before-after-badge">Visual Transformation Proof</span>
+            <h2 class="before-after-title">Before & After: The Local Client Difference</h2>
+            <p class="before-after-subtitle">
+              Drag the interactive handle below to compare an outdated, sluggish local website with a TASK & CO bespoke
+              high-converting build.
+            </p>
+          </div>
+
+          <!-- Interactive Slider Viewport -->
+          <div class="ba-slider-container" id="ba-slider" style="--split-pos: 50%;">
+
+            <!-- Layer 1: AFTER (TASK & CO High-Converting Site) -->
+            <div class="ba-layer-after">
+              <div class="ba-after-badge-pill">✨ AFTER: TASK & CO Bespoke Studio</div>
+              <div class="ba-layer-content-after">
+                <div class="ba-demo-hud-row">
+                  <span class="ba-demo-hud-pill">⚡ 0.3s Instant Mobile Load</span>
+                  <span class="ba-demo-hud-pill">📱 100% Touch & Retina Fluid</span>
+                  <span class="ba-demo-hud-pill">🎯 +68% Verified Inquiries</span>
+                </div>
+                <h3 class="ba-after-headline">
+                  Turn casual local visitors into <span>paying clients</span> from day one.
+                </h3>
+                <p class="ba-after-desc">
+                  Handcrafted lightweight code, 100/100 Lighthouse performance, 1-tap WhatsApp booking bag, and
+                  editorial luxury aesthetics that command premium pricing.
+                </p>
+                <div class="ba-after-actions">
+                  <a href="#portfolio" class="btn btn-primary btn-sm btn-shimmer">Explore 10 Demo Blueprints →</a>
+                  <a href="#contact" class="btn btn-secondary btn-sm">Claim Free Mockup</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Layer 2: BEFORE (Outdated Typical Site) -->
+            <div class="ba-layer-before" id="ba-layer-before">
+              <div class="ba-before-inner">
+                <div class="ba-before-badge-pill">⚠️ BEFORE: Dated & Clunky Site</div>
+                <div class="ba-before-hud-row">
+                  <span class="ba-before-hud-pill">❌ 4.8s Mobile Lag</span>
+                  <span class="ba-before-hud-pill">❌ 72% Bounce Rate</span>
+                  <span class="ba-before-hud-pill">❌ No Direct Booking</span>
+                </div>
+                <h3 class="ba-before-headline">
+                  Losing 7 out of 10 local visitors to Google back-button clicks.
+                </h3>
+                <p class="ba-before-desc">
+                  Bloated template plugins, broken mobile layouts, no WhatsApp integration, and dated designs costing
+                  thousands in missed customer calls every month.
+                </p>
+                <div class="ba-before-btn">
+                  Generic Dated Template
+                </div>
+              </div>
+            </div>
+
+            <!-- Draggable Center Handle -->
+            <div class="ba-handle" id="ba-handle">
+              <div class="ba-handle-line"></div>
+              <div class="ba-handle-knob">◀ ▶</div>
+            </div>
+          </div>
+
+          <div class="ba-hint-bar">
+            <span>⇄ Drag the center slider left or right to inspect the transformation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. SERVICES SECTION
+         ======================================================================= -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Services</span>
+          <h2 class="section-title">Built for how local businesses actually work.</h2>
+          <p class="section-subtitle">Choose the package that fits where your business is today. Every site is
+            custom-coded, ultra-fast, and built to convert visitors into inquiries.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1: 1-Page Business Site -->
+          <div class="service-card" data-tilt="true">
+            <span class="badge service-badge">Essential Presence</span>
+            <div class="service-icon-box">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="service-card-title">1-Page Business Site</h3>
+            <p class="service-card-desc">High-impact, single-page site with your hero, core services, opening hours,
+              Google Map, and instant click-to-call.</p>
+
+            <div class="service-includes-title">What's Included:</div>
+            <div class="service-features-list">
+              <div class="service-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Click-to-Call & WhatsApp Lead CTAs</span>
+              </div>
+              <div class="service-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Interactive Google Maps & Hours</span>
+              </div>
+              <div class="service-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>100% Mobile & Retina Optimized</span>
+              </div>
+            </div>
+
+            <div class="service-footer-meta">
+              <span>Best for: Trades, Cafés, Local Shops</span>
+              <span class="service-turnaround">⚡ 3 Days</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Visual Showcase Pro -->
+          <div class="service-card" data-tilt="true">
+            <span class="badge service-badge">Visual Showcase</span>
+            <div class="service-icon-box">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="service-card-title">Portfolio & Catalog Pro</h3>
+            <p class="service-card-desc">Visual-first layout with masonry photo galleries, filterable project
+              categories, lookbooks, and rate package inquiries.</p>
+
+            <div class="service-includes-title">What's Included:</div>
+            <div class="service-features-list">
+              <div class="service-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Filterable Photo / Product Gallery</span>
+              </div>
+              <div class="service-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Product Catalog & Instagram Connection</span>
+              </div>
+              <div class="service-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Package Quote Inquiry Form</span>
+              </div>
+            </div>
+
+            <div class="service-footer-meta">
+              <span>Best for: Photographers, Boutiques, Artists</span>
+              <span class="service-turnaround">⚡ 4 Days</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Booking & Leads Hub -->
+          <div class="service-card" data-tilt="true">
+            <span class="badge service-badge">Appointments & Leads</span>
+            <div class="service-icon-box">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="service-card-title">Booking & Leads Hub</h3>
+            <p class="service-card-desc">Designed to fill your calendar. Includes integrated appointment scheduling,
+              service menus, team bios, and customer reviews.</p>
+
+            <div class="service-includes-title">What's Included:</div>
+            <div class="service-features-list">
+              <div class="service-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Interactive Appointment Scheduler</span>
+              </div>
+              <div class="service-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Pricing Tiers & Menu Cards</span>
+              </div>
+              <div class="service-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>WhatsApp / SMS Instant Lead Alerts</span>
+              </div>
+            </div>
+
+            <div class="service-footer-meta">
+              <span>Best for: Clinics, Gyms, Salons, B2B</span>
+              <span class="service-turnaround">⚡ 4–5 Days</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. PORTFOLIO / DEMO PROJECTS SECTION (CORE)
+         ======================================================================= -->
+    <section class="portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Demo Showcase</span>
+          <h2 class="section-title">Built for diverse local industries.</h2>
+          <p class="section-subtitle">
+            Every business type has unique customer behavior. Browse these live demo concepts built to turn real-world
+            local traffic into paying clients.
+          </p>
+        </div>
+
+        <!-- Filter Bar with Sliding Indicator -->
+        <div class="portfolio-filter-bar-wrapper">
+          <div class="portfolio-filter-bar" id="portfolio-filter-bar">
+            <div class="filter-sliding-pill" id="filter-sliding-pill"></div>
+            <button class="filter-btn active" data-filter="all">All Businesses (10)</button>
+            <button class="filter-btn" data-filter="dining">Food & Hospitality</button>
+            <button class="filter-btn" data-filter="wellness">Personal Care & Fitness</button>
+            <button class="filter-btn" data-filter="trades">Trades & Contractors</button>
+            <button class="filter-btn" data-filter="commercial">Retail & Real Estate</button>
+            <button class="filter-btn" data-filter="services">Clinics, Events & Photo</button>
+            <button class="filter-btn" data-filter="industry-edu">Education, NGOs & Industry</button>
+          </div>
+        </div>
+
+        <!-- Portfolio Cards Grid -->
+        <div class="portfolio-grid" id="portfolio-grid">
+
+          <!-- PROJECT 1: Restaurant & Café -->
+          <article class="project-card" data-category="dining" data-id="dining" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="mock-browser-frame">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="mock-live-pill">
+                <span class="live-pulse-dot"></span>
+                <span>Live Demo</span>
+              </div>
+              <button type="button" class="icon-quick-btn quick-view-btn" data-demo="dining" title="Quick Preview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <a href="demo-dining.html" target="_blank" class="mockup-preview-screen" tabindex="-1">
+              <div class="preview-hover-overlay">
+                <span class="btn-overlay-pill">View Live Demo ↗</span>
+              </div>
+              <div class="mock-ui-viewport theme-dining">
+                <div class="mock-ui-glass-card">
+                  <div class="mock-brand-emblem">🥘</div>
+                  <div class="mock-brand-name">The Copper Handi</div>
+                  <div class="mock-brand-tagline">Heritage Handi & Artisan Coffee</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="project-biz-badge">🍽️ Restaurant & Café</span>
+              </div>
+              <h3 class="project-card-title">The Copper Handi</h3>
+              <div class="project-card-actions">
+                <a href="demo-dining.html" target="_blank" class="btn-live-demo">
+                  <span>View Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Salon & Barber -->
+          <article class="project-card" data-category="wellness" data-id="salon" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="mock-browser-frame">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="mock-live-pill">
+                <span class="live-pulse-dot"></span>
+                <span>Live Demo</span>
+              </div>
+              <button type="button" class="icon-quick-btn quick-view-btn" data-demo="salon" title="Quick Preview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <a href="demo-salon.html" target="_blank" class="mockup-preview-screen" tabindex="-1">
+              <div class="preview-hover-overlay">
+                <span class="btn-overlay-pill">View Live Demo ↗</span>
+              </div>
+              <div class="mock-ui-viewport theme-salon">
+                <div class="mock-ui-glass-card">
+                  <div class="mock-brand-emblem">✂️</div>
+                  <div class="mock-brand-name">Luxe & Blade Studio</div>
+                  <div class="mock-brand-tagline">Master Barbers & Luxury Spa</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="project-biz-badge">💈 Salon & Barber</span>
+              </div>
+              <h3 class="project-card-title">Luxe & Blade Studio</h3>
+              <div class="project-card-actions">
+                <a href="demo-salon.html" target="_blank" class="btn-live-demo">
+                  <span>View Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Trades & Contractors -->
+          <article class="project-card" data-category="trades" data-id="contractor" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="mock-browser-frame">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="mock-live-pill">
+                <span class="live-pulse-dot"></span>
+                <span>Live Demo</span>
+              </div>
+              <button type="button" class="icon-quick-btn quick-view-btn" data-demo="contractor" title="Quick Preview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <a href="demo-contractor.html" target="_blank" class="mockup-preview-screen" tabindex="-1">
+              <div class="preview-hover-overlay">
+                <span class="btn-overlay-pill">View Live Demo ↗</span>
+              </div>
+              <div class="mock-ui-viewport theme-contractor">
+                <div class="mock-ui-glass-card">
+                  <div class="mock-brand-emblem">🔧</div>
+                  <div class="mock-brand-name">ProCraft Home Services</div>
+                  <div class="mock-brand-tagline">Licensed Contracting & 24/7 Dispatch</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="project-biz-badge">⚡ Trades & Contractors</span>
+              </div>
+              <h3 class="project-card-title">ProCraft Home Services</h3>
+              <div class="project-card-actions">
+                <a href="demo-contractor.html" target="_blank" class="btn-live-demo">
+                  <span>View Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: Boutique & Retail -->
+          <article class="project-card" data-category="commercial" data-id="retail" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="mock-browser-frame">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="mock-live-pill">
+                <span class="live-pulse-dot"></span>
+                <span>Live Demo</span>
+              </div>
+              <button type="button" class="icon-quick-btn quick-view-btn" data-demo="retail" title="Quick Preview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <a href="demo-retail.html" target="_blank" class="mockup-preview-screen" tabindex="-1">
+              <div class="preview-hover-overlay">
+                <span class="btn-overlay-pill">View Live Demo ↗</span>
+              </div>
+              <div class="mock-ui-viewport theme-retail">
+                <div class="mock-ui-glass-card">
+                  <div class="mock-brand-emblem">🛍️</div>
+                  <div class="mock-brand-name">Khaadi & Silk Boutique</div>
+                  <div class="mock-brand-tagline">Artisan Mulberry Silks & Lookbook</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="project-biz-badge">👗 Boutique & Retail</span>
+              </div>
+              <h3 class="project-card-title">Khaadi & Silk Boutique</h3>
+              <div class="project-card-actions">
+                <a href="demo-retail.html" target="_blank" class="btn-live-demo">
+                  <span>View Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 5: Fitness & Gym -->
+          <article class="project-card" data-category="wellness" data-id="fitness" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="mock-browser-frame">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="mock-live-pill">
+                <span class="live-pulse-dot"></span>
+                <span>Live Demo</span>
+              </div>
+              <button type="button" class="icon-quick-btn quick-view-btn" data-demo="fitness" title="Quick Preview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <a href="demo-fitness.html" target="_blank" class="mockup-preview-screen" tabindex="-1">
+              <div class="preview-hover-overlay">
+                <span class="btn-overlay-pill">View Live Demo ↗</span>
+              </div>
+              <div class="mock-ui-viewport theme-fitness">
+                <div class="mock-ui-glass-card">
+                  <div class="mock-brand-emblem">⚡</div>
+                  <div class="mock-brand-name">IronPulse Performance</div>
+                  <div class="mock-brand-tagline">Functional Strength & Hyrox Coaching</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="project-biz-badge">🏋️ Fitness & Gym</span>
+              </div>
+              <h3 class="project-card-title">IronPulse Fitness Club</h3>
+              <div class="project-card-actions">
+                <a href="demo-fitness.html" target="_blank" class="btn-live-demo">
+                  <span>View Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 6: Healthcare & Clinic -->
+          <article class="project-card" data-category="services" data-id="healthcare" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="mock-browser-frame">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="mock-live-pill">
+                <span class="live-pulse-dot"></span>
+                <span>Live Demo</span>
+              </div>
+              <button type="button" class="icon-quick-btn quick-view-btn" data-demo="healthcare" title="Quick Preview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <a href="demo-healthcare.html" target="_blank" class="mockup-preview-screen" tabindex="-1">
+              <div class="preview-hover-overlay">
+                <span class="btn-overlay-pill">View Live Demo ↗</span>
+              </div>
+              <div class="mock-ui-viewport theme-healthcare">
+                <div class="mock-ui-glass-card">
+                  <div class="mock-brand-emblem">🩺</div>
+                  <div class="mock-brand-name">CareFirst Family Clinic</div>
+                  <div class="mock-brand-tagline">Gentle Medicine & Same-Day Dental</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="project-biz-badge">🩺 Healthcare & Clinic</span>
+              </div>
+              <h3 class="project-card-title">CareFirst Family Clinic</h3>
+              <div class="project-card-actions">
+                <a href="demo-healthcare.html" target="_blank" class="btn-live-demo">
+                  <span>View Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 7: Luxury Real Estate -->
+          <article class="project-card" data-category="commercial" data-id="realestate" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="mock-browser-frame">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="mock-live-pill">
+                <span class="live-pulse-dot"></span>
+                <span>Live Demo</span>
+              </div>
+              <button type="button" class="icon-quick-btn quick-view-btn" data-demo="realestate" title="Quick Preview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <a href="demo-realestate.html" target="_blank" class="mockup-preview-screen" tabindex="-1">
+              <div class="preview-hover-overlay">
+                <span class="btn-overlay-pill">View Live Demo ↗</span>
+              </div>
+              <div class="mock-ui-viewport theme-realestate">
+                <div class="mock-ui-glass-card">
+                  <div class="mock-brand-emblem">🏛️</div>
+                  <div class="mock-brand-name">Aura Luxury Realty</div>
+                  <div class="mock-brand-tagline">Architectural Villas & Virtual Tours</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="project-biz-badge">🏡 Luxury Real Estate</span>
+              </div>
+              <h3 class="project-card-title">Aura Luxury Realty</h3>
+              <div class="project-card-actions">
+                <a href="demo-realestate.html" target="_blank" class="btn-live-demo">
+                  <span>View Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 8: Photography & Film -->
+          <article class="project-card" data-category="services" data-id="photography" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="mock-browser-frame">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="mock-live-pill">
+                <span class="live-pulse-dot"></span>
+                <span>Live Demo</span>
+              </div>
+              <button type="button" class="icon-quick-btn quick-view-btn" data-demo="photography" title="Quick Preview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <a href="demo-photography.html" target="_blank" class="mockup-preview-screen" tabindex="-1">
+              <div class="preview-hover-overlay">
+                <span class="btn-overlay-pill">View Live Demo ↗</span>
+              </div>
+              <div class="mock-ui-viewport theme-photography">
+                <div class="mock-ui-glass-card">
+                  <div class="mock-brand-emblem">📷</div>
+                  <div class="mock-brand-name">Aurora & Co. Studios</div>
+                  <div class="mock-brand-tagline">Editorial Weddings & Natural Light</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="project-biz-badge">📷 Photography & Film</span>
+              </div>
+              <h3 class="project-card-title">Aurora & Co. Photography</h3>
+              <div class="project-card-actions">
+                <a href="demo-photography.html" target="_blank" class="btn-live-demo">
+                  <span>View Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 9: Education & Academy -->
+          <article class="project-card" data-category="industry-edu" data-id="education" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="mock-browser-frame">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="mock-live-pill">
+                <span class="live-pulse-dot"></span>
+                <span>Live Demo</span>
+              </div>
+              <button type="button" class="icon-quick-btn quick-view-btn" data-demo="education" title="Quick Preview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <a href="demo-education.html" target="_blank" class="mockup-preview-screen" tabindex="-1">
+              <div class="preview-hover-overlay">
+                <span class="btn-overlay-pill">View Live Demo ↗</span>
+              </div>
+              <div class="mock-ui-viewport theme-education">
+                <div class="mock-ui-glass-card">
+                  <div class="mock-brand-emblem">🎓</div>
+                  <div class="mock-brand-name">BrightPath Academy</div>
+                  <div class="mock-brand-tagline">STEM Robotics & Career Foundations</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="project-biz-badge">🎓 Education & Academy</span>
+              </div>
+              <h3 class="project-card-title">BrightPath Academy</h3>
+              <div class="project-card-actions">
+                <a href="demo-education.html" target="_blank" class="btn-live-demo">
+                  <span>View Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 10: Industry & Manufacturing -->
+          <article class="project-card" data-category="industry-edu" data-id="industrial" data-tilt="true">
+            <div class="card-spotlight"></div>
+            <div class="mock-browser-frame">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="mock-live-pill">
+                <span class="live-pulse-dot"></span>
+                <span>Live Demo</span>
+              </div>
+              <button type="button" class="icon-quick-btn quick-view-btn" data-demo="industrial" title="Quick Preview">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <a href="demo-industrial.html" target="_blank" class="mockup-preview-screen" tabindex="-1">
+              <div class="preview-hover-overlay">
+                <span class="btn-overlay-pill">View Live Demo ↗</span>
+              </div>
+              <div class="mock-ui-viewport theme-industrial">
+                <div class="mock-ui-glass-card">
+                  <div class="mock-brand-emblem">⚙️</div>
+                  <div class="mock-brand-name">Vertex Dynamics</div>
+                  <div class="mock-brand-tagline">Precision CNC Machining & Valve Spec</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="project-biz-badge">⚙️ Industry & Engineering</span>
+              </div>
+              <h3 class="project-card-title">Vertex Industrial Dynamics</h3>
+              <div class="project-card-actions">
+                <a href="demo-industrial.html" target="_blank" class="btn-live-demo">
+                  <span>View Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. PROCESS SECTION
+         ======================================================================= -->
+    <section class="process-section" id="process">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">How It Works</span>
+          <h2 class="section-title">From idea to live website in 4 simple steps.</h2>
+          <p class="section-subtitle">No endless homework for you. You share what your business does, and I handle the
+            heavy lifting from design to live launch.</p>
+        </div>
+
+        <div class="process-steps-container">
+          <!-- Step 1 -->
+          <div class="process-step-card" data-tilt="true">
+            <div class="step-number-circle">1</div>
+            <div class="step-card-timeline">Step 1 • Zero Risk</div>
+            <h3 class="step-card-title">Free Custom Mockup</h3>
+            <p class="step-card-desc">
+              Share your business details, and get a visual mockup within 24h with zero upfront cost.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-card" data-tilt="true">
+            <div class="step-number-circle">2</div>
+            <div class="step-card-timeline">Step 2 • Alignment</div>
+            <h3 class="step-card-title">Rapid Refinements</h3>
+            <p class="step-card-desc">
+              Direct WhatsApp feedback to dial in your brand colors, imagery, and messaging.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-card" data-tilt="true">
+            <div class="step-number-circle">3</div>
+            <div class="step-card-timeline">Step 3 • 48–72 Hours</div>
+            <h3 class="step-card-title">Pixel Code & Speed</h3>
+            <p class="step-card-desc">
+              Handcrafted vanilla code with 100/100 speed, mobile responsiveness & WhatsApp lead capture.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-card" data-tilt="true">
+            <div class="step-number-circle">4</div>
+            <div class="step-card-timeline">Step 4 • Done & Live</div>
+            <h3 class="step-card-title">Launch & Handover</h3>
+            <p class="step-card-desc">
+              Connected to your custom domain with 100% full code ownership and zero lock-in fees.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. PRICING SECTION
+         ======================================================================= -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Transparent Pricing</span>
+          <h2 class="section-title">Clear, one-time investment. No surprises.</h2>
+          <p class="section-subtitle">No monthly agency retainers or hidden host trap fees. You pay once and own your
+            website outright forever.</p>
+        </div>
+
+        <!-- Dual Currency Mode Switcher -->
+        <div class="currency-selector-bar">
+          <span class="currency-selector-label">Dealing Currency:</span>
+          <div class="currency-btn-group">
+            <button type="button" class="currency-btn active" data-curr="both">Both ₹ INR & $ USD</button>
+            <button type="button" class="currency-btn" data-curr="inr">₹ INR Only</button>
+            <button type="button" class="currency-btn" data-curr="usd">$ USD Only</button>
+          </div>
+        </div>
+
+        <div class="pricing-guarantee-strip">
+          <span class="guarantee-badge">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            100% Full Site Ownership
+          </span>
+          <span class="guarantee-badge">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            Free Custom Mockup First
+          </span>
+          <span class="guarantee-badge">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            30 Days Free Post-Launch Support
+          </span>
+        </div>
+
+        <!-- ===================================================================
+             INTERACTIVE PROJECT SCOPE & COST ESTIMATOR
+             =================================================================== -->
+        <div class="interactive-calculator-card" id="project-calculator" data-tilt="true">
+          <div class="card-spotlight"></div>
+          <div class="calc-header">
+            <div class="calc-badge">
+              <span class="calc-pulse-dot"></span>
+              Interactive Custom Estimate Builder
+            </div>
+            <h3 class="calc-title">Tailor Your Website Package in Real Time</h3>
+            <p class="calc-subtitle">Select your base foundation and choose optional revenue add-ons. See live pricing,
+              timeline, and generate an instant WhatsApp project proposal.</p>
+          </div>
+
+          <div class="calc-body-grid">
+            <!-- Step 1: Base Tier Selection -->
+            <div class="calc-step-section">
+              <div class="calc-step-label">
+                <span>Step 1</span> Choose Base Architecture
+              </div>
+              <div class="calc-tiers-grid">
+                <label class="calc-tier-option active" data-base="starter">
+                  <input type="radio" name="calc-base" value="starter" data-price="299" data-price-usd="299"
+                    data-price-inr="24999" data-name="Starter Express (1 Page)" data-days="3" checked>
+                  <div class="calc-tier-box">
+                    <div class="calc-tier-name">Starter Express</div>
+                    <div class="calc-tier-desc">1-Page High-Converting Site</div>
+                    <div class="calc-tier-price">
+                      <span class="pricing-inr-tag">₹24,999</span>
+                      <span class="pricing-slash">/</span>
+                      <span class="pricing-usd-tag">$299</span>
+                    </div>
+                    <div class="calc-tier-days">⚡ Ready in 3 Days</div>
+                  </div>
+                </label>
+
+                <label class="calc-tier-option" data-base="pro">
+                  <input type="radio" name="calc-base" value="pro" data-price="599" data-price-usd="599"
+                    data-price-inr="49999" data-name="Standard Pro (5 Pages)" data-days="4-5">
+                  <div class="calc-tier-box">
+                    <div class="calc-tier-tag">Most Popular</div>
+                    <div class="calc-tier-name">Standard Pro</div>
+                    <div class="calc-tier-desc">Up to 5 Pages + Lookbook</div>
+                    <div class="calc-tier-price">
+                      <span class="pricing-inr-tag">₹49,999</span>
+                      <span class="pricing-slash">/</span>
+                      <span class="pricing-usd-tag">$599</span>
+                    </div>
+                    <div class="calc-tier-days">⚡ 4 to 5 Days</div>
+                  </div>
+                </label>
+
+                <label class="calc-tier-option" data-base="booking">
+                  <input type="radio" name="calc-base" value="booking" data-price="899" data-price-usd="899"
+                    data-price-inr="74999" data-name="Booking & Leads Hub" data-days="5-7">
+                  <div class="calc-tier-box">
+                    <div class="calc-tier-name">Booking & Leads Hub</div>
+                    <div class="calc-tier-desc">Scheduler + Menu/Catalog</div>
+                    <div class="calc-tier-price">
+                      <span class="pricing-inr-tag">₹74,999</span>
+                      <span class="pricing-slash">/</span>
+                      <span class="pricing-usd-tag">$899</span>
+                    </div>
+                    <div class="calc-tier-days">⚡ 5 to 7 Days</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 2: Add-Ons Selection -->
+            <div class="calc-step-section">
+              <div class="calc-step-label">
+                <span>Step 2</span> Select Optional High-Growth Add-Ons
+              </div>
+              <div class="calc-addons-grid">
+                <label class="calc-addon-pill active">
+                  <input type="checkbox" class="calc-addon-check" data-price="99" data-price-usd="99"
+                    data-price-inr="7999" data-addon="WhatsApp Direct Takeaway & Catalog Bag" checked>
+                  <div class="addon-pill-content">
+                    <span class="addon-icon">💬</span>
+                    <div class="addon-text-group">
+                      <span class="addon-title">WhatsApp Direct Ordering Bag</span>
+                      <span class="addon-sub">1-Click customer order messages</span>
+                    </div>
+                    <span class="addon-price">
+                      <span class="pricing-inr-tag">+₹7,999</span>
+                      <span class="pricing-slash">/</span>
+                      <span class="pricing-usd-tag">+$99</span>
+                    </span>
+                  </div>
+                </label>
+
+                <label class="calc-addon-pill active">
+                  <input type="checkbox" class="calc-addon-check" data-price="149" data-price-usd="149"
+                    data-price-inr="11999" data-addon="Google Local 3-Pack SEO & Schema" checked>
+                  <div class="addon-pill-content">
+                    <span class="addon-icon">📍</span>
+                    <div class="addon-text-group">
+                      <span class="addon-title">Google Maps & Local SEO Schema</span>
+                      <span class="addon-sub">Rank higher for near-me searches</span>
+                    </div>
+                    <span class="addon-price">
+                      <span class="pricing-inr-tag">+₹11,999</span>
+                      <span class="pricing-slash">/</span>
+                      <span class="pricing-usd-tag">+$149</span>
+                    </span>
+                  </div>
+                </label>
+
+                <label class="calc-addon-pill">
+                  <input type="checkbox" class="calc-addon-check" data-price="129" data-price-usd="129"
+                    data-price-inr="9999" data-addon="VIP Rush 48h Turnaround">
+                  <div class="addon-pill-content">
+                    <span class="addon-icon">⚡</span>
+                    <div class="addon-text-group">
+                      <span class="addon-title">VIP Priority 48-Hour Rush</span>
+                      <span class="addon-sub">Skip the queue & launch in 2 days</span>
+                    </div>
+                    <span class="addon-price">
+                      <span class="pricing-inr-tag">+₹9,999</span>
+                      <span class="pricing-slash">/</span>
+                      <span class="pricing-usd-tag">+$129</span>
+                    </span>
+                  </div>
+                </label>
+
+                <label class="calc-addon-pill">
+                  <input type="checkbox" class="calc-addon-check" data-price="79" data-price-usd="79"
+                    data-price-inr="5999" data-addon="Interactive Google Reviews Live Sync">
+                  <div class="addon-pill-content">
+                    <span class="addon-icon">⭐</span>
+                    <div class="addon-text-group">
+                      <span class="addon-title">Google Reviews Live Sync Widget</span>
+                      <span class="addon-sub">Showcase live 5-star social proof</span>
+                    </div>
+                    <span class="addon-price">
+                      <span class="pricing-inr-tag">+₹5,999</span>
+                      <span class="pricing-slash">/</span>
+                      <span class="pricing-usd-tag">+$79</span>
+                    </span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Dynamic Total Bar -->
+          <div class="calc-summary-bar">
+            <div class="calc-total-info">
+              <span class="calc-total-label">Estimated Total Investment:</span>
+              <div class="calc-price-display">
+                <span class="calc-number" id="calc-total-amount"></span>
+                <span class="calc-type">one-time flat investment</span>
+              </div>
+              <div class="calc-timeline-note" id="calc-timeline-note">
+                ⚡ Estimated Delivery: <strong>3 to 5 business days</strong> • 100% Code Ownership
+              </div>
+            </div>
+            <div class="calc-actions">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-magnetic btn-shimmer"
+                id="calc-whatsapp-btn">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.2 1.028.916 1.488.948 1.701 1.05.213.102.339.087.466-.059.127-.145.544-.635.688-.852.145-.217.29-.18.491-.104.202.076 1.277.602 1.494.71.217.108.362.162.416.252.054.09.054.521-.09 1.127z" />
+                </svg>
+                <span>Lock This Quote on WhatsApp ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-grid-divider">
+          <span>Or Choose A Standard Fixed Tier</span>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Tier 1: Starter -->
+          <div class="pricing-card">
+            <h3 class="pricing-tier-name">Starter Express</h3>
+            <p class="pricing-tier-sub">Ideal for trades & local businesses needing a fast, professional online
+              presence.</p>
+
+            <div class="pricing-amount-wrap">
+              <span class="pricing-inr-tag">₹24,999</span>
+              <span class="pricing-slash">/</span>
+              <span class="pricing-usd-tag">$299</span>
+              <span class="pricing-period">one-time</span>
+            </div>
+
+            <div class="pricing-features-list">
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Complete 1-Page High-Converting Site</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Mobile, Tablet & Desktop Responsive</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Click-to-Call & WhatsApp Chat Setup</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Google Maps & Opening Hours</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Ready in 3 Business Days</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn-secondary" style="width: 100%;">Select Starter Plan</a>
+          </div>
+
+          <!-- Tier 2: Standard (Featured) -->
+          <div class="pricing-card featured">
+            <div class="featured-ribbon">Most Popular Choice</div>
+            <h3 class="pricing-tier-name">Standard Pro</h3>
+            <p class="pricing-tier-sub">Complete showcase for photographers, clinics, gyms, and growing local
+              businesses.</p>
+
+            <div class="pricing-amount-wrap">
+              <span class="pricing-inr-tag">₹49,999</span>
+              <span class="pricing-slash">/</span>
+              <span class="pricing-usd-tag">$599</span>
+              <span class="pricing-period">one-time</span>
+            </div>
+
+            <div class="pricing-features-list">
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Up to 5 Custom-Designed Sections / Pages</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Filterable Photo Gallery / Product Lookbook</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Appointment Scheduler / Calendar Booking</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Google Business Profile & Local SEO setup</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Fast 4 to 5 Day Delivery</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>2 Rounds of Free Revisions</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn-primary" style="width: 100%;">Select Standard Plan</a>
+          </div>
+
+          <!-- Tier 3: Custom -->
+          <div class="pricing-card">
+            <h3 class="pricing-tier-name">Custom / B2B</h3>
+            <p class="pricing-tier-sub">Tailored engineering for manufacturers, real estate firms, and catalog-heavy
+              businesses.</p>
+
+            <div class="pricing-amount-wrap">
+              <span class="pricing-inr-tag">₹79,999+</span>
+              <span class="pricing-slash">/</span>
+              <span class="pricing-usd-tag">$999+</span>
+              <span class="pricing-period">starting at</span>
+            </div>
+
+            <div class="pricing-features-list">
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Full Multi-Page Architecture</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Custom RFQ / Quotation Calculation Form</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Technical Spec & PDF Catalog Downloads</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Full CRM / Webhook Data Integration</span>
+              </div>
+              <div class="pricing-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Priority 60-Day Support Warranty</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn-secondary" style="width: 100%;">Discuss Custom Needs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. TESTIMONIALS SECTION
+         ======================================================================= -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Client Feedback</span>
+          <h2 class="section-title">What local business owners say.</h2>
+          <p class="section-subtitle">Real feedback from clients who needed to get online quickly without the agency
+            headaches.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              <p class="testimonial-quote">
+                "TASK & CO had our wedding photography portfolio live in just 4 days. They understood our aesthetic
+                immediately. Brides constantly tell us how easy it is to view our packages and check our date
+                availability."
+              </p>
+            </div>
+            <div class="testimonial-author-meta">
+              <div class="author-avatar-badge">MK</div>
+              <div>
+                <div class="author-name">Maya K.</div>
+                <div class="author-biz">Wedding & Portrait Studio Owner</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              <p class="testimonial-quote">
+                "As an electrician, I know nothing about websites or code. TASK & CO took care of everything: domain,
+                Google Maps, and a click-to-call button that generated 8 emergency service calls in the very first
+                week."
+              </p>
+            </div>
+            <div class="testimonial-author-meta">
+              <div class="author-avatar-badge">DR</div>
+              <div>
+                <div class="author-name">David R.</div>
+                <div class="author-biz">Apex Electrical Contracting</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              <p class="testimonial-quote">
+                "Other agencies quoted me $4,000 and 2 months. TASK & CO delivered our boutique's lookbook website in 5
+                days for a fraction of the cost, and customers love placing direct WhatsApp orders from it!"
+              </p>
+            </div>
+            <div class="testimonial-author-meta">
+              <div class="author-avatar-badge">SC</div>
+              <div>
+                <div class="author-name">Sarah C.</div>
+                <div class="author-biz">Founder, Velvet & Fig Apparel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. CONTACT / CTA SECTION
+         ======================================================================= -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-layout">
+          <!-- Left Info Column -->
+          <div class="contact-info-col">
+            <span class="section-eyebrow">Get Started Today</span>
+            <h2>Let's build your website this week.</h2>
+            <p class="contact-lead-text">
+              Have a question, or ready for a free visual mockup? Reach out directly via WhatsApp, Instagram, or fill
+              out the quick form. I respond within a couple of hours.
+            </p>
+
+            <!-- Direct Channels List -->
+            <div class="contact-channels-list">
+              <!-- WhatsApp -->
+              <a href="https://wa.me/?text=Hi%20TASK%20%26%20CO!%20I'd%20like%20to%20get%20a%20website%20for%20my%20business."
+                target="_blank" rel="noopener noreferrer" class="contact-channel-card" id="whatsapp-channel-btn">
+                <div class="channel-icon-wrap whatsapp">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.186 1.564 5.938l-1.564 5.714 5.867-1.539c1.699.932 3.652 1.465 5.733 1.465 6.627 0 12-5.373 12-12s-5.373-12-12-12z" />
+                  </svg>
+                </div>
+                <div class="channel-details">
+                  <div class="channel-title">WhatsApp Chat</div>
+                  <div class="channel-value">Instant Reply (Tap to Chat)</div>
+                </div>
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+                <div class="channel-icon-wrap instagram">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </div>
+                <div class="channel-details">
+                  <div class="channel-title">Instagram</div>
+                  <div class="channel-value">@taskandco.studio</div>
+                </div>
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+
+              <!-- Email -->
+              <a href="mailto:hello@taskandco.studio" class="contact-channel-card">
+                <div class="channel-icon-wrap email">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="channel-details">
+                  <div class="channel-title">Direct Email</div>
+                  <div class="channel-value">hello@taskandco.studio</div>
+                </div>
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- WhatsApp Action Shortcut -->
+            <a href="https://wa.me/?text=Hi%20TASK%20%26%20CO,%20I'm%20interested%20in%20a%20website%20for%20my%20business!"
+              target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.186 1.564 5.938l-1.564 5.714 5.867-1.539c1.699.932 3.652 1.465 5.733 1.465 6.627 0 12-5.373 12-12s-5.373-12-12-12z" />
+              </svg>
+              Chat on WhatsApp Directly
+            </a>
+          </div>
+
+          <!-- Right Form Column: "Tell me about your business" -->
+          <div class="contact-form-container">
+            <h3 class="contact-form-title">Tell me about your business</h3>
+            <p class="contact-form-sub">Fill out this 60-second form and I'll send you a custom visual mockup outline.
+            </p>
+
+            <form id="project-inquiry-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="client-name" class="form-label">Your Name *</label>
+                  <input type="text" id="client-name" name="name" class="form-input" placeholder="e.g. Maya Sharma"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label for="client-phone" class="form-label">Phone / WhatsApp *</label>
+                  <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="+1 (555) 000-0000"
+                    required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="client-biz-name" class="form-label">Business Name *</label>
+                  <input type="text" id="client-biz-name" name="bizName" class="form-input"
+                    placeholder="e.g. Apex Electric Co." required>
+                </div>
+                <div class="form-group">
+                  <label for="client-industry" class="form-label">Industry / Business Type *</label>
+                  <select id="client-industry" name="industry" class="form-select" required>
+                    <option value="" disabled selected>Select your industry...</option>
+                    <option value="Restaurants / Cafés / Dhabas">1. Restaurants / Cafés / Dhabas</option>
+                    <option value="Salons, Spas & Barbershops">2. Salons, Spas & Barbershops</option>
+                    <option value="Home Contractors / Electricians / Plumbers">3. Home Contractors / Electricians /
+                      Plumbers</option>
+                    <option value="Boutiques / Clothing / Local Retail">4. Boutiques / Clothing / Local Retail</option>
+                    <option value="Gyms & Fitness Trainers">5. Gyms & Fitness Trainers</option>
+                    <option value="Dentists / Small Clinics / Vets">6. Dentists / Small Clinics / Vets</option>
+                    <option value="Real Estate Agents (Individual)">7. Real Estate Agents (Individual)</option>
+                    <option value="Wedding/Event Planners, Photographers">8. Wedding/Event Planners & Photographers
+                    </option>
+                    <option value="Local NGOs / Schools / Coaching Centers">9. Local NGOs / Schools / Coaching Centers
+                    </option>
+                    <option value="Manufacturers / Wholesalers / Exporters">10. Manufacturers / Wholesalers / Exporters
+                    </option>
+                    <option value="Other Local Business">Other Local Business</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="client-needs" class="form-label">What are you looking to accomplish?</label>
+                <textarea id="client-needs" name="notes" class="form-textarea"
+                  placeholder="Tell me what you need (e.g. Brand new site, redesign of old site, need online appointment booking, want more calls from Google)"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="submit-inquiry-btn" style="width: 100%;">
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+                Request Free Mockup (No Cost)
+              </button>
+
+              <p class="form-disclaimer">
+                🔒 Zero spam. Your details are strictly used to prepare your custom website preview.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#hero" class="brand-logo">
+            <span class="logo-mark">T</span>
+            <span>TASK & CO</span>
+          </a>
+          <p class="footer-brand-desc">
+            We build simple, professional websites for local businesses in 3-5 days. Clean, mobile-first, and engineered
+            to convert.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Industries (Demos)</h4>
+          <div class="footer-links-list">
+            <a href="demo-dining.html" target="_blank" class="footer-link">Restaurants & Cafés ↗</a>
+            <a href="demo-salon.html" target="_blank" class="footer-link">Salons & Spas ↗</a>
+            <a href="demo-contractor.html" target="_blank" class="footer-link">Contractors & Trades ↗</a>
+            <a href="demo-retail.html" target="_blank" class="footer-link">Boutiques & Retail ↗</a>
+            <a href="demo-fitness.html" target="_blank" class="footer-link">Gyms & Trainers ↗</a>
+            <a href="demo-healthcare.html" target="_blank" class="footer-link">Clinics, Dentists & Vets ↗</a>
+            <a href="demo-realestate.html" target="_blank" class="footer-link">Real Estate Agents ↗</a>
+            <a href="demo-photography.html" target="_blank" class="footer-link">Weddings & Photography ↗</a>
+            <a href="demo-education.html" target="_blank" class="footer-link">Schools & NGOs ↗</a>
+            <a href="demo-industrial.html" target="_blank" class="footer-link">Manufacturers & Exporters ↗</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <div class="footer-links-list">
+            <a href="#about" class="footer-link">About TASK & CO</a>
+            <a href="#services" class="footer-link">Services & Packages</a>
+            <a href="#portfolio" class="footer-link">Demo Portfolio</a>
+            <a href="#process" class="footer-link">How It Works</a>
+            <a href="#pricing" class="footer-link">Pricing Plans</a>
+            <a href="#contact" class="footer-link">Request Mockup</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Get In Touch</h4>
+          <div class="footer-links-list">
+            <a href="https://wa.me/?text=Hi%20TASK%20%26%20CO!" target="_blank" rel="noopener noreferrer"
+              class="footer-link">WhatsApp: Tap to Chat</a>
+            <a href="mailto:hello@taskandco.studio" class="footer-link">hello@taskandco.studio</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram:
+              @taskandco.studio</a>
+            <span class="footer-link" style="color: var(--text-muted);">🟢 Available for new bookings</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 TASK & CO Web Studio. All rights reserved. Built for local business growth.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#hero" class="footer-link">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       INTERACTIVE QUICK VIEW DEMO MODAL
+       ========================================================================= -->
+  <div class="demo-modal-backdrop" id="demo-modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="demo-modal-container">
+      <!-- Modal Header -->
+      <div class="demo-modal-header">
+        <div class="demo-modal-title-wrap">
+          <span class="badge" id="modal-industry-tag">Industry Demo</span>
+          <h3 id="modal-demo-title" style="font-size: 1.15rem;">Live Demo Preview</h3>
+        </div>
+
+        <!-- Viewport Switcher -->
+        <div class="modal-device-toggles">
+          <button class="modal-device-btn active" data-device="desktop" title="Desktop view">Desktop</button>
+          <button class="modal-device-btn" data-device="tablet" title="Tablet view">Tablet</button>
+          <button class="modal-device-btn" data-device="mobile" title="Mobile view">Mobile</button>
+        </div>
+
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close demo preview">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body (Preview Canvas) -->
+      <div class="demo-modal-body">
+        <div class="demo-preview-viewport viewport-desktop" id="demo-viewport">
+          <!-- Dynamically Injected Interactive Simulated Demo Screen -->
+          <div id="modal-dynamic-content" style="padding: 24px; min-height: 420px;">
+            <!-- Rendered by main.js based on selected industry -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="demo-modal-footer">
+        <div>
+          <span id="modal-features-note" style="font-size: 0.86rem; color: var(--text-secondary);">
+            Includes full mobile optimization & lead generation form.
+          </span>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn btn-secondary btn-sm" id="modal-dismiss-btn">Close</button>
+          <a href="#contact" class="btn btn-primary btn-sm" id="modal-cta-btn">I Want a Site Like This →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Alert -->
+  <div class="toast-notice" id="toast-notice">
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#10b981">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <span id="toast-message">Thank you! Your mockup request has been submitted.</span>
+  </div>
+
+  <!-- Floating Back to Top with Circular Scroll Progress Ring -->
+  <button id="floating-back-to-top" class="floating-back-to-top" aria-label="Back to top" title="Scroll to top">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="20" fill="none" stroke-width="3" />
+      <circle class="progress-ring-circle" id="progress-circle" cx="24" cy="24" r="20" fill="none" stroke-width="3" />
+    </svg>
+    <span class="back-to-top-arrow">↑</span>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js?v=lux_dark_bronze_final"></script>
+</body>
+
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SALONS • SPAS • BARBERSHOPS | Luxe & Blade Studio & Day Spa (Demo by TASK & CO)</title>
+  <meta name="description" content="Precision men's grooming, bespoke women's hair artistry, and holistic Ayurvedic spa treatments. A live interactive demo website crafted by TASK & CO.">
+
+  <!-- Google Fonts: Cinzel (Regal Fashion Serif) & Montserrat (Sleek Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f0a0d;
+      --bg-surface: #171015;
+      --bg-card: #20171d;
+      --bg-card-hover: #2a1e27;
+      --border: rgba(244, 114, 182, 0.2);
+      --accent-pink: #ec4899;
+      --accent-rose: #f43f5e;
+      --accent-gold: #f59e0b;
+      --text-light: #fdfafc;
+      --text-muted: #a3929c;
+      --font-serif: 'Cinzel', Georgia, serif;
+      --font-sans: 'Montserrat', sans-serif;
+      --radius: 12px;
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-family: var(--font-sans); background: var(--bg-dark); color: var(--text-light); }
+    body { line-height: 1.6; overflow-x: hidden; position: relative; }
+
+    /* =========================================================================
+       UNIQUE BACKGROUND ANIMATION: Rose-Gold Silk Wave Aurora
+       ========================================================================= */
+    .salon-silk-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.65;
+    }
+    .silk-wave {
+      position: absolute;
+      width: 200vw;
+      height: 400px;
+      border-radius: 50%;
+      filter: blur(75px);
+      will-change: transform;
+    }
+    .silk-wave-1 {
+      top: 10%;
+      left: -50vw;
+      background: radial-gradient(ellipse at center, rgba(236, 72, 153, 0.22) 0%, rgba(244, 63, 94, 0.08) 50%, transparent 80%);
+      animation: silkWave1 18s infinite alternate ease-in-out;
+    }
+    .silk-wave-2 {
+      bottom: 15%;
+      right: -50vw;
+      background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.18) 0%, rgba(236, 72, 153, 0.12) 50%, transparent 80%);
+      animation: silkWave2 24s infinite alternate ease-in-out;
+    }
+    @keyframes silkWave1 {
+      0% { transform: translate3d(0, 0, 0) rotate(-6deg) scaleY(0.9); }
+      50% { transform: translate3d(120px, 60px, 0) rotate(4deg) scaleY(1.2); }
+      100% { transform: translate3d(-80px, 100px, 0) rotate(-4deg) scaleY(1); }
+    }
+    @keyframes silkWave2 {
+      0% { transform: translate3d(0, 0, 0) rotate(8deg) scaleY(1.1); }
+      50% { transform: translate3d(-140px, -70px, 0) rotate(-5deg) scaleY(0.85); }
+      100% { transform: translate3d(60px, -40px, 0) rotate(6deg) scaleY(1.2); }
+    }
+
+    header, main, footer, .biz-category-super-banner, .studio-demo-bar { position: relative; z-index: 1; }
+
+    /* Studio Demo Bar */
+    .studio-demo-bar {
+      position: sticky; top: 0; left: 0; right: 0;
+      background: linear-gradient(90deg, #0f172a 0%, #0d9488 100%);
+      color: #fff; padding: 10px 20px; display: flex; align-items: center;
+      justify-content: space-between; font-size: 0.84rem; font-weight: 600;
+      z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    .demo-pulse-dot { width: 8px; height: 8px; background-color: #34d399; border-radius: 50%; animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.8; } 50% { transform: scale(1.4); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.8; } }
+    .studio-demo-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-demo-back { color: #e2e8f0; text-decoration: none; font-size: 0.82rem; padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.25); transition: var(--transition); }
+    .btn-demo-back:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+    .btn-demo-hire { background: #fff; color: #0f172a; text-decoration: none; font-size: 0.82rem; font-weight: 700; padding: 5px 14px; border-radius: 6px; transition: var(--transition); }
+    .btn-demo-hire:hover { background: #f1f5f9; }
+
+    /* PROMINENT TOP BUSINESS CATEGORY BANNER */
+    .biz-category-super-banner {
+      background: linear-gradient(135deg, #2a0c1e 0%, #170711 100%);
+      border-bottom: 3px solid var(--accent-pink);
+      padding: 20px 0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+    .super-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .super-banner-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: #f472b6;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .super-banner-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+    }
+    .super-banner-pill {
+      background: rgba(236, 72, 153, 0.18);
+      border: 1px solid var(--accent-pink);
+      color: #fbcfe8;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    .site-nav { padding: 20px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+    .brand-logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--accent-pink), var(--accent-rose)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+    .brand-name { font-family: var(--font-serif); font-size: 1.55rem; font-weight: 700; color: #fff; }
+    .brand-tag { font-size: 0.72rem; color: #f472b6; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: var(--transition); }
+    .nav-links a:hover { color: var(--accent-pink); }
+
+    .btn-rose { background: linear-gradient(135deg, var(--accent-pink), var(--accent-rose)); color: #fff; padding: 11px 24px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
+    .btn-rose:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4); }
+
+    .btn-outline-rose { background: transparent; color: #fff; border: 1px solid var(--border); padding: 11px 22px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; text-decoration: none; cursor: pointer; transition: var(--transition); }
+    .btn-outline-rose:hover { border-color: var(--accent-pink); color: var(--accent-pink); background: rgba(236, 72, 153, 0.08); }
+
+    /* Hero */
+    .hero-sec {
+      position: relative;
+      padding: 90px 0 70px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(15, 10, 13, 0.84) 0%, rgba(15, 10, 13, 0.96) 100%),
+                  url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(236, 72, 153, 0.18); border: 1px solid var(--accent-pink); color: #fbcfe8; padding: 6px 18px; border-radius: 999px; font-size: 0.84rem; font-weight: 700; margin-bottom: 22px; }
+    .hero-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 5.2vw, 4.2rem); line-height: 1.15; max-width: 900px; margin: 0 auto 18px; color: #fff; }
+    .hero-title span { color: var(--accent-pink); }
+    .hero-desc { color: #d4c5cf; font-size: 1.15rem; max-width: 720px; margin: 0 auto 36px; }
+    .hero-cta-wrap { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+
+    /* Services Grid with Real Photos */
+    .services-sec { padding: 90px 0; background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .sec-header { text-align: center; margin-bottom: 44px; }
+    .sec-eyebrow { color: #f472b6; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+    .sec-title { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); color: #fff; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+    .service-item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      transition: var(--transition);
+    }
+    .service-item-card:hover { transform: translateY(-4px); border-color: var(--accent-pink); background: var(--bg-card-hover); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .service-img { width: 100%; height: 100%; object-fit: cover; min-height: 150px; }
+    .service-content { padding: 18px; display: flex; flex-direction: column; justify-content: space-between; }
+    .service-name { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; }
+    .service-duration { font-size: 0.74rem; font-family: var(--font-sans); color: #f472b6; font-weight: 700; }
+    .service-desc { color: var(--text-muted); font-size: 0.86rem; line-height: 1.45; margin-bottom: 12px; }
+    .service-footer { display: flex; align-items: center; justify-content: space-between; }
+    .service-rate { font-size: 1.25rem; font-weight: 800; color: #fbcfe8; font-family: var(--font-serif); }
+
+    /* Stylist Team */
+    .stylists-sec { padding: 80px 0; }
+    .stylists-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+    .stylist-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; text-align: center; }
+    .stylist-photo { width: 100%; height: 260px; object-fit: cover; }
+    .stylist-info { padding: 18px; }
+    .stylist-name { font-family: var(--font-serif); font-size: 1.35rem; color: #fff; font-weight: 700; }
+    .stylist-role { font-size: 0.8rem; color: #f472b6; font-weight: 700; text-transform: uppercase; margin-top: 2px; }
+
+    /* 3-Step Interactive Booking Engine */
+    .booking-engine-sec { padding: 90px 0; background: var(--bg-surface); border-top: 1px solid var(--border); }
+    .wizard-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; max-width: 800px; margin: 0 auto; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
+    .wizard-steps-indicator { display: flex; justify-content: space-between; margin-bottom: 30px; position: relative; }
+    .wizard-step-badge { display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: var(--text-muted); }
+    .wizard-step-badge.active { color: var(--accent-pink); }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: #2a1e27; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; }
+    .wizard-step-badge.active .step-num { background: var(--accent-pink); color: #fff; border-color: var(--accent-pink); }
+
+    .form-group-salon { margin-bottom: 18px; }
+    .form-label-salon { display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #f472b6; margin-bottom: 6px; }
+    .form-input-salon, .form-select-salon { width: 100%; background: #120910; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; color: #fff; font-family: inherit; font-size: 0.92rem; }
+    .form-input-salon:focus, .form-select-salon:focus { outline: none; border-color: var(--accent-pink); box-shadow: 0 0 0 3px rgba(236,72,153,0.2); }
+
+    /* Footer */
+    .salon-footer { padding: 60px 0 30px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.88rem; }
+
+    @media (max-width: 860px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .stylists-grid { grid-template-columns: 1fr; }
+      .site-nav { flex-direction: column; gap: 14px; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIQUE BACKGROUND ANIMATION: Rose-Gold Silk Wave Aurora -->
+  <div class="salon-silk-canvas" aria-hidden="true">
+    <div class="silk-wave silk-wave-1"></div>
+    <div class="silk-wave silk-wave-2"></div>
+  </div>
+
+  <!-- Floating TASK & CO Studio Bar -->
+  <aside class="studio-demo-bar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="demo-pulse-dot"></span>
+      <span>Live Demo Website built by <strong>TASK & CO Studio</strong> (Ready in 3–5 Days) • Dealing in: <strong style="color:#fef08a;">₹ INR &amp; $ USD</strong></span>
+    </div>
+    <div class="studio-demo-actions">
+      <a href="index.html#portfolio" class="btn-demo-back">← Back to Portfolio</a>
+      <a href="index.html#contact" class="btn-demo-hire">Get a Website Like This →</a>
+    </div>
+  </aside>
+
+  <!-- PROMINENT TOP BUSINESS CATEGORY BANNER -->
+  <div class="biz-category-super-banner">
+    <div class="container super-banner-inner">
+      <div>
+        <span class="super-banner-tag">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          INDUSTRY CATEGORY DEMO
+        </span>
+        <h1 class="super-banner-h1">SALONS • SPAS • BARBERSHOPS</h1>
+      </div>
+      <div class="super-banner-pill">
+        ⚡ 3-in-1 Turnkey Grooming & Wellness Solution by TASK & CO
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Nav -->
+  <header class="container">
+    <nav class="site-nav">
+      <a href="#home" class="nav-brand">
+        <div class="brand-logo-icon">✂️</div>
+        <div>
+          <div class="brand-name">LUXE & BLADE</div>
+          <div class="brand-tag">HAIR STUDIO • BARBERSHOP • DAY SPA</div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services">Services & Rates</a></li>
+        <li><a href="#stylists">Our Specialists</a></li>
+        <li><a href="#book">Book Appointment</a></li>
+        <li><a href="#hours">Hours & Contact</a></li>
+      </ul>
+
+      <a href="#book" class="btn-rose">Book Online ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-sec" id="home">
+      <div class="container">
+        <span class="hero-badge">✨ Bespoke Styling • Master Barbers • Deep Ayurvedic Spa</span>
+        <h2 class="hero-title">
+          Where modern precision meets <span>luxury day spa</span> tranquility.
+        </h2>
+        <p class="hero-desc">
+          From tailored beard artistry and razor fades to dimensional balayage hair coloring and stress-melting scalp head spas. Experience effortless online appointment booking.
+        </p>
+
+        <div class="hero-cta-wrap">
+          <a href="#book" class="btn-rose">Book 3-Step Appointment 📅</a>
+          <a href="#services" class="btn-outline-rose">View Service Menu & Rates</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES WITH REAL PHOTOGRAPHY -->
+    <section class="services-sec" id="services">
+      <div class="container">
+        <div class="sec-header">
+          <span class="sec-eyebrow">Curated Menu</span>
+          <h3 class="sec-title">Signature Hair & Spa Treatments</h3>
+        </div>
+
+        <div class="services-grid">
+          <!-- 1. Precision Fade & Beard -->
+          <div class="service-item-card">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" alt="Men's Beard and Haircut" class="service-img">
+            <div class="service-content">
+              <div>
+                <div class="service-name">
+                  <span>The Gentleman's Cut & Beard</span>
+                  <span class="service-duration">45 mins</span>
+                </div>
+                <p class="service-desc">Tailored skin fade or classic scissor cut, warm eucalyptus hot towel wrap, straight-razor cheek contouring, and organic beard butter massage.</p>
+              </div>
+              <div class="service-footer">
+                <span class="service-rate">₹2,500 / $55</span>
+                <a href="#book" class="btn-rose" style="font-size: 0.78rem; padding: 6px 14px;">Select Service</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Dimensional Balayage -->
+          <div class="service-item-card">
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="Balayage Hair Color" class="service-img">
+            <div class="service-content">
+              <div>
+                <div class="service-name">
+                  <span>Dimensional Balayage & Gloss</span>
+                  <span class="service-duration">120 mins</span>
+                </div>
+                <p class="service-desc">Hand-painted sun-kissed lightening, bond-strengthening Olaplex therapy, custom root smudge, and signature blowout style.</p>
+              </div>
+              <div class="service-footer">
+                <span class="service-rate">₹7,500 / $195</span>
+                <a href="#book" class="btn-rose" style="font-size: 0.78rem; padding: 6px 14px;">Select Service</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Ayurvedic Head Spa -->
+          <div class="service-item-card">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Ayurvedic Head Spa" class="service-img">
+            <div class="service-content">
+              <div>
+                <div class="service-name">
+                  <span>Ayurvedic Head & Scalp Spa</span>
+                  <span class="service-duration">60 mins</span>
+                </div>
+                <p class="service-desc">Deep scalp detox with warm infused herbal oils, Japanese water-halo waterfall wash, neck & shoulder acupressure, and clarifying blow-dry.</p>
+              </div>
+              <div class="service-footer">
+                <span class="service-rate">₹3,500 / $85</span>
+                <a href="#book" class="btn-rose" style="font-size: 0.78rem; padding: 6px 14px;">Select Service</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Botanical Glow Facial -->
+          <div class="service-item-card">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Botanical Facial Spa" class="service-img">
+            <div class="service-content">
+              <div>
+                <div class="service-name">
+                  <span>Botanical Radiance Facial</span>
+                  <span class="service-duration">50 mins</span>
+                </div>
+                <p class="service-desc">Ultrasonic pore cleansing, enzyme fruit peel, cryo-ice globe massage, and hyaluronic collagen infusion for instant dewy hydration.</p>
+              </div>
+              <div class="service-footer">
+                <span class="service-rate">₹4,000 / $90</span>
+                <a href="#book" class="btn-rose" style="font-size: 0.78rem; padding: 6px 14px;">Select Service</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STYLISTS TEAM SECTION -->
+    <section class="stylists-sec" id="stylists">
+      <div class="container">
+        <div class="sec-header">
+          <span class="sec-eyebrow">Our Artisans</span>
+          <h3 class="sec-title">Meet Your Master Specialists</h3>
+        </div>
+
+        <div class="stylists-grid">
+          <div class="stylist-card">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Marcus Thorne" class="stylist-photo">
+            <div class="stylist-info">
+              <div class="stylist-name">Marcus Thorne</div>
+              <div class="stylist-role">Master Barber • 12 Yrs Exp</div>
+            </div>
+          </div>
+          <div class="stylist-card">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80" alt="Elena Rostova" class="stylist-photo">
+            <div class="stylist-info">
+              <div class="stylist-name">Elena Rostova</div>
+              <div class="stylist-role">Creative Color Director • 9 Yrs Exp</div>
+            </div>
+          </div>
+          <div class="stylist-card">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Priya Nair" class="stylist-photo">
+            <div class="stylist-info">
+              <div class="stylist-name">Priya Nair</div>
+              <div class="stylist-role">Lead Ayurvedic Aesthetician • 11 Yrs Exp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-STEP ONLINE BOOKING WIZARD -->
+    <section class="booking-engine-sec" id="book">
+      <div class="container">
+        <div class="wizard-card">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <span class="sec-eyebrow">Instant Calendar</span>
+            <h3 style="font-family: var(--font-serif); font-size: 2rem; color: #fff;">Book Your Session</h3>
+          </div>
+
+          <div class="wizard-steps-indicator">
+            <div class="wizard-step-badge active"><span class="step-num">1</span> Service</div>
+            <div class="wizard-step-badge active"><span class="step-num">2</span> Specialist</div>
+            <div class="wizard-step-badge active"><span class="step-num">3</span> Confirm Slot</div>
+          </div>
+
+          <form id="salon-booking-form" onsubmit="handleSalonBooking(event)">
+            <div class="form-group-salon">
+              <label class="form-label-salon">Select Desired Service *</label>
+              <select id="salon-service" class="form-select-salon" required>
+                <option value="The Gentleman's Cut & Beard (₹2,500 / $55)">The Gentleman's Cut &amp; Beard (₹2,500 / $55 • 45m)</option>
+                <option value="Dimensional Balayage & Gloss (₹7,500 / $195)">Dimensional Balayage &amp; Gloss (₹7,500 / $195 • 120m)</option>
+                <option value="Ayurvedic Head & Scalp Spa (₹3,500 / $85)">Ayurvedic Head &amp; Scalp Spa (₹3,500 / $85 • 60m)</option>
+                <option value="Botanical Radiance Facial (₹4,000 / $90)">Botanical Radiance Facial (₹4,000 / $90 • 50m)</option>
+              </select>
+            </div>
+
+            <div class="form-group-salon">
+              <label class="form-label-salon">Select Specialist *</label>
+              <select id="salon-stylist" class="form-select-salon" required>
+                <option value="Marcus Thorne (Master Barber)">Marcus Thorne (Master Barber)</option>
+                <option value="Elena Rostova (Color Director)">Elena Rostova (Color Director)</option>
+                <option value="Priya Nair (Lead Aesthetician)">Priya Nair (Lead Aesthetician)</option>
+                <option value="First Available Specialist">Any First Available Specialist</option>
+              </select>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div class="form-group-salon">
+                <label class="form-label-salon">Preferred Date *</label>
+                <input type="date" id="salon-date" class="form-input-salon" value="2026-09-21" required>
+              </div>
+              <div class="form-group-salon">
+                <label class="form-label-salon">Time Slot *</label>
+                <select id="salon-time" class="form-select-salon">
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:30 AM">11:30 AM</option>
+                  <option value="2:00 PM" selected>2:00 PM</option>
+                  <option value="4:30 PM">4:30 PM</option>
+                  <option value="6:00 PM">6:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group-salon">
+              <label class="form-label-salon">Your Name & WhatsApp Phone *</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                <input type="text" id="salon-client-name" class="form-input-salon" placeholder="e.g. Jessica Lane" required>
+                <input type="tel" id="salon-client-phone" class="form-input-salon" placeholder="+1 (555) 000-0000" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-rose" style="width: 100%; justify-content: center; margin-top: 10px;">
+              Confirm Appointment & Lock Slot ↗
+            </button>
+
+            <div id="salon-confirmation" style="display:none; margin-top: 16px; padding: 14px; border-radius: 8px; background: rgba(236,72,153,0.15); border: 1px solid var(--accent-pink); color: #fbcfe8; font-size: 0.9rem; text-align: center;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="salon-footer" id="hours">
+    <div class="container">
+      <div style="font-family: var(--font-serif); font-size: 1.5rem; color: #fff; margin-bottom: 8px;">Luxe & Blade Studio & Day Spa</div>
+      <p style="margin-bottom: 12px;">720 Velvet Boulevard, Studio District • Contact: (555) 849-2041</p>
+      <p style="color: #f472b6; font-weight: 600;">Tuesday–Sunday: 9:00 AM – 8:00 PM • Closed Mondays</p>
+      <p style="margin-top: 24px; font-size: 0.78rem; opacity: 0.6;">© 2026 TASK & CO Web Studio. High-performance, turn-key booking websites for local salons and spas.</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleSalonBooking(e) {
+      e.preventDefault();
+      const service = document.getElementById('salon-service').value;
+      const stylist = document.getElementById('salon-stylist').value;
+      const date = document.getElementById('salon-date').value;
+      const time = document.getElementById('salon-time').value;
+      const name = document.getElementById('salon-client-name').value;
+      const phone = document.getElementById('salon-client-phone').value;
+
+      const conf = document.getElementById('salon-confirmation');
+      conf.innerHTML = `✨ <strong>Appointment Confirmed for ${name}!</strong><br>Service: ${service}<br>Specialist: ${stylist}<br>Slot: <strong>${date} at ${time}</strong><br>A confirmation SMS was sent to ${phone}.`;
+      conf.style.display = 'block';
+
+      setTimeout(() => {
+        const waText = `Hi Luxe & Blade Studio! I just booked: ${service} with ${stylist} on ${date} at ${time} under the name ${name}.`;
+        const opt = confirm('Would you also like to send this booking to the salon via WhatsApp?');
+        if (opt) window.open(`https://wa.me/?text=${encodeURIComponent(waText)}`, '_blank');
+      }, 500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrightPath Academy & Foundation | NGOs, Schools & Coaching (Demo by TASK & CO)</title>
+  <meta name="description" content="K-12 STEM excellence, competitive entrance coaching, and non-profit educational outreach. A live interactive turnkey demo website crafted by TASK & CO.">
+
+  <!-- Google Fonts: Lexend (Educational Clarity) & Poppins (Inspiring Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-light: #f6f9fc;
+      --bg-card: #ffffff;
+      --border: #e2e8f0;
+      --accent-blue: #1e40af;
+      --accent-blue-light: #3b82f6;
+      --accent-emerald: #059669;
+      --accent-amber: #d97706;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --font-display: 'Lexend', sans-serif;
+      --font-sans: 'Poppins', sans-serif;
+      --radius: 12px;
+      --shadow-sm: 0 4px 15px rgba(0,0,0,0.05);
+      --shadow-md: 0 12px 30px rgba(0,0,0,0.08);
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-family: var(--font-sans); background: var(--bg-light); color: var(--text-main); }
+    body { line-height: 1.6; overflow-x: hidden; position: relative; }
+    h1, h2, h3, h4, .brand-title, .super-banner-h1, .course-title { font-family: var(--font-display); }
+
+    /* =========================================================================
+       UNIQUE BACKGROUND ANIMATION: Constellation of Knowledge & Orbit Particles
+       ========================================================================= */
+    .education-constellation-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.65;
+    }
+    .knowledge-node {
+      position: absolute;
+      border-radius: 50%;
+      will-change: transform, opacity;
+      animation: knowledgeFlow 18s infinite ease-in-out;
+    }
+    .node-1 {
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+      top: -60px; left: 15%;
+      animation-duration: 22s;
+    }
+    .node-2 {
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(5, 150, 105, 0.1) 0%, transparent 70%);
+      bottom: 10%; right: 10%;
+      animation-duration: 26s; animation-delay: 3s;
+    }
+    .orbit-ring {
+      position: absolute;
+      width: 480px; height: 480px;
+      border-radius: 50%;
+      border: 1px dashed rgba(59, 130, 246, 0.15);
+      top: 25%; left: 30%;
+      animation: orbitSpin 50s infinite linear;
+    }
+    @keyframes knowledgeFlow {
+      0% { transform: translate3d(0, 0, 0) scale(0.9); }
+      50% { transform: translate3d(80px, 40px, 0) scale(1.15); }
+      100% { transform: translate3d(-40px, 60px, 0) scale(0.95); }
+    }
+    @keyframes orbitSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    header, main, footer, .biz-category-super-banner, .studio-demo-bar { position: relative; z-index: 1; }
+
+    /* Studio Demo Bar */
+    .studio-demo-bar {
+      position: sticky; top: 0; left: 0; right: 0;
+      background: linear-gradient(90deg, #0f172a 0%, #1e3a8a 100%);
+      color: #fff; padding: 10px 20px; display: flex; align-items: center;
+      justify-content: space-between; font-size: 0.84rem; font-weight: 600;
+      z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .demo-pulse-dot { width: 9px; height: 9px; background-color: #34d399; border-radius: 50%; animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.8; } 50% { transform: scale(1.4); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.8; } }
+    .studio-demo-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-demo-back { color: #e2e8f0; text-decoration: none; font-size: 0.82rem; padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.25); transition: var(--transition); }
+    .btn-demo-back:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+    .btn-demo-hire { background: #3b82f6; color: #ffffff; text-decoration: none; font-size: 0.82rem; font-weight: 700; padding: 5px 14px; border-radius: 6px; transition: var(--transition); }
+    .btn-demo-hire:hover { background: #2563eb; }
+
+    /* PROMINENT SUPER BANNER */
+    .biz-category-super-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #172554 100%);
+      border-bottom: 2px solid #3b82f6;
+      color: #ffffff;
+      padding: 16px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .super-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .super-banner-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #93c5fd;
+      margin-bottom: 4px;
+    }
+    .super-banner-h1 {
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .super-banner-pill {
+      background: rgba(59, 130, 246, 0.2);
+      border: 1px solid #60a5fa;
+      color: #dbeafe;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    .site-nav {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+    }
+    .brand-group { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-main); }
+    .brand-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      color: #fff; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; box-shadow: 0 4px 12px rgba(30, 64, 175, 0.25);
+    }
+    .brand-title { font-size: 1.45rem; font-weight: 800; color: var(--text-main); line-height: 1.1; }
+    .brand-sub { font-size: 0.72rem; color: var(--accent-blue-light); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.92rem; font-weight: 600; transition: var(--transition); }
+    .nav-links a:hover { color: var(--accent-blue); }
+
+    .btn-blue {
+      background: var(--accent-blue);
+      color: #fff;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(30, 64, 175, 0.25);
+      transition: var(--transition);
+    }
+    .btn-blue:hover { background: #1e3a8a; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(30, 64, 175, 0.35); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .btn-outline:hover { border-color: var(--accent-blue); color: var(--accent-blue); background: #eff6ff; }
+
+    /* Hero */
+    .hero-sec { padding: 60px 0 50px; text-align: center; }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #eff6ff; border: 1px solid #bfdbfe;
+      color: var(--accent-blue); padding: 6px 16px; border-radius: 999px;
+      font-size: 0.84rem; font-weight: 700; margin-bottom: 20px;
+    }
+    .hero-h1 {
+      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      max-width: 960px;
+      margin: 0 auto 20px;
+      color: #0f172a;
+    }
+    .hero-h1 span { color: var(--accent-blue-light); }
+    .hero-p { color: var(--text-muted); font-size: 1.15rem; max-width: 740px; margin: 0 auto 36px; }
+
+    /* Impact Strip */
+    .impact-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1040px;
+      margin: 0 auto 60px;
+    }
+    .impact-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .impact-num { font-size: 2.5rem; font-weight: 800; color: var(--accent-blue); margin-bottom: 4px; line-height: 1; }
+    .impact-label { font-size: 0.84rem; color: var(--text-muted); font-weight: 600; }
+
+    /* Dual Campus Photo Showcase */
+    .campus-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+    .campus-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      height: 240px;
+      box-shadow: var(--shadow-sm);
+    }
+    .campus-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: var(--transition);
+    }
+    .campus-card:hover .campus-img { transform: scale(1.05); }
+    .campus-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 100%);
+      color: #fff; padding: 20px 16px 12px;
+      font-size: 0.9rem; font-weight: 700;
+    }
+
+    /* Scholarship & Aid Calculator */
+    .tool-sec {
+      padding: 60px 0;
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .tool-box {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1.2fr auto;
+      gap: 16px;
+      align-items: flex-end;
+    }
+    .input-field {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      font-size: 0.92rem;
+      font-family: inherit;
+      color: var(--text-main);
+    }
+    .input-field:focus { outline: none; border-color: var(--accent-blue); }
+
+    .result-alert {
+      display: none;
+      margin-top: 20px;
+      padding: 18px 24px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 8px;
+      color: #065f46;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Programs Grid */
+    .courses-sec { padding: 70px 0; }
+    .filter-pills { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+    .pill-btn {
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .pill-btn.active, .pill-btn:hover {
+      background: var(--accent-blue);
+      color: #fff;
+      border-color: var(--accent-blue);
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .course-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .course-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-blue-light);
+    }
+    .course-img-box {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    .course-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: var(--transition);
+    }
+    .course-card:hover .course-img { transform: scale(1.04); }
+    .course-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #fff; padding: 4px 10px; border-radius: 4px;
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    }
+    .course-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .course-cat { font-size: 0.76rem; font-weight: 800; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 6px; }
+    .course-title { font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 10px; line-height: 1.3; }
+    .course-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px; flex-grow: 1; }
+    .course-specs {
+      display: flex; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding: 12px 0; margin-bottom: 18px;
+      font-size: 0.82rem; color: #475569; font-weight: 600;
+    }
+
+    /* Faculty Section */
+    .faculty-sec { padding: 60px 0; background: #fff; border-top: 1px solid var(--border); }
+    .faculty-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
+    .faculty-card { text-align: center; }
+    .faculty-img {
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+      margin: 0 auto 16px; border: 3px solid #eff6ff;
+    }
+    .faculty-name { font-size: 1.1rem; font-weight: 800; color: var(--text-main); }
+    .faculty-role { font-size: 0.82rem; color: var(--accent-blue); font-weight: 700; margin-bottom: 6px; }
+    .faculty-bio { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* NGO Impact Section */
+    .ngo-sec {
+      padding: 70px 0;
+      background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+      color: #ffffff;
+    }
+    .ngo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .ngo-stat-pill {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .ngo-h2 { font-size: 2.4rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+    .ngo-p { color: #d1fae5; font-size: 1.05rem; margin-bottom: 24px; }
+    .ngo-img-box {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    .ngo-img { width: 100%; height: 380px; object-fit: cover; display: block; }
+
+    /* Admission Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .modal-card {
+      background: #fff;
+      border-radius: var(--radius);
+      max-width: 520px; width: 100%;
+      padding: 32px; position: relative;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text-muted);
+    }
+
+    .site-footer {
+      padding: 50px 0 30px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 900px) {
+      .courses-grid, .faculty-grid, .impact-strip, .campus-strip, .ngo-grid, .tool-grid { grid-template-columns: 1fr; }
+      .site-nav { flex-direction: column; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIQUE BACKGROUND ANIMATION: Constellation of Knowledge & Orbit Particles -->
+  <div class="education-constellation-canvas" aria-hidden="true">
+    <div class="knowledge-node node-1"></div>
+    <div class="knowledge-node node-2"></div>
+    <div class="orbit-ring"></div>
+  </div>
+
+  <!-- Studio Demo Bar -->
+  <aside class="studio-demo-bar">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <span class="demo-pulse-dot"></span>
+      <span>Live Demo Website built by <strong>TASK & CO Studio</strong> (Ready in 3–5 Days) • Dealing in: <strong style="color:#fef08a;">₹ INR &amp; $ USD</strong></span>
+    </div>
+    <div class="studio-demo-actions">
+      <a href="index.html#portfolio" class="btn-demo-back">← Back to Portfolio</a>
+      <a href="index.html#contact" class="btn-demo-hire">Get a Website Like This →</a>
+    </div>
+  </aside>
+
+  <!-- PROMINENT TOP BUSINESS CATEGORY BANNER (Requested by User) -->
+  <div class="biz-category-super-banner">
+    <div class="container super-banner-inner">
+      <div>
+        <span class="super-banner-tag">INDUSTRY CATEGORY DEMO</span>
+        <h1 class="super-banner-h1">LOCAL NGOS • SCHOOLS • COACHING CENTERS</h1>
+      </div>
+      <div class="super-banner-pill">⚡ 3-in-1 Turnkey Solution by TASK & CO</div>
+    </div>
+  </div>
+
+  <!-- Header Nav -->
+  <header style="background:#fff;">
+    <nav class="container site-nav">
+      <a href="#" class="brand-group">
+        <div class="brand-icon">🎓</div>
+        <div>
+          <div class="brand-title">BrightPath</div>
+          <div class="brand-sub">ACADEMY &amp; SOCIAL FOUNDATION • EST. 2014</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#programs">Academic Programs</a></li>
+        <li><a href="#scholarship">Fee Aid Calculator</a></li>
+        <li><a href="#faculty">Senior Faculty</a></li>
+        <li><a href="#foundation">NGO Outreach</a></li>
+      </ul>
+      <div>
+        <button class="btn-blue" onclick="openModal('General Admission Inquiry')">Book Free Counseling Session</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-sec container">
+      <div class="hero-pill">📚 2026 Academic Admissions Open • Dealing in ₹ INR &amp; $ USD • Up to 100% Scholarships</div>
+      <h1 class="hero-h1">Empowering students through academic rigor &amp; <span>community impact</span>.</h1>
+      <p class="hero-p">Comprehensive coaching for school boards, Olympiads, and competitive entrance exams—partnered with our non-profit foundation providing free digital education to 18 underprivileged communities.</p>
+
+      <!-- Impact Metrics -->
+      <div class="impact-strip">
+        <div class="impact-card">
+          <div class="impact-num">5,200+</div>
+          <div class="impact-label">Students Mentored</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-num">98.8%</div>
+          <div class="impact-label">Board Pass Success</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-num">18</div>
+          <div class="impact-label">Free NGO Rural Learning Labs</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-num"><span style="font-size:0.82em;color:var(--accent-blue);">₹3.5 Cr</span> / $420K+</div>
+          <div class="impact-label">Scholarship Aid Disbursed</div>
+        </div>
+      </div>
+
+      <!-- Campus Photo Strip -->
+      <div class="campus-strip">
+        <div class="campus-card">
+          <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80" alt="STEM Robotics Lab" class="campus-img">
+          <div class="campus-caption">Advanced STEM &amp; Robotics Research Lab</div>
+        </div>
+        <div class="campus-card">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Interactive Classroom" class="campus-img">
+          <div class="campus-caption">Modern Smart Classrooms (1:15 Ratio)</div>
+        </div>
+        <div class="campus-card">
+          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="NGO Community Workshop" class="campus-img">
+          <div class="campus-caption">Free Weekend Coding Outreach for Youth</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Scholarship Estimator -->
+    <section class="tool-sec" id="scholarship">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 28px;">
+          <span style="color:var(--accent-blue); font-size:0.78rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em;">MERIT &amp; NEED BASED AID</span>
+          <h2 style="font-size: 2.2rem; font-weight: 800; color: #0f172a;">Instant Scholarship &amp; Fee Waiver Estimator</h2>
+          <p style="color: var(--text-muted); max-width: 600px; margin: 6px auto 0;">Enter your current academic score percentage to preview instant fee concession.</p>
+        </div>
+
+        <div class="tool-box">
+          <form id="scholarship-form" class="tool-grid">
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 700; color: #334155; display: block; margin-bottom: 6px;">Select Academic Program</label>
+              <select id="sch-program" class="input-field">
+                <option value="Middle School Foundation (Grades 6-8)">Middle School Foundation (Grades 6–8)</option>
+                <option value="Junior STEM Olympiad (Grades 9-10)">Junior STEM Olympiad (Grades 9–10)</option>
+                <option value="Senior Medical & Engineering Intensive (Grades 11-12)">Senior Medical &amp; Engineering (Grades 11–12)</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 700; color: #334155; display: block; margin-bottom: 6px;">Last Exam Score / GPA (%)</label>
+              <input type="number" id="sch-score" class="input-field" min="50" max="100" value="88" required>
+            </div>
+            <div>
+              <button type="submit" class="btn-blue" style="height: 48px; width: 100%; justify-content: center;">Calculate Aid ↗</button>
+            </div>
+          </form>
+
+          <div id="sch-result" class="result-alert">
+            <!-- Dynamic Result -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic Programs Section -->
+    <section class="courses-sec container" id="programs">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <span style="color:var(--accent-blue); font-size:0.78rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em;">CURRICULUM PORTFOLIO</span>
+        <h2 style="font-size: 2.4rem; font-weight: 800; color: #0f172a;">Academic Courses &amp; Initiatives</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 6px auto 0;">Structured cohorts designed for foundational mastery, competitive exam honors, and social vocational enablement.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-pills">
+        <button class="pill-btn active" onclick="filterCourses('all', this)">All Programs (6)</button>
+        <button class="pill-btn" onclick="filterCourses('school', this)">School &amp; Foundation</button>
+        <button class="pill-btn" onclick="filterCourses('coaching', this)">Competitive Coaching</button>
+        <button class="pill-btn" onclick="filterCourses('ngo', this)">Free NGO Foundation</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="courses-grid">
+        <!-- Course 1 -->
+        <div class="course-card" data-cat="school">
+          <div class="course-img-box">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80" alt="STEM Class" class="course-img">
+            <span class="course-badge">Grades 6–8</span>
+          </div>
+          <div class="course-body">
+            <div class="course-cat">School Curriculum</div>
+            <h3 class="course-title">STEM Explorers &amp; Math Olympiad</h3>
+            <p class="course-desc">Hands-on practical physics experiments, mental math acceleration, and intro robotics logic to ignite lifelong scientific curiosity.</p>
+            <div class="course-specs">
+              <span>Tuition: <strong style="color:var(--text-main);">₹3,500/mo / $45/mo</strong></span> • <span>👥 12 Students</span>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button class="btn-blue" style="flex-grow:1; justify-content:center;" onclick="openModal('STEM Explorers (Grades 6-8)')">Apply Online ↗</button>
+              <button class="btn-outline" onclick="alert('Syllabus PDF downloaded in demo!')">PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card" data-cat="coaching">
+          <div class="course-img-box">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=700&q=80" alt="Entrance Intensive" class="course-img">
+            <span class="course-badge">Grades 11–12</span>
+          </div>
+          <div class="course-body">
+            <div class="course-cat">Competitive Coaching</div>
+            <h3 class="course-title">Engineering &amp; Medical Entrance Elite</h3>
+            <p class="course-desc">Rigorous conceptual lectures by ex-IIT and top medical faculty, weekly mock computer-based tests (CBT), and 1-on-1 doubt clearing counters.</p>
+            <div class="course-specs">
+              <span>Tuition: <strong style="color:var(--text-main);">₹8,500/mo / $105/mo</strong></span> • <span>📊 200+ Tests</span>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button class="btn-blue" style="flex-grow:1; justify-content:center;" onclick="openModal('Entrance Exam Elite (Grades 11-12)')">Apply Online ↗</button>
+              <button class="btn-outline" onclick="alert('Syllabus PDF downloaded in demo!')">PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card" data-cat="ngo">
+          <div class="course-img-box">
+            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=700&q=80" alt="NGO Digital Class" class="course-img">
+            <span class="course-badge" style="background:#059669;">100% Free NGO Aid</span>
+          </div>
+          <div class="course-body">
+            <div class="course-cat" style="color:#059669;">Foundation Initiative</div>
+            <h3 class="course-title">Project Vidya: Digital Literacy Labs</h3>
+            <p class="course-desc">Providing free laptop stations, internet access, and foundational coding education to underprivileged children in rural and semi-urban districts.</p>
+            <div class="course-specs">
+              <span>Tuition: <strong style="color:#059669;">100% Free (₹0 / $0)</strong></span> • <span>🎓 1,400+ Graduated</span>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button class="btn-blue" style="flex-grow:1; justify-content:center; background:#059669;" onclick="openModal('Sponsor a Student / Volunteer')">Sponsor / Volunteer ↗</button>
+              <button class="btn-outline" onclick="alert('Annual NGO Audit Report downloaded!')">Audit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="course-card" data-cat="school">
+          <div class="course-img-box">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80" alt="Language and Literature" class="course-img">
+            <span class="course-badge">Grades 9–10</span>
+          </div>
+          <div class="course-body">
+            <div class="course-cat">School Curriculum</div>
+            <h3 class="course-title">Board Exam Accelerator &amp; English Writing</h3>
+            <p class="course-desc">Targeted strategy for scoring 95%+ in state &amp; national board exams with structured answer writing workshops and time-management drills.</p>
+            <div class="course-specs">
+              <span>Tuition: <strong style="color:var(--text-main);">₹4,200/mo / $55/mo</strong></span> • <span>📝 Full Board Coverage</span>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button class="btn-blue" style="flex-grow:1; justify-content:center;" onclick="openModal('Board Exam Accelerator (Grades 9-10)')">Apply Online ↗</button>
+              <button class="btn-outline" onclick="alert('Syllabus PDF downloaded in demo!')">PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="course-card" data-cat="coaching">
+          <div class="course-img-box">
+            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=700&q=80" alt="Pure Science Lab" class="course-img">
+            <span class="course-badge">Research Track</span>
+          </div>
+          <div class="course-body">
+            <div class="course-cat">Competitive Coaching</div>
+            <h3 class="course-title">National Science Fellowship &amp; NTSE</h3>
+            <p class="course-desc">Specialized mentoring program for national scholarship tests with advanced astrophysics, biochemistry, and discrete mathematics coursework.</p>
+            <div class="course-specs">
+              <span>Tuition: <strong style="color:var(--text-main);">₹6,500/mo / $80/mo</strong></span> • <span>🔬 Lab Access</span>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button class="btn-blue" style="flex-grow:1; justify-content:center;" onclick="openModal('National Fellowship Track')">Apply Online ↗</button>
+              <button class="btn-outline" onclick="alert('Syllabus PDF downloaded in demo!')">PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="course-card" data-cat="ngo">
+          <div class="course-img-box">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80" alt="Girls STEM Initiative" class="course-img">
+            <span class="course-badge" style="background:#059669;">100% Free NGO Aid</span>
+          </div>
+          <div class="course-body">
+            <div class="course-cat" style="color:#059669;">Foundation Initiative</div>
+            <h3 class="course-title">Girls in Technology &amp; Leadership</h3>
+            <p class="course-desc">Free mentorship program connecting female high school students from modest backgrounds with women leaders in engineering, finance, and medicine.</p>
+            <div class="course-specs">
+              <span>Tuition: <strong style="color:#059669;">100% Free (₹0 / $0)</strong></span> • <span>🎓 100% College Placement</span>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button class="btn-blue" style="flex-grow:1; justify-content:center; background:#059669;" onclick="openModal('Girls in Tech Mentorship')">Sponsor / Volunteer ↗</button>
+              <button class="btn-outline" onclick="alert('Program Guide PDF downloaded!')">Guide</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="faculty-sec" id="faculty">
+      <div class="container">
+        <div style="text-align: center;">
+          <span style="color:var(--accent-blue); font-size:0.78rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em;">EXPERT MENTORSHIP</span>
+          <h2 style="font-size: 2.2rem; font-weight: 800; color: #0f172a;">Distinguished Faculty &amp; Academic Directors</h2>
+        </div>
+
+        <div class="faculty-grid">
+          <div class="faculty-card">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Faculty" class="faculty-img">
+            <div class="faculty-name">Dr. Ananya Roy</div>
+            <div class="faculty-role">Dean of Sciences (Ph.D. Cambridge)</div>
+            <p class="faculty-bio">16+ years teaching olympiad physics with 40+ national gold medalist mentees.</p>
+          </div>
+          <div class="faculty-card">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" alt="Faculty" class="faculty-img">
+            <div class="faculty-name">Prof. Rajesh Varma</div>
+            <div class="faculty-role">Head of Mathematics (IIT Bombay Alum)</div>
+            <p class="faculty-bio">Renowned author of entrance algebra guides; mentored over 3,000 top rankers.</p>
+          </div>
+          <div class="faculty-card">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Faculty" class="faculty-img">
+            <div class="faculty-name">Meera Nair, M.Ed.</div>
+            <div class="faculty-role">Foundation Outreach Director</div>
+            <p class="faculty-bio">Directs 18 rural learning hubs; recipient of National Social Educator Award 2024.</p>
+          </div>
+          <div class="faculty-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Faculty" class="faculty-img">
+            <div class="faculty-name">Sanjay Kulkarni</div>
+            <div class="faculty-role">Chief Academic Counselor</div>
+            <p class="faculty-bio">Personal career guidance and Ivy League / Top tier university admission strategist.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NGO Foundation Highlight -->
+    <section class="ngo-sec" id="foundation">
+      <div class="container ngo-grid">
+        <div>
+          <span class="ngo-stat-pill">NON-PROFIT REGISTERED FOUNDATION</span>
+          <h2 class="ngo-h2">Education is every child’s fundamental right.</h2>
+          <p class="ngo-p">For every 5 paying academy students enrolled in our coaching cohorts, BrightPath Foundation fully sponsors 1 underprivileged student with tuition, books, daily meals, and computer lab access.</p>
+          <div style="display:flex; gap:16px; flex-wrap:wrap;">
+            <button class="btn-blue" style="background:#ffffff; color:#064e3b; font-weight:800;" onclick="openModal('Foundation Child Sponsorship ($25/mo)')">Sponsor a Child ($25/mo) ↗</button>
+            <a href="tel:+18005550144" class="btn-outline" style="border-color:rgba(255,255,255,0.4); color:#fff;">Volunteer Helpline</a>
+          </div>
+        </div>
+        <div class="ngo-img-box">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="NGO Children learning" class="ngo-img">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Admission & Counseling Modal -->
+  <div class="modal-overlay" id="admit-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div style="font-size: 0.76rem; color: var(--accent-blue); font-weight: 800; text-transform: uppercase; margin-bottom: 4px;">ACADEMIC ENROLLMENT</div>
+      <h3 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 6px;" id="modal-target-prog">Apply for Admission</h3>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">Fill out this quick form and an academic counselor will call to schedule a free diagnostic test &amp; campus tour.</p>
+      
+      <form id="admit-form" onsubmit="handleAdmitSubmit(event)">
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.8rem; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">Student / Guardian Name</label>
+          <input type="text" class="input-field" placeholder="e.g. Priya Sharma" required>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom: 12px;">
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">Phone / WhatsApp</label>
+            <input type="tel" class="input-field" placeholder="+91 98000 00000" required>
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">Student Grade</label>
+            <select class="input-field">
+              <option>Grade 6 - 8</option>
+              <option>Grade 9 - 10</option>
+              <option>Grade 11 - 12</option>
+              <option>NGO Vocational</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-blue" style="width: 100%; justify-content: center; height: 46px;">Confirm Free Counselor Appointment ↗</button>
+      </form>
+
+      <div id="admit-success" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="font-size: 2.2rem; color: #059669; margin-bottom: 8px;">✓</div>
+        <h4 style="font-size: 1.3rem; font-weight: 800; color: #0f172a; margin-bottom: 6px;">Application Received!</h4>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">Our senior counselor will contact you via WhatsApp/phone within 2 business hours with test slot dates.</p>
+        <button class="btn-outline" style="margin-top: 16px;" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer container">
+    <p>© 2026 BrightPath Academy &amp; Social Foundation Demo. All rights reserved.</p>
+    <p style="font-size: 0.78rem; margin-top: 6px; color: #94a3b8;">Turnkey 3-in-1 Demo Website for NGOs, Schools &amp; Coaching Centers crafted by <strong>TASK &amp; CO Studio</strong>.</p>
+  </footer>
+
+  <script>
+    // Scholarship Calculator (Dual Currency Dealing: ₹ INR & $ USD)
+    document.getElementById('scholarship-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const score = parseInt(document.getElementById('sch-score').value) || 0;
+      const prog = document.getElementById('sch-program').value;
+      let waiver = 25;
+      let amountUSD = 300;
+      let amountINR = 25000;
+
+      if (score >= 95) { waiver = 100; amountUSD = 1200; amountINR = 100000; }
+      else if (score >= 90) { waiver = 60; amountUSD = 720; amountINR = 60000; }
+      else if (score >= 80) { waiver = 40; amountUSD = 480; amountINR = 40000; }
+
+      const res = document.getElementById('sch-result');
+      res.style.display = 'block';
+      res.innerHTML = `🎉 <strong>Eligible for ${waiver}% Merit Scholarship!</strong><br>Based on a score of ${score}% in ${prog}, you qualify for an annual fee waiver of approx <strong style="color:var(--accent-blue);">₹${amountINR.toLocaleString('en-IN')}</strong> / <strong>$${amountUSD.toLocaleString()}</strong>. A counselor can confirm during your interview.`;
+    });
+
+    // Filtering
+    function filterCourses(cat, btn) {
+      document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.course-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal
+    function openModal(prog) {
+      document.getElementById('modal-target-prog').textContent = prog;
+      document.getElementById('admit-form').style.display = 'block';
+      document.getElementById('admit-success').style.display = 'none';
+      document.getElementById('admit-modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('admit-modal').style.display = 'none';
+    }
+
+    function handleAdmitSubmit(e) {
+      e.preventDefault();
+      document.getElementById('admit-form').style.display = 'none';
+      document.getElementById('admit-success').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME CONTRACTORS • ELECTRICIANS • PLUMBERS | ProCraft Trades & Contracting (Demo by TASK & CO)</title>
+  <meta name="description"
+    content="24/7 Emergency electrical repairs, licensed plumbing, and trusted home remodeling contracting. A live interactive demo website crafted by TASK & CO.">
+
+  <!-- Google Fonts: Chakra Petch (Technical Display) & Work Sans (Sturdy Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #070c17;
+      --bg-surface: #0e1628;
+      --bg-card: #141f38;
+      --bg-card-hover: #1b2a4c;
+      --border: rgba(56, 189, 248, 0.22);
+      --accent-orange: #f97316;
+      --accent-orange-dark: #ea580c;
+      --accent-blue: #38bdf8;
+      --text-light: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-display: 'Chakra Petch', sans-serif;
+      --font-sans: 'Work Sans', sans-serif;
+      --radius: 12px;
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: var(--font-sans);
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    body {
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .brand-name,
+    .super-banner-h1 {
+      font-family: var(--font-display);
+    }
+
+    /* =========================================================================
+       UNIQUE BACKGROUND ANIMATION: Blueprint Isometric Grid & Electric Laser Scan
+       ========================================================================= */
+    .contractor-grid-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      background-image:
+        linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    .electric-laser-beam {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.7) 50%, #f97316 80%, transparent 100%);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.6);
+      animation: electricScan 10s infinite linear;
+    }
+
+    .blueprint-glow-1 {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+      top: -100px;
+      left: 10%;
+    }
+
+    .blueprint-glow-2 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+      bottom: 5%;
+      right: 5%;
+    }
+
+    @keyframes electricScan {
+      0% {
+        top: -5%;
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.8;
+      }
+
+      90% {
+        opacity: 0.8;
+      }
+
+      100% {
+        top: 105%;
+        opacity: 0;
+      }
+    }
+
+    header,
+    main,
+    footer,
+    .biz-category-super-banner,
+    .studio-demo-bar {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Studio Demo Bar */
+    .studio-demo-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, #0f172a 0%, #0d9488 100%);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .demo-pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #34d399;
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: scale(1.4);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.9);
+        opacity: 0.8;
+      }
+    }
+
+    .studio-demo-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-demo-back {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.82rem;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: var(--transition);
+    }
+
+    .btn-demo-back:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .btn-demo-hire {
+      background: #fff;
+      color: #0f172a;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 6px;
+      transition: var(--transition);
+    }
+
+    .btn-demo-hire:hover {
+      background: #f1f5f9;
+    }
+
+    /* PROMINENT TOP BUSINESS CATEGORY BANNER */
+    .biz-category-super-banner {
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+      border-bottom: 3px solid var(--accent-orange);
+      padding: 20px 0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .super-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .super-banner-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: #fb923c;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .super-banner-h1 {
+      font-size: clamp(1.4rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+      margin-top: 2px;
+    }
+
+    .super-banner-pill {
+      background: rgba(249, 115, 22, 0.18);
+      border: 1px solid var(--accent-orange);
+      color: #fed7aa;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Emergency Alert Bar */
+    .emergency-alert-bar {
+      background: #dc2626;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .btn-emergency-call {
+      background: #fff;
+      color: #dc2626;
+      padding: 4px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.84rem;
+    }
+
+    /* Nav */
+    .site-nav {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .brand-sub {
+      font-size: 0.7rem;
+      color: var(--accent-blue);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .btn-orange {
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
+      color: #fff;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .btn-orange:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+    }
+
+    /* Hero */
+    .hero-sec {
+      position: relative;
+      padding: 80px 0 70px;
+      background: linear-gradient(180deg, rgba(9, 15, 29, 0.85) 0%, rgba(9, 15, 29, 0.98) 100%),
+        url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-h2 {
+      font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 18px;
+    }
+
+    .hero-h2 span {
+      color: var(--accent-orange);
+    }
+
+    .hero-p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+
+    .credential-strip {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .cred-pill {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Fast Dispatch Form Card */
+    .dispatch-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    .dispatch-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .dispatch-sub {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .form-group-trades {
+      margin-bottom: 14px;
+    }
+
+    .form-label-trades {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-orange);
+      margin-bottom: 5px;
+    }
+
+    .form-input-trades,
+    .form-select-trades {
+      width: 100%;
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 11px 12px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .form-input-trades:focus,
+    .form-select-trades:focus {
+      outline: none;
+      border-color: var(--accent-orange);
+    }
+
+    /* Services Grid with Real Photos */
+    .services-sec {
+      padding: 90px 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sec-title-trades {
+      font-size: 2.2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .trades-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .trade-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      transition: var(--transition);
+    }
+
+    .trade-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-orange);
+    }
+
+    .trade-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 150px;
+    }
+
+    .trade-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .trade-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .trade-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    /* Cost Estimator */
+    .estimator-sec {
+      padding: 80px 0;
+    }
+
+    .estimator-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    .trades-footer {
+      padding: 60px 0 30px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trades-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .site-nav {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- UNIQUE BACKGROUND ANIMATION: Blueprint Grid & Electric Laser Scan --><div class="contractor-grid-canvas" aria-hidden="true"><div class="blueprint-glow-1"></div><div class="blueprint-glow-2"></div><div class="electric-laser-beam"></div></div><!-- Floating TASK & CO Studio Bar --><aside class="studio-demo-bar"><div style="display: flex; align-items: center; gap: 10px;"><span class="demo-pulse-dot"></span><span>Live Demo Website built by <strong>TASK & CO Studio</strong> (Ready in 3–5 Days) • Dealing in: <strong style="color:#fef08a;">₹ INR &amp; $ USD</strong></span></div><div class="studio-demo-actions"><a href="index.html#portfolio" class="btn-demo-back">← Back to Portfolio</a><a href="index.html#contact" class="btn-demo-hire">Get a Website Like This →</a></div></aside><!-- PROMINENT TOP BUSINESS CATEGORY BANNER --><div class="biz-category-super-banner"><div class="container super-banner-inner"><div><span class="super-banner-tag"><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>INDUSTRY CATEGORY DEMO </span><h1 class="super-banner-h1">HOME CONTRACTORS • ELECTRICIANS • PLUMBERS</h1></div><div class="super-banner-pill">⚡ 3-in-1 Turnkey Emergency Trade Solution by TASK & CO </div></div></div><!-- Emergency Alert Header --><div class="emergency-alert-bar"><span>⚡ 24/7 RAPID DISPATCH: Technicians on call now (Avg response time: 28 mins)</span><a href="tel:5550192831" class="btn-emergency-call">📞 (555) 019-2831</a></div><header class="container"><nav class="site-nav"><a href="#home" class="brand-wrap"><div class="brand-icon">🔧</div><div><div class="brand-title">PROCRAFT TRADES</div><div class="brand-sub">LICENSED CONTRACTING • ELECTRIC • PLUMBING</div></div></a><ul class="nav-links"><li><a href="#services">Our Trades</a></li><li><a href="#estimator">Cost Calculator</a></li><li><a href="#dispatch">Request Dispatch</a></li><li><a href="#coverage">Service Radius</a></li></ul><a href="#dispatch" class="btn-orange">Book Service Call</a></nav></header><main><!-- HERO SECTION --><section class="hero-sec" id="home"><div class="container"><div class="hero-grid"><div><h2 class="hero-h2">Licensed master <span>electricians,
+      plumbers</span>& general contractors. </h2><p class="hero-p">No guesswork,
+      no price surprises. We handle everything from 24/7 urgent pipe leaks and fuse trips to whole-home kitchen & bath renovations with guaranteed permits and warranties. </p><div class="credential-strip"><span class="cred-pill">✓ State License #EC-94821</span><span class="cred-pill">✓ $2M Liability Insured</span><span class="cred-pill">✓ 100% Upfront Pricing</span></div></div><!-- Fast Dispatch Lead Card --><div class="dispatch-card" id="dispatch"><h3 class="dispatch-title">Request 15-Minute Dispatch</h3><p class="dispatch-sub">Fill this quick form and our on-call dispatcher will phone you back immediately.</p><form id="dispatch-form" onsubmit="handleDispatch(event)"><div class="form-group-trades"><label class="form-label-trades">Trade Needed *</label><select id="trade-type" class="form-select-trades" required><option value="Emergency Electrical Repair">Electrical Repair / Breaker Issue</option><option value="Emergency Plumbing Leak">Plumbing Leak / Clogged Drain</option><option value="Home Remodeling & Contracting">Home Renovation / Remodeling</option><option value="HVAC Heating & Cooling">HVAC / Heating System</option></select></div><div class="form-group-trades"><label class="form-label-trades">Your Name & Phone *</label><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><input type="text" id="trade-name" class="form-input-trades" placeholder="Your Name" required><input type="tel" id="trade-phone" class="form-input-trades" placeholder="Phone Number" required></div></div><div class="form-group-trades"><label class="form-label-trades">Address / Neighborhood *</label><input type="text" id="trade-address" class="form-input-trades" placeholder="e.g. 142 Elm Street, North District" required></div><button type="submit" class="btn-orange" style="width: 100%; justify-content: center; margin-top: 8px;">🚨 Dispatch Nearest Technician Now </button><div id="dispatch-conf" style="display:none; margin-top: 14px; padding: 12px; border-radius: 6px; background: rgba(56,189,248,0.15); border: 1px solid #38bdf8; color: #7dd3fc; font-size: 0.88rem; text-align: center;"></div></form></div></div></div></section><!-- TRADES WITH REAL PHOTOGRAPHY --><section class="services-sec" id="services"><div class="container"><h3 class="sec-title-trades">Our Certified Trade Divisions</h3><div class="trades-grid"><!-- 1. Electrical --><div class="trade-card"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Electrical Panel Repair" class="trade-img"><div class="trade-content"><div><h4 class="trade-name">Master Electrical Division</h4><p class="trade-desc">200-amp main service panel upgrades,
+      whole-home rewiring,
+      EV home charger installations,
+      generator transfers,
+      and safety inspections.</p></div><div><span style="color: var(--accent-blue); font-weight: 700; font-size: 0.84rem;">⚡ Same-Day Service Available</span></div></div></div><!-- 2. Plumbing --><div class="trade-card"><img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80" alt="Emergency Plumbing" class="trade-img"><div class="trade-content"><div><h4 class="trade-name">Licensed Plumbing Division</h4><p class="trade-desc">Burst pipe emergency repairs,
+      tankless water heater installation,
+      sewer line camera inspection,
+      fixture replacements,
+      and drain clearing.</p></div><div><span style="color: var(--accent-blue); font-weight: 700; font-size: 0.84rem;">💧 24/7 Leak Dispatch Ready</span></div></div></div><!-- 3. Contracting & Remodeling --><div class="trade-card"><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Kitchen and Bath Remodel" class="trade-img"><div class="trade-content"><div><h4 class="trade-name">General Home Contracting</h4><p class="trade-desc">Custom kitchen renovations,
+      master bathroom remodeling,
+      drywall,
+      framing,
+      tile work,
+      and full structural home improvements from permit to paint.</p></div><div><span style="color: var(--accent-blue); font-weight: 700; font-size: 0.84rem;">🔨 Guaranteed Permit Compliance</span></div></div></div><!-- 4. HVAC --><div class="trade-card"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="HVAC Repair" class="trade-img"><div class="trade-content"><div><h4 class="trade-name">HVAC Heating & Air Services</h4><p class="trade-desc">Central air conditioner repair,
+      heat pump conversions,
+      annual furnace tune-ups,
+      ductwork sealing,
+      and smart thermostat integrations.</p></div><div><span style="color: var(--accent-blue); font-weight: 700; font-size: 0.84rem;">❄️ High-Efficiency Certified</span></div></div></div></div></div></section><!-- INTERACTIVE COST ESTIMATOR --><section class="estimator-sec" id="estimator"><div class="container"><div class="estimator-box"><div style="text-align: center; margin-bottom: 24px;"><span style="color: var(--accent-orange); font-weight: 700; font-size: 0.82rem; text-transform: uppercase;">Instant Pricing Tool</span><h3 style="font-size: 1.8rem; font-weight: 800; margin-top: 4px;">Interactive Repair Cost Estimator</h3><p style="color: var(--text-muted); font-size: 0.9rem;">Estimate your repair or installation cost in seconds.</p></div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;"><div><label class="form-label-trades">Project Type</label><select id="calc-type" class="form-select-trades" onchange="calculateEstimate()"><option value="180" data-inr="2500">Standard Plumbing Drain Clearing (~₹2,500 / $180)</option><option value="450" data-inr="6500">Electrical Panel Inspection & Circuit Repair (~₹6,500 / $450)</option><option value="1200" data-inr="18000">Tankless Water Heater Installation (~₹18,000 / $1,200)</option><option value="3500" data-inr="48000">Bathroom Tile & Fixture Remodel (~₹48,000 / $3,500)</option></select></div><div><label class="form-label-trades">Timeline / Urgency</label><select id="calc-urgency" class="form-select-trades" onchange="calculateEstimate()"><option value="1">Standard Schedule (Next 48 Hours)</option><option value="1.25">Same-Day Priority (+25%)</option><option value="1.5">24/7 Immediate Emergency (+50%)</option></select></div></div><div style="background: var(--bg-dark); padding: 20px; border-radius: 8px; border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;"><div><div style="font-size: 0.82rem; color: var(--text-muted);">Estimated Job Range:</div><div id="calc-result" style="font-size: 1.5rem; font-weight: 800; color: #38bdf8;">₹2,500 – ₹3,000 / $180 – $220</div></div><a href="#dispatch" class="btn-orange">Lock In This Estimate →</a></div></div></div></section></main><footer class="trades-footer" id="coverage"><div class="container"><div style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 6px;">ProCraft Trades & Contracting</div><p style="margin-bottom: 8px;">Headquarters: 110 Ironworks Way,
+      Metro Area • 24/7 Dispatch Hotline: (555) 019-2831</p><p style="color: var(--accent-blue); font-weight: 600;">Covering Metro Area,
+      North Suburbs,
+      and Surrounding 40-Mile Radius</p><p style="margin-top: 20px; font-size: 0.76rem; opacity: 0.6;">© 2026 TASK & CO Web Studio. Lead-generating websites for electricians,
+      plumbers,
+      and local trades.</p></div></footer><script>function calculateEstimate() {
+        const typeSelect = document.getElementById('calc-type');
+        const selectedOpt = typeSelect.options[typeSelect.selectedIndex];
+        const baseUSD = parseFloat(typeSelect.value);
+        const baseINR = parseFloat(selectedOpt.getAttribute('data-inr') || baseUSD * 83);
+        const mult = parseFloat(document.getElementById('calc-urgency').value);
+        const minUSD = Math.round(baseUSD * mult);
+        const maxUSD = Math.round(minUSD * 1.2);
+        const minINR = Math.round(baseINR * mult);
+        const maxINR = Math.round(minINR * 1.2);
+
+        document.getElementById('calc-result').textContent = `₹${minINR.toLocaleString('en-IN')} – ₹${maxINR.toLocaleString('en-IN')} / $${minUSD} – $${maxUSD}`;
+      }
+
+      function handleDispatch(e) {
+        e.preventDefault();
+        const trade=document.getElementById('trade-type').value;
+        const name=document.getElementById('trade-name').value;
+        const phone=document.getElementById('trade-phone').value;
+        const addr=document.getElementById('trade-address').value;
+
+        const conf=document.getElementById('dispatch-conf');
+
+        conf.innerHTML=`🚨 <strong>Emergency Dispatch Requested !</strong><br>Technician assigned for $ {
+          name
+        }
+
+        at $ {
+          addr
+        }
+
+        . Our dispatcher is dialing $ {
+          phone
+        }
+
+        right now.`;
+        conf.style.display='block';
+
+        setTimeout(()=> {
+            const waText=`EMERGENCY DISPATCH: I need $ {
+              trade
+            }
+
+            at $ {
+              addr
+            }
+
+            . Name: $ {
+              name
+            }
+
+            , Phone: $ {
+              phone
+            }
+
+            . Please call me immediately !`;
+            window.open(`https: //wa.me/?text=${encodeURIComponent(waText)}`, '_blank');
+            }
+
+            , 500);
+        }
+
+        </script> </body> </html>

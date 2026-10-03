@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GYMS & FITNESS TRAINERS | IronPulse Performance Club (Demo by TASK & CO)</title>
+  <meta name="description" content="Olympic weightlifting, high-intensity turf conditioning, yoga recovery, and expert personal trainers. A live interactive demo website crafted by TASK & CO.">
+
+  <!-- Google Fonts: Oswald (High-Impact Athletic Condensed) & Manrope (Dynamic Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #08080a;
+      --bg-surface: #101014;
+      --bg-card: #17171d;
+      --bg-card-hover: #202028;
+      --border: rgba(234, 179, 8, 0.22);
+      --accent-yellow: #eab308;
+      --accent-neon: #a3e635;
+      --text-light: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --font-display: 'Oswald', sans-serif;
+      --font-sans: 'Manrope', sans-serif;
+      --radius: 12px;
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-family: var(--font-sans); background: var(--bg-dark); color: var(--text-light); }
+    body { line-height: 1.6; overflow-x: hidden; position: relative; }
+    h1, h2, h3, h4, .brand-name, .super-banner-h1, .class-name { font-family: var(--font-display); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    /* =========================================================================
+       UNIQUE BACKGROUND ANIMATION: Neon Speed Streaks & Energy Pulse
+       ========================================================================= */
+    .fitness-speed-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.75;
+    }
+    .speed-streak {
+      position: absolute;
+      width: 2px;
+      height: 280px;
+      background: linear-gradient(180deg, transparent 0%, var(--accent-yellow) 50%, var(--accent-neon) 80%, transparent 100%);
+      transform: rotate(-35deg);
+      box-shadow: 0 0 14px rgba(234, 179, 8, 0.5);
+      animation: streakPulse 6s infinite ease-out;
+      will-change: transform, opacity;
+    }
+    .streak-1 { top: -200px; left: 20%; animation-delay: 0s; animation-duration: 5s; }
+    .streak-2 { top: -200px; left: 60%; animation-delay: 2s; animation-duration: 7s; }
+    .streak-3 { top: -200px; left: 85%; animation-delay: 3.5s; animation-duration: 6s; }
+
+    .energy-glow {
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(234, 179, 8, 0.12) 0%, transparent 70%);
+      top: 20%; left: 30%;
+    }
+
+    @keyframes streakPulse {
+      0% { transform: translate3d(0, 0, 0) rotate(-35deg); opacity: 0; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.6; }
+      100% { transform: translate3d(400px, 120vh, 0) rotate(-35deg); opacity: 0; }
+    }
+
+    header, main, footer, .biz-category-super-banner, .studio-demo-bar { position: relative; z-index: 1; }
+
+    /* Studio Demo Bar */
+    .studio-demo-bar {
+      position: sticky; top: 0; left: 0; right: 0;
+      background: linear-gradient(90deg, #0f172a 0%, #0d9488 100%);
+      color: #fff; padding: 10px 20px; display: flex; align-items: center;
+      justify-content: space-between; font-size: 0.84rem; font-weight: 600;
+      z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    .demo-pulse-dot { width: 8px; height: 8px; background-color: #34d399; border-radius: 50%; animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.8; } 50% { transform: scale(1.4); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.8; } }
+    .studio-demo-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-demo-back { color: #e2e8f0; text-decoration: none; font-size: 0.82rem; padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.25); transition: var(--transition); }
+    .btn-demo-back:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+    .btn-demo-hire { background: #fff; color: #0f172a; text-decoration: none; font-size: 0.82rem; font-weight: 700; padding: 5px 14px; border-radius: 6px; transition: var(--transition); }
+    .btn-demo-hire:hover { background: #f1f5f9; }
+
+    /* PROMINENT TOP BUSINESS CATEGORY BANNER */
+    .biz-category-super-banner {
+      background: linear-gradient(135deg, #271e03 0%, #0d0d0f 100%);
+      border-bottom: 3px solid var(--accent-yellow);
+      padding: 20px 0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+    .super-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .super-banner-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--accent-yellow);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .super-banner-h1 {
+      font-size: clamp(1.4rem, 3.2vw, 2.3rem);
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+    }
+    .super-banner-pill {
+      background: rgba(234, 179, 8, 0.18);
+      border: 1px solid var(--accent-yellow);
+      color: #fef08a;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    .site-nav { padding: 20px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .brand-wrap { text-decoration: none; color: #fff; font-weight: 900; font-size: 1.4rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px; }
+    .brand-wrap span { color: var(--accent-yellow); }
+
+    .nav-links { display: flex; gap: 26px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 700; transition: var(--transition); }
+    .nav-links a:hover { color: var(--accent-yellow); }
+
+    .btn-yellow { background: var(--accent-yellow); color: #000; padding: 11px 24px; border-radius: 8px; font-weight: 800; font-size: 0.88rem; text-decoration: none; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
+    .btn-yellow:hover { background: #facc15; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(234, 179, 8, 0.4); }
+
+    /* Hero */
+    .hero-sec {
+      position: relative;
+      padding: 100px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(9, 9, 11, 0.82) 0%, rgba(9, 9, 11, 0.98) 100%),
+                  url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(234, 179, 8, 0.15); border: 1px solid var(--accent-yellow); color: #fef08a; padding: 6px 18px; border-radius: 999px; font-size: 0.84rem; font-weight: 800; margin-bottom: 22px; }
+    .hero-h2 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 900; line-height: 1.12; max-width: 900px; margin: 0 auto 20px; }
+    .hero-h2 span { color: var(--accent-yellow); }
+    .hero-desc { color: var(--text-muted); font-size: 1.15rem; max-width: 700px; margin: 0 auto 36px; }
+
+    /* Classes with Real Photos */
+    .classes-sec { padding: 90px 0; background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .sec-header { text-align: center; margin-bottom: 44px; }
+    .sec-title { font-size: 2.4rem; font-weight: 900; }
+
+    .classes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+    .class-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: grid; grid-template-columns: 160px 1fr; transition: var(--transition); }
+    .class-card:hover { transform: translateY(-4px); border-color: var(--accent-yellow); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .class-img { width: 100%; height: 100%; object-fit: cover; min-height: 160px; }
+    .class-content { padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+    .class-name { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .class-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.45; margin-bottom: 12px; }
+
+    /* Free Pass Generator Modal */
+    .pass-sec { padding: 80px 0; }
+    .pass-card { background: linear-gradient(135deg, #18181c 0%, #101014 100%); border: 2px dashed var(--accent-yellow); border-radius: var(--radius); padding: 40px; max-width: 720px; margin: 0 auto; text-align: center; }
+
+    /* Footer */
+    .fitness-footer { padding: 60px 0 30px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.88rem; }
+
+    @media (max-width: 860px) {
+      .classes-grid { grid-template-columns: 1fr; }
+      .site-nav { flex-direction: column; gap: 14px; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIQUE BACKGROUND ANIMATION: Neon Speed Streaks & Energy Pulse -->
+  <div class="fitness-speed-canvas" aria-hidden="true">
+    <div class="energy-glow"></div>
+    <div class="speed-streak streak-1"></div>
+    <div class="speed-streak streak-2"></div>
+    <div class="speed-streak streak-3"></div>
+  </div>
+
+  <!-- Floating TASK & CO Studio Bar -->
+  <aside class="studio-demo-bar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="demo-pulse-dot"></span>
+      <span>Live Demo Website built by <strong>TASK & CO Studio</strong> (Ready in 3–5 Days) • Dealing in: <strong style="color:#fef08a;">₹ INR &amp; $ USD</strong></span>
+    </div>
+    <div class="studio-demo-actions">
+      <a href="index.html#portfolio" class="btn-demo-back">← Back to Portfolio</a>
+      <a href="index.html#contact" class="btn-demo-hire">Get a Website Like This →</a>
+    </div>
+  </aside>
+
+  <!-- PROMINENT TOP BUSINESS CATEGORY BANNER -->
+  <div class="biz-category-super-banner">
+    <div class="container super-banner-inner">
+      <div>
+        <span class="super-banner-tag">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          INDUSTRY CATEGORY DEMO
+        </span>
+        <h1 class="super-banner-h1">GYMS & FITNESS TRAINERS</h1>
+      </div>
+      <div class="super-banner-pill">
+        ⚡ 3-in-1 Turnkey Gym & Trainer Solution by TASK & CO
+      </div>
+    </div>
+  </div>
+
+  <header class="container">
+    <nav class="site-nav">
+      <a href="#home" class="brand-wrap">
+        ⚡ IRONPULSE <span>ATHLETICS</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#programs">Classes & Programs</a></li>
+        <li><a href="#trainers">Coaches</a></li>
+        <li><a href="#pass">Free 3-Day Pass</a></li>
+        <li><a href="#pricing">Membership</a></li>
+      </ul>
+
+      <a href="#pass" class="btn-yellow">Claim Free Pass</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-sec" id="home">
+      <div class="container">
+        <span class="hero-badge">🔥 Elevate Your Strength • Turf Conditioning • Recovery</span>
+        <h2 class="hero-h2">
+          Train harder. Move better. <span>Zero excuses.</span>
+        </h2>
+        <p class="hero-desc">
+          State-of-the-art barbell club, competitive turf conditioning, high-energy coaching, and a vibrant community dedicated to real human performance.
+        </p>
+
+        <a href="#pass" class="btn-yellow" style="font-size: 1rem; padding: 14px 32px;">Claim Your Free 3-Day VIP Pass Today ➔</a>
+      </div>
+    </section>
+
+    <!-- PROGRAMS WITH REAL PHOTOGRAPHY -->
+    <section class="classes-sec" id="programs">
+      <div class="container">
+        <div class="sec-header">
+          <h3 class="sec-title">Performance Divisions</h3>
+          <p style="color: var(--text-muted); margin-top: 6px;">Coached small groups and open weightlifting floor access.</p>
+        </div>
+
+        <div class="classes-grid">
+          <!-- Class 1 -->
+          <div class="class-card">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Olympic Weightlifting" class="class-img">
+            <div class="class-content">
+              <div>
+                <h4 class="class-name">Olympic Barbell & Strength</h4>
+                <p class="class-desc">Structured periodized strength cycles, squat/bench/deadlift mastery, and Eleiko competition platforms.</p>
+              </div>
+              <span style="color: var(--accent-yellow); font-weight: 700; font-size: 0.85rem;">Mon, Wed, Fri • 6:00 AM & 5:30 PM</span>
+            </div>
+          </div>
+
+          <!-- Class 2 -->
+          <div class="class-card">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="HIIT Turf" class="class-img">
+            <div class="class-content">
+              <div>
+                <h4 class="class-name">High-Octane Turf & HIIT</h4>
+                <p class="class-desc">Sprint intervals, sled pushes, kettlebells, and Concept2 rowers designed for maximum cardiovascular output.</p>
+              </div>
+              <span style="color: var(--accent-yellow); font-weight: 700; font-size: 0.85rem;">Tue, Thu, Sat • 7:00 AM & 6:30 PM</span>
+            </div>
+          </div>
+
+          <!-- Class 3 -->
+          <div class="class-card">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Yoga Mobility" class="class-img">
+            <div class="class-content">
+              <div>
+                <h4 class="class-name">Mobility & Athletic Yoga</h4>
+                <p class="class-desc">Decompress tight joints, increase hip/shoulder range of motion, and prevent athletic training injuries.</p>
+              </div>
+              <span style="color: var(--accent-yellow); font-weight: 700; font-size: 0.85rem;">Daily Sessions • 8:00 AM & 7:00 PM</span>
+            </div>
+          </div>
+
+          <!-- Class 4 -->
+          <div class="class-card">
+            <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" alt="Boxing Combat" class="class-img">
+            <div class="class-content">
+              <div>
+                <h4 class="class-name">Boxing Conditioning</h4>
+                <p class="class-desc">Heavy bag combinations, footwork agility ladders, core stability, and pad rounds with professional fight coaches.</p>
+              </div>
+              <span style="color: var(--accent-yellow); font-weight: 700; font-size: 0.85rem;">Mon, Wed, Fri • 6:30 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- MEMBERSHIP PRICING TIERS -->
+    <section class="pricing-sec" id="pricing" style="padding: 70px 0; border-top: 1px solid var(--border);">
+      <div class="container">
+        <div class="sec-header" style="text-align: center; margin-bottom: 36px;">
+          <span style="color: var(--accent-yellow); font-weight: 800; font-size: 0.84rem; text-transform: uppercase;">Membership Tiers</span>
+          <h3 style="font-size: 2.2rem; font-weight: 900; margin-top: 6px;">Straightforward Access. No Contracts.</h3>
+          <p style="color: var(--text-muted); margin-top: 6px;">Dealing in Indian Rupees &amp; US Dollars for all athletes.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center;">
+            <h4 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 8px;">Basic Barbell</h4>
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent-yellow); margin-bottom: 12px;">₹1,999 / $29 <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">/ mo</span></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">24/7 keycard access to weight room, turf floor, and locker rooms.</p>
+            <a href="#pass" class="btn-yellow" style="width: 100%; justify-content: center; font-size: 0.85rem;">Get Started</a>
+          </div>
+
+          <div style="background: var(--bg-card); border: 2px solid var(--accent-yellow); border-radius: var(--radius); padding: 28px; text-align: center; position: relative;">
+            <span style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent-yellow); color: #000; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 999px;">MOST POPULAR</span>
+            <h4 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 8px;">Coached Hyrox &amp; Strength</h4>
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent-yellow); margin-bottom: 12px;">₹3,999 / $49 <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">/ mo</span></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">Unlimited daily coached classes, biometric progress tracking, and recovery lounge.</p>
+            <a href="#pass" class="btn-yellow" style="width: 100%; justify-content: center; font-size: 0.85rem;">Get Started</a>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center;">
+            <h4 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 8px;">Elite 1-on-1 Athlete</h4>
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent-yellow); margin-bottom: 12px;">₹8,999 / $119 <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">/ mo</span></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">Dedicated personal strength coach, macro nutrition planning, and weekly 1-on-1 sessions.</p>
+            <a href="#pass" class="btn-yellow" style="width: 100%; justify-content: center; font-size: 0.85rem;">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREE 3-DAY VIP PASS GENERATOR -->
+    <section class="pass-sec" id="pass">
+      <div class="container">
+        <div class="pass-card">
+          <span style="color: var(--accent-yellow); font-weight: 800; font-size: 0.84rem; text-transform: uppercase;">100% Free • No Commitment</span>
+          <h3 style="font-size: 2.2rem; font-weight: 900; margin: 8px 0 16px;">Claim Your 3-Day VIP Access Pass</h3>
+          <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 24px;">Enjoy full access to our weight room, turf, all group fitness classes, and locker rooms with sauna.</p>
+
+          <form onsubmit="handleClaimPass(event)" style="max-width: 480px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+              <input type="text" id="pass-name" placeholder="First & Last Name" required style="background: #09090b; border: 1px solid var(--border); padding: 12px; border-radius: 8px; color: #fff;">
+              <input type="tel" id="pass-phone" placeholder="Phone Number" required style="background: #09090b; border: 1px solid var(--border); padding: 12px; border-radius: 8px; color: #fff;">
+            </div>
+            <button type="submit" class="btn-yellow" style="width: 100%; justify-content: center; font-size: 1rem; padding: 14px;">
+              ⚡ Generate VIP Pass & Send to WhatsApp
+            </button>
+            <div id="pass-conf" style="display:none; margin-top: 14px; padding: 12px; border-radius: 8px; background: rgba(234,179,8,0.15); color: #fef08a; font-weight: 700;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fitness-footer">
+    <div class="container">
+      <div style="font-weight: 900; font-size: 1.4rem; color: #fff; margin-bottom: 6px;">IRONPULSE PERFORMANCE CLUB</div>
+      <p style="margin-bottom: 8px;">890 Powerhouse Way, Midtown Gym District • Open 24/7 for Keycard Members</p>
+      <p style="color: var(--accent-yellow); font-weight: 700;">Staffed Hours: Mon–Fri 5:30 AM – 10:00 PM • Sat–Sun 7:00 AM – 8:00 PM</p>
+      <p style="margin-top: 20px; font-size: 0.76rem; opacity: 0.6;">© 2026 TASK & CO Web Studio. High-converting membership and class booking websites for gyms.</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleClaimPass(e) {
+      e.preventDefault();
+      const name = document.getElementById('pass-name').value;
+      const phone = document.getElementById('pass-phone').value;
+      const conf = document.getElementById('pass-conf');
+      conf.innerHTML = `🎉 <strong>VIP Pass Generated for ${name}!</strong><br>Show this confirmation at the front desk. Pass expires in 7 days.`;
+      conf.style.display = 'block';
+
+      setTimeout(() => {
+        const waText = `Hi IronPulse Gym! I just generated my Free 3-Day VIP Pass under the name ${name} (${phone}). Can I visit today?`;
+        window.open(`https://wa.me/?text=${encodeURIComponent(waText)}`, '_blank');
+      }, 500);
+    }
+  </script>
+</body>
+</html>

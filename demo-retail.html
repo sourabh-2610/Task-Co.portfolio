@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOUTIQUES • CLOTHING • LOCAL RETAIL | Khaadi & Silk Artisan Apparel (Demo by TASK & CO)</title>
+  <meta name="description" content="Handcrafted textiles, artisanal linen weekend sets, festive ethnic silhouettes, and 1-click in-store reservations. A live interactive demo website crafted by TASK & CO.">
+
+  <!-- Google Fonts: Tenor Sans (Editorial Vogue) & Jost (Chic Geometric Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #120e0b;
+      --bg-surface: #1a1510;
+      --bg-card: #231c16;
+      --bg-card-hover: #2d241c;
+      --border: rgba(217, 119, 6, 0.22);
+      --accent-gold: #d97706;
+      --accent-sand: #fef3c7;
+      --text-light: #fefaf6;
+      --text-muted: #a3998f;
+      --font-serif: 'Tenor Sans', serif;
+      --font-sans: 'Jost', sans-serif;
+      --radius: 12px;
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-family: var(--font-sans); background: var(--bg-dark); color: var(--text-light); }
+    body { line-height: 1.6; overflow-x: hidden; position: relative; }
+
+    /* =========================================================================
+       UNIQUE BACKGROUND ANIMATION: Couture Diamond Dust & Champagne Glitter Drift
+       ========================================================================= */
+    .retail-glitter-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.7;
+    }
+    .glitter-particle {
+      position: absolute;
+      will-change: transform, opacity;
+      animation: coutureDrift 16s infinite ease-in;
+    }
+    .diamond-1 {
+      width: 16px; height: 16px;
+      background: rgba(254, 243, 199, 0.25);
+      border: 1px solid rgba(217, 119, 6, 0.4);
+      transform: rotate(45deg);
+      bottom: -30px; left: 18%;
+      animation-duration: 18s; animation-delay: 1s;
+    }
+    .diamond-2 {
+      width: 24px; height: 24px;
+      background: rgba(245, 158, 11, 0.18);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      transform: rotate(45deg);
+      bottom: -40px; left: 62%;
+      animation-duration: 22s; animation-delay: 4s;
+    }
+    .diamond-3 {
+      width: 12px; height: 12px;
+      background: rgba(254, 243, 199, 0.3);
+      border: 1px solid rgba(217, 119, 6, 0.5);
+      transform: rotate(45deg);
+      bottom: -20px; left: 85%;
+      animation-duration: 14s; animation-delay: 7s;
+    }
+    .glitter-glow {
+      position: absolute;
+      width: 450px; height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.12) 0%, transparent 70%);
+      top: 15%; right: 5%;
+    }
+    @keyframes coutureDrift {
+      0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.7; }
+      100% { transform: translate3d(60px, -110vh, 0) rotate(180deg); opacity: 0; }
+    }
+
+    header, main, footer, .biz-category-super-banner, .studio-demo-bar { position: relative; z-index: 1; }
+
+    /* Studio Demo Bar */
+    .studio-demo-bar {
+      position: sticky; top: 0; left: 0; right: 0;
+      background: linear-gradient(90deg, #0f172a 0%, #0d9488 100%);
+      color: #fff; padding: 10px 20px; display: flex; align-items: center;
+      justify-content: space-between; font-size: 0.84rem; font-weight: 600;
+      z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    .demo-pulse-dot { width: 8px; height: 8px; background-color: #34d399; border-radius: 50%; animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.8; } 50% { transform: scale(1.4); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.8; } }
+    .studio-demo-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-demo-back { color: #e2e8f0; text-decoration: none; font-size: 0.82rem; padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.25); transition: var(--transition); }
+    .btn-demo-back:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+    .btn-demo-hire { background: #fff; color: #0f172a; text-decoration: none; font-size: 0.82rem; font-weight: 700; padding: 5px 14px; border-radius: 6px; transition: var(--transition); }
+    .btn-demo-hire:hover { background: #f1f5f9; }
+
+    /* PROMINENT TOP BUSINESS CATEGORY BANNER */
+    .biz-category-super-banner {
+      background: linear-gradient(135deg, #2b1704 0%, #150d03 100%);
+      border-bottom: 3px solid var(--accent-gold);
+      padding: 20px 0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+    .super-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .super-banner-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: #f59e0b;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .super-banner-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+    }
+    .super-banner-pill {
+      background: rgba(217, 119, 6, 0.2);
+      border: 1px solid var(--accent-gold);
+      color: #fde68a;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    .site-nav { padding: 20px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .brand-wrap { text-decoration: none; color: #fff; }
+    .brand-title { font-family: var(--font-serif); font-size: 1.55rem; font-weight: 700; letter-spacing: 0.08em; }
+    .brand-sub { font-size: 0.7rem; color: var(--accent-gold); letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .nav-links { display: flex; gap: 26px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: var(--transition); }
+    .nav-links a:hover { color: #f59e0b; }
+
+    .btn-gold { background: linear-gradient(135deg, #d97706, #b45309); color: #fff; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4); }
+
+    /* Hero */
+    .hero-sec {
+      position: relative;
+      padding: 90px 0 70px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(18, 16, 14, 0.82) 0%, rgba(18, 16, 14, 0.96) 100%),
+                  url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-tag { display: inline-block; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: #f59e0b; font-weight: 700; margin-bottom: 16px; }
+    .hero-h2 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5vw, 4rem); max-width: 860px; margin: 0 auto 18px; color: #fff; line-height: 1.15; }
+    .hero-h2 span { color: #f59e0b; }
+    .hero-desc { color: var(--text-muted); font-size: 1.1rem; max-width: 650px; margin: 0 auto 34px; }
+
+    /* Lookbook Grid with Real Images */
+    .lookbook-sec { padding: 90px 0; background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .sec-header { text-align: center; margin-bottom: 40px; }
+    .sec-title { font-family: var(--font-serif); font-size: 2.5rem; color: #fff; }
+
+    .category-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; }
+    .tab-btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-muted); padding: 9px 22px; border-radius: 999px; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
+    .tab-btn.active, .tab-btn:hover { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); }
+
+    .lookbook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .product-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
+    .product-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+    .product-img { width: 100%; height: 320px; object-fit: cover; }
+    .product-body { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+    .product-name { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .product-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.45; }
+
+    .product-meta-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .product-price { font-size: 1.25rem; font-weight: 800; color: #fde68a; font-family: var(--font-serif); }
+    .product-stock { font-size: 0.74rem; color: #34d399; font-weight: 700; }
+
+    /* Footer */
+    .retail-footer { padding: 60px 0 30px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.88rem; }
+
+    @media (max-width: 860px) {
+      .lookbook-grid { grid-template-columns: 1fr; }
+      .site-nav { flex-direction: column; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIQUE BACKGROUND ANIMATION: Couture Diamond Dust & Champagne Glitter Drift -->
+  <div class="retail-glitter-canvas" aria-hidden="true">
+    <div class="glitter-glow"></div>
+    <div class="glitter-particle diamond-1"></div>
+    <div class="glitter-particle diamond-2"></div>
+    <div class="glitter-particle diamond-3"></div>
+  </div>
+
+  <!-- Floating TASK & CO Studio Bar -->
+  <aside class="studio-demo-bar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="demo-pulse-dot"></span>
+      <span>Live Demo Website built by <strong>TASK & CO Studio</strong> (Ready in 3–5 Days) • Dealing in: <strong style="color:#fef08a;">₹ INR &amp; $ USD</strong></span>
+    </div>
+    <div class="studio-demo-actions">
+      <a href="index.html#portfolio" class="btn-demo-back">← Back to Portfolio</a>
+      <a href="index.html#contact" class="btn-demo-hire">Get a Website Like This →</a>
+    </div>
+  </aside>
+
+  <!-- PROMINENT TOP BUSINESS CATEGORY BANNER -->
+  <div class="biz-category-super-banner">
+    <div class="container super-banner-inner">
+      <div>
+        <span class="super-banner-tag">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          INDUSTRY CATEGORY DEMO
+        </span>
+        <h1 class="super-banner-h1">BOUTIQUES • CLOTHING • LOCAL RETAIL</h1>
+      </div>
+      <div class="super-banner-pill">
+        ⚡ 3-in-1 Turnkey Boutique & Retail Solution by TASK & CO
+      </div>
+    </div>
+  </div>
+
+  <header class="container">
+    <nav class="site-nav">
+      <a href="#home" class="brand-wrap">
+        <div class="brand-title">KHAADI & SILK</div>
+        <div class="brand-sub">ARTISANAL APPAREL & LOCAL BOUTIQUE</div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#lookbook">Seasonal Lookbook</a></li>
+        <li><a href="#craft">Our Craft</a></li>
+        <li><a href="#reserve">Hold in Store</a></li>
+        <li><a href="#location">Visit Boutique</a></li>
+      </ul>
+
+      <a href="#lookbook" class="btn-gold">View Collection</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-sec" id="home">
+      <div class="container">
+        <span class="hero-tag">Handloom Silks • Organic Linens • Slow Fashion</span>
+        <h2 class="hero-h2">
+          Handcrafted garments designed for <span>grace & everyday poetry</span>.
+        </h2>
+        <p class="hero-desc">
+          Browse our seasonal capsule collection online, select your size, and reserve pieces to try on in our boutique with 1-click WhatsApp hold.
+        </p>
+        <a href="#lookbook" class="btn-gold">Browse Lookbook & Hold in Store →</a>
+      </div>
+    </section>
+
+    <!-- LOOKBOOK WITH REAL IMAGES -->
+    <section class="lookbook-sec" id="lookbook">
+      <div class="container">
+        <div class="sec-header">
+          <h3 class="sec-title">The Autumn / Winter Capsule</h3>
+          <p style="color: var(--text-muted); margin-top: 8px;">100% natural fibers dyed with heritage botanical extracts.</p>
+        </div>
+
+        <div class="lookbook-grid">
+          <!-- Item 1: Raw Silk Ensemble -->
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" alt="Silk Anarkali" class="product-img">
+            <div class="product-body">
+              <div>
+                <h4 class="product-name">Raw Silk Festive Kurti Set</h4>
+                <p class="product-desc">Pure handloom Chanderi silk with delicate hand-zari needlework along the neckline, paired with pleated silk trousers.</p>
+              </div>
+              <div>
+                <div class="product-meta-row">
+                  <span class="product-price">₹3,499 / $89.00</span>
+                  <span class="product-stock">● In Stock (S, M, L)</span>
+                </div>
+                <button class="btn-gold" style="width: 100%; justify-content: center;" onclick="holdProduct('Raw Silk Festive Kurti Set', 89, 3499)">
+                  💬 Hold in Store via WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Organic Linen Trench -->
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Organic Linen Trench" class="product-img">
+            <div class="product-body">
+              <div>
+                <h4 class="product-name">Organic Linen Weekend Trench</h4>
+                <p class="product-desc">Heavyweight European flax linen tailored with relaxed storm flaps, tortoiseshell buttons, and an oversized self-tie belt.</p>
+              </div>
+              <div>
+                <div class="product-meta-row">
+                  <span class="product-price">₹4,999 / $115.00</span>
+                  <span class="product-stock">● In Stock (M, L)</span>
+                </div>
+                <button class="btn-gold" style="width: 100%; justify-content: center;" onclick="holdProduct('Organic Linen Weekend Trench', 115, 4999)">
+                  💬 Hold in Store via WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Handcrafted Leather Bag -->
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80" alt="Leather Bag" class="product-img">
+            <div class="product-body">
+              <div>
+                <h4 class="product-name">Vegetable-Tanned Saddle Tote</h4>
+                <p class="product-desc">Supple saddle leather hand-stitched by generational artisans with solid brass hardware and an unlined suede interior.</p>
+              </div>
+              <div>
+                <div class="product-meta-row">
+                  <span class="product-price">₹6,499 / $145.00</span>
+                  <span class="product-stock">● 4 Pieces Left</span>
+                </div>
+                <button class="btn-gold" style="width: 100%; justify-content: center;" onclick="holdProduct('Vegetable-Tanned Saddle Tote', 145, 6499)">
+                  💬 Hold in Store via WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="retail-footer" id="location">
+    <div class="container">
+      <div style="font-family: var(--font-serif); font-size: 1.4rem; color: #fff; margin-bottom: 6px;">Khaadi &amp; Silk Artisan Apparel</div>
+      <p style="margin-bottom: 8px;">210 Heritage Lane, Old Town Arts District • WhatsApp: (555) 749-1920</p>
+      <p style="color: #f59e0b; font-weight: 600;">Open Daily: 10:30 AM – 7:30 PM • Fitting Rooms Available</p>
+      <p style="margin-top: 20px; font-size: 0.76rem; opacity: 0.6;">© 2026 TASK &amp; CO Web Studio. E-commerce &amp; store reservation web designs for local boutiques.</p>
+    </div>
+  </footer>
+
+  <script>
+    function holdProduct(name, priceUSD, priceINR) {
+      const waText = `Hi Khaadi & Silk! I'd like to reserve the "${name}" (₹${priceINR.toLocaleString('en-IN')} / $${priceUSD}) to try on in store this week. What sizes do you currently have available?`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(waText)}`, '_blank');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURORA & CO. | Luxury Wedding & Editorial Photography (Demo by TASK & CO)</title>
+  <meta name="description"
+    content="Editorial, timeless, and film-inspired wedding photography for discerning couples worldwide. A live interactive demo website crafted by TASK & CO.">
+
+  <!-- Google Fonts: Italiana (High-Fashion Romance) & Urbanist (Editorial Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Urbanist:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       AURORA & CO. - Luxury Photography Studio Stylesheet
+       ========================================================================== */
+    :root {
+      --bg-dark: #0b0c10;
+      --bg-card: #13151b;
+      --bg-card-hover: #191c24;
+      --bg-surface: #181a22;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(201, 168, 106, 0.3);
+      --text-main: #f5f3ef;
+      --text-muted: #9e9a93;
+      --text-gold: #c9a86a;
+      --gold-gradient: linear-gradient(135deg, #dfc698 0%, #c9a86a 50%, #9e7d3b 100%);
+      --accent-glow: rgba(201, 168, 106, 0.15);
+      --font-serif: 'Italiana', Georgia, serif;
+      --font-sans: 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.6;
+      background-color: var(--bg-dark);
+      position: relative;
+    }
+
+    /* =========================================================================
+       UNIQUE BACKGROUND ANIMATION: Cinematic Bokeh Light Leaks & Aperture Flare
+       ========================================================================= */
+    .photography-lens-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.65;
+    }
+
+    .bokeh-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(65px);
+      will-change: transform, opacity;
+      animation: bokehLeak 16s infinite alternate ease-in-out;
+    }
+
+    .bokeh-1 {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(201, 168, 106, 0.22) 0%, rgba(223, 198, 152, 0.08) 50%, transparent 75%);
+      top: -60px;
+      right: 10%;
+      animation-duration: 18s;
+    }
+
+    .bokeh-2 {
+      width: 440px;
+      height: 440px;
+      background: radial-gradient(circle, rgba(158, 125, 59, 0.16) 0%, rgba(201, 168, 106, 0.06) 60%, transparent 80%);
+      bottom: 10%;
+      left: 5%;
+      animation-duration: 24s;
+    }
+
+    .aperture-glow {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      border: 1px dashed rgba(201, 168, 106, 0.08);
+      top: 30%;
+      right: -200px;
+      animation: apertureSpin 60s infinite linear;
+    }
+
+    @keyframes bokehLeak {
+      0% {
+        transform: translate3d(0, 0, 0) scale(0.9);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: translate3d(-80px, 60px, 0) scale(1.15);
+        opacity: 0.85;
+      }
+
+      100% {
+        transform: translate3d(40px, -40px, 0) scale(0.95);
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes apertureSpin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    header,
+    main,
+    footer,
+    .biz-category-super-banner,
+    .studio-demo-bar {
+      position: relative;
+      z-index: 1;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.6;
+      background-color: var(--bg-dark);
+    }
+
+    /* Floating Studio Demo Topbar */
+    .studio-demo-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, #0f172a 0%, #0d9488 100%);
+      color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .studio-demo-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .demo-pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #34d399;
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: scale(1.4);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.9);
+        opacity: 0.8;
+      }
+    }
+
+    .studio-demo-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-demo-back {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.82rem;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: var(--transition);
+    }
+
+    .btn-demo-back:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    .btn-demo-hire {
+      background: #ffffff;
+      color: #0f172a;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 6px;
+      transition: var(--transition);
+    }
+
+    .btn-demo-hire:hover {
+      background: #f1f5f9;
+      transform: translateY(-1px);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Site Header */
+    .site-nav {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      color: var(--text-gold);
+      text-transform: uppercase;
+      margin-top: -4px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+
+    .nav-menu a:hover {
+      color: var(--text-gold);
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #111;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(201, 168, 106, 0.25);
+      transition: var(--transition);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201, 168, 106, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #f5f3ef;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text-gold);
+      color: var(--text-gold);
+      background: rgba(201, 168, 106, 0.05);
+    }
+
+    /* Hero Section */
+    .hero-sec {
+      padding: 80px 0 60px;
+      position: relative;
+      text-align: center;
+    }
+
+    .status-pill-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201, 168, 106, 0.12);
+      border: 1px solid var(--border-gold);
+      color: var(--text-gold);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      max-width: 980px;
+      margin: 0 auto 20px;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--text-gold);
+      font-weight: 300;
+    }
+
+    .hero-lead {
+      color: var(--text-muted);
+      font-size: 1.12rem;
+      max-width: 680px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* Date Availability Checker Widget */
+    .date-widget-box {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 14px;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .widget-field {
+      text-align: left;
+    }
+
+    .widget-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-gold);
+      margin-bottom: 4px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .widget-input,
+    .widget-select {
+      width: 100%;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+      color: #fff;
+      font-size: 0.88rem;
+    }
+
+    .widget-input:focus,
+    .widget-select:focus {
+      outline: none;
+      border-color: var(--text-gold);
+    }
+
+    .date-feedback-banner {
+      display: none;
+      max-width: 780px;
+      margin: -40px auto 40px;
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Editorial Showcase Grid */
+    .showcase-sec {
+      padding: 60px 0 90px;
+    }
+
+    .sec-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .sec-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .filter-pills {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 32px 0 44px;
+    }
+
+    .filter-tab {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-tab:hover,
+    .filter-tab.active {
+      background: var(--text-gold);
+      color: #111;
+      border-color: var(--text-gold);
+      font-weight: 600;
+    }
+
+    .gallery-masonry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .story-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .story-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-gold);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    }
+
+    .story-img-wrap {
+      position: relative;
+      height: 360px;
+      overflow: hidden;
+    }
+
+    .story-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .story-card:hover .story-img {
+      transform: scale(1.06);
+    }
+
+    .story-loc-pill {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(11, 12, 16, 0.75);
+      backdrop-filter: blur(8px);
+      color: #f5f3ef;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .story-overlay-btn {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(11, 12, 16, 0.8);
+      color: var(--text-gold);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--border-gold);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: var(--transition);
+    }
+
+    .story-card:hover .story-overlay-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .story-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .story-names {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .story-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .story-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.76rem;
+      color: var(--text-gold);
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(5, 6, 8, 0.94);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-content {
+      max-width: 1000px;
+      width: 100%;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+      position: relative;
+    }
+
+    .lightbox-img {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      max-height: 600px;
+      object-fit: cover;
+    }
+
+    .lightbox-details {
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: var(--transition);
+      z-index: 10;
+    }
+
+    .lightbox-close-btn:hover {
+      background: var(--text-gold);
+      color: #111;
+    }
+
+    /* Investment / Interactive Packages Calculator */
+    .pricing-sec {
+      padding: 80px 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .package-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .package-card.popular {
+      border: 1px solid var(--text-gold);
+      box-shadow: 0 8px 30px rgba(201, 168, 106, 0.15);
+    }
+
+    .package-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold-gradient);
+      color: #111;
+      padding: 3px 14px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .pkg-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .pkg-sub {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 20px;
+    }
+
+    .pkg-price {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--text-gold);
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .pkg-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 30px;
+      flex-grow: 1;
+      font-size: 0.88rem;
+      color: #d1cfc7;
+    }
+
+    .pkg-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pkg-features li span.check {
+      color: var(--text-gold);
+    }
+
+    /* Live Add-ons Calculator Bar */
+    .addons-calc-box {
+      max-width: 860px;
+      margin: 48px auto 0;
+      background: var(--bg-card);
+      border: 1px dashed var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+    }
+
+    .addons-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: #fff;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .addons-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .addon-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      font-size: 0.86rem;
+      cursor: pointer;
+    }
+
+    .addon-item input[type="checkbox"] {
+      accent-color: var(--text-gold);
+      width: 16px;
+      height: 16px;
+    }
+
+    .addon-price {
+      margin-left: auto;
+      color: var(--text-gold);
+      font-weight: 600;
+    }
+
+    .total-calc-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 16px;
+    }
+
+    .total-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .total-amount {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--text-gold);
+      font-weight: 600;
+    }
+
+    /* Inquiry Section */
+    .inquire-sec {
+      padding: 90px 0;
+      background: var(--bg-dark);
+    }
+
+    .inquire-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .inquire-form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    .form-group-photo {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .form-label-photo {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-gold);
+    }
+
+    .form-input-photo,
+    .form-select-photo,
+    .form-textarea-photo {
+      background: #0b0c10;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.92rem;
+    }
+
+    .form-input-photo:focus,
+    .form-select-photo:focus,
+    .form-textarea-photo:focus {
+      outline: none;
+      border-color: var(--text-gold);
+      box-shadow: 0 0 0 3px rgba(201, 168, 106, 0.15);
+    }
+
+    /* Footer */
+    .photo-footer {
+      padding: 50px 0 30px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
+    /* Super Category Banner */
+    .biz-category-super-banner {
+      background: linear-gradient(135deg, #18140e 0%, #241d13 100%);
+      border-bottom: 2px solid var(--border-gold);
+      padding: 16px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .super-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .super-banner-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--text-gold);
+      margin-bottom: 4px;
+    }
+
+    .super-banner-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .super-banner-pill {
+      background: rgba(201, 168, 106, 0.15);
+      border: 1px solid var(--border-gold);
+      color: var(--text-gold);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-masonry {
+        grid-template-columns: 1fr;
+      }
+
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .addons-list {
+        grid-template-columns: 1fr;
+      }
+
+      .inquire-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-content {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .date-widget-box {
+        grid-template-columns: 1fr;
+      }
+
+      .site-nav {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- UNIQUE BACKGROUND ANIMATION: Cinematic Bokeh Light Leaks & Aperture Flare --><div class="photography-lens-canvas" aria-hidden="true"><div class="aperture-glow"></div><div class="bokeh-orb bokeh-1"></div><div class="bokeh-orb bokeh-2"></div></div><!--=========================================================================FLOATING STUDIO DEMO TOPBAR (BY TASK & CO)=========================================================================--><aside class="studio-demo-bar"><div class="studio-demo-badge"><span class="demo-pulse-dot"></span><span>Live Demo Website built by <strong>TASK & CO Studio</strong> (Ready in 3–5 Days) • Dealing in: <strong style="color:#fef08a;">₹ INR &amp; $ USD</strong></span></div><div class="studio-demo-actions"><a href="index.html#portfolio" class="btn-demo-back">← Back to Portfolio</a><a href="index.html#contact" class="btn-demo-hire">Get a Website Like This →</a></div></aside><!-- PROMINENT TOP BUSINESS CATEGORY BANNER --><div class="biz-category-super-banner"><div class="container super-banner-inner"><div><span class="super-banner-tag">INDUSTRY CATEGORY DEMO</span><h1 class="super-banner-h1">WEDDING / EVENT PLANNERS &amp;
+      PHOTOGRAPHERS</h1></div><div class="super-banner-pill">⚡ 3-in-1 Turnkey Solution by TASK &amp;
+      CO</div></div></div><!--=========================================================================SITE HEADER & NAVIGATION=========================================================================--><header class="container"><nav class="site-nav"><div><div class="brand-title">AURORA & CO.</div><div class="brand-sub">WEDDING & EVENT PLANNING • EDITORIAL PHOTOGRAPHY</div></div><ul class="nav-menu"><li><a href="#stories">Selected Works</a></li><li><a href="#experience">The Experience</a></li><li><a href="#investment">Investment</a></li><li><a href="#calculator">Custom Estimate</a></li><li><a href="#inquire">Inquire</a></li></ul><div><a href="#inquire" class="btn-gold">Check Date Availability</a></div></nav></header><main><!--=======================================================================HERO SECTION=======================================================================--><section class="hero-sec container"><div class="status-pill-gold">★ Now Securing 2026 & 2027 Wedding Dates • Worldwide Destinations </div><h1 class="hero-h1">Documenting timeless,
+      <em>poetry-in-motion</em>love stories across the world's most romantic landscapes.
+ </h1><p class="hero-lead">Natural light editorial and medium-format film imagery for couples who care deeply about authentic emotion over stiff,
+      staged poses. Based between Lake Como,
+      Provence & New York. </p><!-- Real-time Date Checker Widget --><div class="date-widget-box" id="date-checker-widget"><div class="widget-field"><label class="widget-label">Wedding Date</label><input type="date" id="quick-wedding-date" class="widget-input" value="2026-09-19"></div><div class="widget-field"><label class="widget-label">Destination / Region</label><select id="quick-wedding-loc" class="widget-select"><option value="Lake Como, Italy">Lake Como & Tuscany,
+      Italy</option><option value="Provence, France">French Riviera & Provence</option><option value="California Coast">California Coast & Big Sur</option><option value="Aspen Rockies">Aspen & Rocky Mountains</option><option value="New York City">New York & East Coast</option><option value="Other Destination">International / Other</option></select></div><div><button id="check-date-btn" class="btn-gold" style="height: 42px; margin-top: 18px;">Check Date ↗</button></div></div><!-- Feedback Banner --><div id="date-feedback" class="date-feedback-banner">🎉 Good news ! September 19,
+      2026 is currently open in Italy. We recommend securing your date soon ! </div></section><!--=======================================================================GALLERY / SELECTED WORKS (MASONRY & LIGHTBOX)=======================================================================--><section class="showcase-sec container" id="stories"><div style="text-align: center;"><span class="sec-eyebrow">Visual Stories</span><h2 class="sec-heading">Curated Celebrations & Elopements</h2><p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Click any love story to open the full editorial gallery and film notes. </p></div><!-- Filter Tabs --><div class="filter-pills"><button class="filter-tab active" data-tag="all">All Stories</button><button class="filter-tab" data-tag="italy">Lake Como & Italy</button><button class="filter-tab" data-tag="coast">California Coast</button><button class="filter-tab" data-tag="france">French Châteaux</button><button class="filter-tab" data-tag="editorial">Editorial Portraits</button></div><!-- Gallery Grid --><div class="gallery-masonry" id="gallery-masonry"><!-- Story 1 --><article class="story-card" data-category="italy" data-story-id="1"><div class="story-img-wrap"><span class="story-loc-pill">Villa Balbianello • Lake Como</span><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80" alt="Lake Como Wedding" class="story-img"><span class="story-overlay-btn">View Gallery ↗</span></div><div class="story-body"><h3 class="story-names">Camilla & Julian</h3><p class="story-desc">An intimate black-tie lakeside celebration with candlelit boat arrival and sunset ceremony overlooking the Alps.</p><div class="story-meta"><span>Medium Format Contax 645</span><span>180 Delivered Images</span></div></div></article><!-- Story 2 --><article class="story-card" data-category="coast" data-story-id="2"><div class="story-img-wrap"><span class="story-loc-pill">Big Sur • California</span><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=80" alt="Big Sur Elopement" class="story-img"><span class="story-overlay-btn">View Gallery ↗</span></div><div class="story-body"><h3 class="story-names">Elena & Marcus</h3><p class="story-desc">Cliffside vows surrounded by Pacific coastal fog and ancient redwoods,
+      followed by a firelit vintage champagne toast.</p><div class="story-meta"><span>35mm Kodak Portra 400</span><span>240 Delivered Images</span></div></div></article><!-- Story 3 --><article class="story-card" data-category="france" data-story-id="3"><div class="story-img-wrap"><span class="story-loc-pill">Château de Tourreau • Provence</span><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=80" alt="Château de Tourreau Wedding" class="story-img"><span class="story-overlay-btn">View Gallery ↗</span></div><div class="story-body"><h3 class="story-names">Sophie & Henri</h3><p class="story-desc">A three-day Provencal immersion featuring lavender garden ceremonies,
+      alfresco dining beneath ancient olive trees.</p><div class="story-meta"><span>Fuji 400H Film+Leica M11</span><span>420 Delivered Images</span></div></div></article><!-- Story 4 --><article class="story-card" data-category="editorial" data-story-id="4"><div class="story-img-wrap"><span class="story-loc-pill">The Beekman • Manhattan</span><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1000&q=80" alt="Manhattan Editorial Elopement" class="story-img"><span class="story-overlay-btn">View Gallery ↗</span></div><div class="story-body"><h3 class="story-names">Aria & Christian</h3><p class="story-desc">Cinematic city elopement capturing architectural romance,
+      vintage taxi rides through SoHo,
+      and rooftop martinis.</p><div class="story-meta"><span>Ilford HP5 B&W Film</span><span>190 Delivered Images</span></div></div></article><!-- Story 5 --><article class="story-card" data-category="italy" data-story-id="5"><div class="story-img-wrap"><span class="story-loc-pill">Borgo Santo Pietro • Tuscany</span><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=80" alt="Tuscany Villa Wedding" class="story-img"><span class="story-overlay-btn">View Gallery ↗</span></div><div class="story-body"><h3 class="story-names">Isabella & Mateo</h3><p class="story-desc">Cypress-lined sunset vows and rustic luxury feast in the heart of Chianti hills with acoustic guitar under fairy lights.</p><div class="story-meta"><span>Contax 645 Film</span><span>380 Delivered Images</span></div></div></article><!-- Story 6 --><article class="story-card" data-category="editorial" data-story-id="6"><div class="story-img-wrap"><span class="story-loc-pill">Old San Juan • Historic Forts</span><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1000&q=80" alt="Historic Editorial Portrait" class="story-img"><span class="story-overlay-btn">View Gallery ↗</span></div><div class="story-body"><h3 class="story-names">Clara & Daniel</h3><p class="story-desc">Editorial fashion-forward bridal sessions with golden hour sunlight bouncing off historic pastel stone facades.</p><div class="story-meta"><span>Kodak Gold 200 • 35mm</span><span>160 Delivered Images</span></div></div></article></div></section><!--=======================================================================THE EXPERIENCE & PHILOSOPHY=======================================================================--><section class="container" id="experience" style="padding: 60px 0 90px; border-top: 1px solid var(--border-subtle);"><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;"><div><span class="sec-eyebrow">Our Philosophy</span><h2 class="sec-heading">Feeling over posing. Atmosphere over perfection.</h2><p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px;">We believe the most breathtaking photographs are the ones where you forget the camera exists. The quiet nervous breath right before walking down the aisle,
+      the roaring laughter during speeches,
+      and the wind catching your veil atop an Italian terrace. </p><p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 28px;">By blending medium-format film cameras with modern high-speed sensors,
+      we deliver imagery with depth,
+      creamy skin tones,
+      and honest soul that digital filters can never duplicate. </p><div style="display: flex; gap: 20px;"><div><div style="font-family: var(--font-serif); font-size: 2rem; color: var(--text-gold);">21 Days</div><div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Full Gallery Turnaround</div></div><div style="border-left: 1px solid var(--border-subtle); padding-left: 20px;"><div style="font-family: var(--font-serif); font-size: 2rem; color: var(--text-gold);">100% Film</div><div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Real Analog Cameras</div></div><div style="border-left: 1px solid var(--border-subtle); padding-left: 20px;"><div style="font-family: var(--font-serif); font-size: 2rem; color: var(--text-gold);">12 Max</div><div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Weddings Per Year</div></div></div></div><div style="position: relative;"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1000&q=80" alt="Photographer in action" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.7);"><div style="position: absolute; bottom: -20px; left: -20px; background: var(--bg-card); padding: 18px 22px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); box-shadow: 0 10px 25px rgba(0,0,0,0.5);"><div style="font-size: 0.75rem; color: var(--text-gold); font-weight: 700; text-transform: uppercase;">Featured in</div><div style="font-family: var(--font-serif); font-size: 1.1rem; color: #fff;">VOGUE WEDDINGS • BRIDES • HARPER'S BAZAAR</div>
+ </div></div></div></section><!--=======================================================================INVESTMENT & INTERACTIVE PRICING CALCULATOR=======================================================================--><section class="pricing-sec" id="investment"><div class="container"><div style="text-align: center;"><span class="sec-eyebrow">Investment</span><h2 class="sec-heading">Transparent Collections & Bespoke Add-Ons</h2><p style="color: var(--text-muted); max-width: 620px; margin: 0 auto;">Every celebration receives our undivided focus. Choose a foundation collection, then tailor it with our interactive calculator below. </p></div><!-- Collections Grid --><div class="packages-grid"><!-- Collection 1 --><div class="package-card" data-base-price="2600" data-base-inr="215000" data-tier="elopement"><h3 class="pkg-title">The Elopement</h3><p class="pkg-sub">For intimate ceremonies & civil celebrations up to 25 guests.</p><div class="pkg-price"><span style="font-size:0.95em;color:var(--text-gold);">₹2,15,000</span> <span style="font-size:0.7em;opacity:0.75;">/</span> $2,600</div><ul class="pkg-features"><li><span class="check">✓</span>4 Hours of Consecutive Coverage</li><li><span class="check">✓</span>1 Lead Photographer (Aurora)</li><li><span class="check">✓</span>250+Curated,
+      Color-Graded Hi-Res Images</li><li><span class="check">✓</span>Online Private Gallery with Print Rights</li><li><span class="check">✓</span>48-Hour 25-Photo Sneak Peek</li></ul><button class="btn-outline select-package-btn" data-name="The Elopement" data-price="2600" data-inr="215000" style="width: 100%;">Select Foundation</button></div><!-- Collection 2 (Featured) --><div class="package-card popular" data-base-price="4400" data-base-inr="365000" data-tier="classic"><span class="package-tag">Most Cherished</span><h3 class="pkg-title">The Full Day</h3><p class="pkg-sub">Comprehensive documentary coverage of your complete celebration.</p><div class="pkg-price"><span style="font-size:0.95em;color:var(--text-gold);">₹3,65,000</span> <span style="font-size:0.7em;opacity:0.75;">/</span> $4,400</div><ul class="pkg-features"><li><span class="check">✓</span>8 Hours of Consecutive Coverage</li><li><span class="check">✓</span>2 Photographers (Lead + Experienced Second)</li><li><span class="check">✓</span>35mm Analog Film Coverage Included</li><li><span class="check">✓</span>600+Delivered Full Resolution Images</li><li><span class="check">✓</span>Full Print Release & USB Keepsake Box</li><li><span class="check">✓</span>Engagement / Bridal Portrait Session</li></ul><button class="btn-gold select-package-btn" data-name="The Full Day" data-price="4400" data-inr="365000" style="width: 100%;">Select Foundation</button></div><!-- Collection 3 --><div class="package-card" data-base-price="6800" data-base-inr="560000" data-tier="destination"><h3 class="pkg-title">The Immersion</h3><p class="pkg-sub">For multi-day destination weddings requiring complete weekend storytelling.</p><div class="pkg-price"><span style="font-size:0.95em;color:var(--text-gold);">₹5,60,000</span> <span style="font-size:0.7em;opacity:0.75;">/</span> $6,800</div><ul class="pkg-features"><li><span class="check">✓</span>Welcome Dinner+10h Wedding Day+Farewell Brunch</li><li><span class="check">✓</span>2 Senior Photographers+Assistant</li><li><span class="check">✓</span>Full Medium Format & 35mm Film Archive</li><li><span class="check">✓</span>950+Delivered Heirloom Images</li><li><span class="check">✓</span>12x12 Handcrafted Italian Leather Album</li><li><span class="check">✓</span>Travel & Accommodation Included in Western Europe</li></ul><button class="btn-outline select-package-btn" data-name="The Immersion" data-price="6800" data-inr="560000" style="width: 100%;">Select Foundation</button></div></div><!-- Interactive Add-Ons & Live Total Calculator --><div class="addons-calc-box" id="calculator"><div class="addons-title">✦ Interactive Custom Estimate Builder (₹ INR & $ USD)</div><p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px;">Currently selected base: <strong id="selected-base-name" style="color: #fff;">The Full Day (₹3,65,000 / $4,400)</strong>. Check optional enhancements below: </p><div class="addons-list"><label class="addon-item"><input type="checkbox" class="calc-addon" data-price="850" data-inr="70000"><span>Super 8mm Vintage Film Reel (3-4 min highlight film)</span><span class="addon-price">+₹70,000 / +$850</span></label><label class="addon-item"><input type="checkbox" class="calc-addon" data-price="450" data-inr="37500"><span>Drone Aerial Scenery Cinematography</span><span class="addon-price">+₹37,500 / +$450</span></label><label class="addon-item"><input type="checkbox" class="calc-addon" data-price="750" data-inr="62000"><span>12x12 Custom Handcrafted Italian Linen Album</span><span class="addon-price">+₹62,000 / +$750</span></label><label class="addon-item"><input type="checkbox" class="calc-addon" data-price="350" data-inr="29000"><span>Express 24-Hour Next-Day Sneak Peek Delivery</span><span class="addon-price">+₹29,000 / +$350</span></label></div><div class="total-calc-bar"><div><div class="total-label">Estimated Total Investment</div><div style="font-size: 0.78rem; color: var(--text-muted);">Includes tax & online gallery hosting. Dual currency dealing accepted.</div></div><div style="display: flex; align-items: center; gap: 20px;"><div class="total-amount" id="calc-total-display"><span style="font-size:0.9em;color:var(--text-gold);">₹3,65,000</span> <span style="font-size:0.75em;opacity:0.8;">/</span> $4,400</div><a href="#inquire" class="btn-gold" id="book-calculated-btn">Reserve This Custom Package →</a></div></div></div></div></section><!--=======================================================================INQUIRY & RESERVATION FORM=======================================================================--><section class="inquire-sec container" id="inquire"><div class="inquire-grid"><div><span class="sec-eyebrow">Connect</span><h2 class="sec-heading">Let's craft something unforgettable together.</h2>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 24px;">Because we take a strictly limited number of weddings per season,
+      we prioritize couples who share our passion for storytelling,
+      natural light,
+      and heartfelt moments. </p><div style="background: var(--bg-card); border-left: 3px solid var(--text-gold); padding: 18px 20px; border-radius: 4px; margin-bottom: 28px;"><div style="font-size: 0.8rem; color: var(--text-gold); font-weight: 700; text-transform: uppercase;">Direct Studio Line</div><div style="font-size: 1.1rem; color: #fff; font-weight: 600; margin: 4px 0;">+1 (555) 392-8104 • WhatsApp Friendly</div><div style="font-size: 0.82rem; color: var(--text-muted);">Available 9am – 6pm CET & EST</div></div><div style="color: var(--text-muted); font-size: 0.85rem;"><em>"Working with Aurora was the single best decision we made for our wedding. The images brought us right back to the tears and laughter." </em><div style="color: #fff; font-weight: 600; margin-top: 6px;">— Chloe & Alex,
+      Lake Como Wedding</div></div></div><!-- Form Card --><div class="inquire-form-card"><h3 style="font-family: var(--font-serif); font-size: 1.75rem; color: #fff; margin-bottom: 6px;">Reserve Your Date</h3><p style="color: var(--text-muted); font-size: 0.86rem; margin-bottom: 24px;">Complete this form and we'll reply within 4 hours with our complete Lookbook & Availability Brochure.</p>
+
+      <form id="photography-inquiry-form"><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;"><div class="form-group-photo"><label class="form-label-photo">Partner 1 Name *</label><input type="text" id="partner-1" class="form-input-photo" placeholder="e.g. Maya" required></div><div class="form-group-photo"><label class="form-label-photo">Partner 2 Name *</label><input type="text" id="partner-2" class="form-input-photo" placeholder="e.g. Julian" required></div></div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;"><div class="form-group-photo"><label class="form-label-photo">Email Address *</label><input type="email" id="photo-email" class="form-input-photo" placeholder="you@domain.com" required></div><div class="form-group-photo"><label class="form-label-photo">WhatsApp / Phone *</label><input type="tel" id="photo-phone" class="form-input-photo" placeholder="+1 (555) 000-0000" required></div></div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;"><div class="form-group-photo"><label class="form-label-photo">Wedding Date *</label><input type="date" id="form-wedding-date" class="form-input-photo" required></div><div class="form-group-photo"><label class="form-label-photo">Venue / City / Country *</label><input type="text" id="form-wedding-venue" class="form-input-photo" placeholder="e.g. Villa Balbianello, Italy" required></div></div><div class="form-group-photo"><label class="form-label-photo">Selected Package</label><select id="form-package-choice" class="form-select-photo"><option value="The Full Day (₹3,65,000 / $4,400)" selected>The Full Day (₹3,65,000 / $4,400) — Most Popular</option><option value="The Elopement (₹2,15,000 / $2,600)">The Elopement (₹2,15,000 / $2,600)</option><option value="The Immersion (₹5,60,000 / $6,800)">The Immersion (₹5,60,000 / $6,800)</option><option value="Custom Bespoke Collection">Custom Bespoke Collection</option></select></div><div class="form-group-photo"><label class="form-label-photo">Tell Us About Your Vision & Story</label><textarea id="photo-vision" class="form-textarea-photo" rows="3" placeholder="Tell us how you met, your celebration style, vibe, or any details you're excited about!"></textarea></div><button type="submit" class="btn-gold" style="width: 100%; padding: 14px; margin-top: 6px;">Submit Date Availability Inquiry ↗ </button></form><div id="photo-confirm-msg" style="display: none; margin-top: 18px; padding: 14px; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); border-radius: 6px; color: #34d399; font-size: 0.92rem; text-align: center;">✓ Thank you ! Your inquiry has been sent directly to Aurora & Co. We will email your full Lookbook and check date availability shortly. </div></div></div></section></main><!--=========================================================================LIGHTBOX MODAL=========================================================================--><div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true"><div class="lightbox-content"><button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close modal">✕</button><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="" class="lightbox-img" id="lightbox-img"><div class="lightbox-details"><div><span class="sec-eyebrow" id="lightbox-location">Location</span><h3 style="font-family: var(--font-serif); font-size: 2rem; color: #fff; margin-bottom: 12px;" id="lightbox-title">Couple Story</h3><p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px;" id="lightbox-desc">Story description</p></div><div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 14px;"><div style="font-size: 0.74rem; color: var(--text-gold); text-transform: uppercase; font-weight: 600;">Technical Specs & Film Notes</div><div style="color: #fff; font-size: 0.84rem; margin-top: 4px;" id="lightbox-gear">Contax 645 • Carl Zeiss 80mm f/2 • Kodak Portra 400</div></div></div></div></div><!--=========================================================================FOOTER=========================================================================--><footer class="photo-footer container"><div class="brand-title" style="font-size: 1.4rem;">AURORA & CO.</div><p style="color: var(--text-muted); font-size: 0.85rem; margin: 10px 0 20px;">Editorial Wedding & Destination Elopement Photography. Available worldwide. </p><div style="padding: 16px 20px; background: var(--bg-card); border-radius: 8px; max-width: 620px; margin: 0 auto 20px; font-size: 0.82rem; color: var(--text-gold); border: 1px dashed var(--border-gold);">⚡ <strong>TASK & CO Live Demo</strong>: This complete website demo shows what your photography studio can offer clients. Designed to convert visitors into booked couples. </div><div style="display: flex; justify-content: center; gap: 20px; font-size: 0.84rem;"><a href="index.html#portfolio" style="color: var(--text-gold); text-decoration: none;">← Return to TASK & CO Portfolio</a><a href="index.html#contact" style="color: #ffffff; text-decoration: none;">Get a Website Like This →</a></div><div style="margin-top: 24px; font-size: 0.76rem; color: #666;">© 2026 Aurora & Co. Photography Demo. Engineered by TASK & CO Web Studio. </div></footer><!--=========================================================================INTERACTIVE JAVASCRIPT=========================================================================--><script> // Gallery Data for Lightbox
+
+      const STORIES_DB= {
+        "1": {
+          title: "Camilla & Julian",
+            location: "Villa Balbianello • Lake Como, Italy",
+            desc: "A breathtaking black-tie wedding on the shores of Lake Como. Arriving by classic wooden Riva speedboat at dusk, followed by vows overlooking the mountain mist.",
+            img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85",
+            gear: "Contax 645 • Carl Zeiss 80mm f/2 Planar • Fuji 400H Film stock"
+        }
+
+        ,
+        "2": {
+          title: "Elena & Marcus",
+            location: "Big Sur Coastal Bluffs • California",
+            desc: "Wild coastal winds, ethereal Pacific fog, and an intimate ceremony between redwoods and waves. Finished with a vintage champagne toast as the sun touched the ocean.",
+            img: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=85",
+            gear: "Leica M11 • Summilux 35mm f/1.4 • Kodak Portra 400 35mm"
+        }
+
+        ,
+        "3": {
+          title: "Sophie & Henri",
+            location: "Château de Tourreau • Provence, France",
+            desc: "A timeless celebration of love in the lavender valleys of Provence. Long candlelit banquet tables, fresh local figs, and dancing under festoon bulbs until 4am.",
+            img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=85",
+            gear: "Mamiya RZ67 Pro II • 110mm f/2.8 • Kodak Tri-X 400 & Portra 800"
+        }
+
+        ,
+        "4": {
+          title: "Aria & Christian",
+            location: "The Beekman & SoHo • Manhattan, NYC",
+            desc: "An ultra-chic editorial city elopement. Vintage taxi portraits down Broadway, champagne on the fire escape, and intimate rooftop romance.",
+            img: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=85",
+            gear: "Contax T3 35mm • Ilford HP5 Plus Black & White"
+        }
+
+        ,
+        "5": {
+          title: "Isabella & Mateo",
+            location: "Borgo Santo Pietro • Tuscany Hills",
+            desc: "Surrounded by cypress groves and olive orchards, an unforgettable sunset vows exchange followed by a Michelin-caliber alfresco feast.",
+            img: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=85",
+            gear: "Hasselblad 500C/M • 80mm f/2.8 • Kodak Portra 160"
+        }
+
+        ,
+        "6": {
+          title: "Clara & Daniel",
+            location: "Old San Juan • Historic Architecture",
+            desc: "Fashion-forward couple session capturing dramatic Spanish colonial archways, tropical sea spray, and effortless cinematic elegance.",
+            img: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=85",
+            gear: "Leica MP 35mm Film Camera • Voigtlander 40mm f/1.2"
+        }
+      }
+
+      ;
+
+      document.addEventListener('DOMContentLoaded', ()=> {
+          // 1. Quick Date Checker
+          const checkBtn=document.getElementById('check-date-btn');
+          const feedback=document.getElementById('date-feedback');
+          const quickDate=document.getElementById('quick-wedding-date');
+          const quickLoc=document.getElementById('quick-wedding-loc');
+
+          checkBtn.addEventListener('click', ()=> {
+              const val=quickDate.value;
+              const loc=quickLoc.value;
+
+              if ( !val) {
+                alert('Please pick a date first.');
+                return;
+              }
+
+              feedback.style.display='block';
+
+              feedback.innerHTML=`✨ <strong>Confirmed Available:</strong> $ {
+                val
+              }
+
+              is currently open for celebrations in <strong>$ {
+                loc
+              }
+
+              </strong> ! Scroll down to reserve.`;
+
+              // Auto-fill form date
+              const formDate=document.getElementById('form-wedding-date');
+              if (formDate) formDate.value=val;
+            });
+
+          // 2. Filter tabs for stories
+          const tabs=document.querySelectorAll('.filter-tab');
+          const cards=document.querySelectorAll('.story-card');
+
+          tabs.forEach(tab=> {
+              tab.addEventListener('click', ()=> {
+                  tabs.forEach(t=> t.classList.remove('active'));
+                  tab.classList.add('active');
+
+                  const filter=tab.getAttribute('data-tag');
+
+                  cards.forEach(card=> {
+                      const cat=card.getAttribute('data-category');
+
+                      if (filter==='all' || cat===filter) {
+                        card.style.display='flex';
+                      }
+
+                      else {
+                        card.style.display='none';
+                      }
+                    });
+                });
+            });
+
+          // 3. Lightbox Logic
+          const modal=document.getElementById('lightbox-modal');
+          const closeBtn=document.getElementById('lightbox-close-btn');
+          const lbImg=document.getElementById('lightbox-img');
+          const lbTitle=document.getElementById('lightbox-title');
+          const lbLoc=document.getElementById('lightbox-location');
+          const lbDesc=document.getElementById('lightbox-desc');
+          const lbGear=document.getElementById('lightbox-gear');
+
+          cards.forEach(card=> {
+              card.addEventListener('click', ()=> {
+                  const id=card.getAttribute('data-story-id');
+                  const data=STORIES_DB[id];
+
+                  if (data) {
+                    lbImg.src=data.img;
+                    lbTitle.textContent=data.title;
+                    lbLoc.textContent=data.location;
+                    lbDesc.textContent=data.desc;
+                    lbGear.textContent=data.gear;
+                    modal.classList.add('active');
+                  }
+                });
+            });
+
+          closeBtn.addEventListener('click', ()=> modal.classList.remove('active'));
+
+          modal.addEventListener('click', (e)=> {
+              if (e.target===modal) modal.classList.remove('active');
+            });
+
+          // 4. Interactive Calculator Logic (Dual Currency: INR & USD)
+          let currentBasePrice = 4400;
+          let currentBaseINR = 365000;
+          let currentBaseName = "The Full Day";
+
+          const selectPkgBtns = document.querySelectorAll('.select-package-btn');
+          const baseNameDisplay = document.getElementById('selected-base-name');
+          const totalDisplay = document.getElementById('calc-total-display');
+          const addonCheckboxes = document.querySelectorAll('.calc-addon');
+          const formPkgChoice = document.getElementById('form-package-choice');
+
+          function recalculateTotal() {
+            let totalUSD = currentBasePrice;
+            let totalINR = currentBaseINR;
+
+            addonCheckboxes.forEach(cb => {
+              if (cb.checked) {
+                totalUSD += parseInt(cb.getAttribute('data-price'), 10);
+                totalINR += parseInt(cb.getAttribute('data-inr') || (cb.getAttribute('data-price') * 83), 10);
+              }
+            });
+
+            totalDisplay.innerHTML = `<span style="font-size:0.9em;color:var(--text-gold);">₹${totalINR.toLocaleString('en-IN')}</span> <span style="font-size:0.75em;opacity:0.8;">/</span> $${totalUSD.toLocaleString()}`;
+          }
+
+          selectPkgBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+              currentBasePrice = parseInt(btn.getAttribute('data-price'), 10);
+              currentBaseINR = parseInt(btn.getAttribute('data-inr') || (currentBasePrice * 83), 10);
+              currentBaseName = btn.getAttribute('data-name');
+
+              baseNameDisplay.innerHTML = `${currentBaseName} (<span style="color:var(--text-gold);">₹${currentBaseINR.toLocaleString('en-IN')}</span> / $${currentBasePrice.toLocaleString()})`;
+              recalculateTotal();
+
+              // Update form select
+              if (formPkgChoice) {
+                for (let i = 0; i < formPkgChoice.options.length; i++) {
+                  if (formPkgChoice.options[i].text.includes(currentBaseName)) {
+                    formPkgChoice.selectedIndex = i;
+                    break;
+                  }
+                }
+              }
+
+              // Smooth scroll to calculator
+              document.getElementById('calculator').scrollIntoView({
+                behavior: 'smooth'
+              });
+            });
+          });
+
+        addonCheckboxes.forEach(cb=> {
+            cb.addEventListener('change', recalculateTotal);
+          });
+
+        // 5. Form Submission Simulation
+        const form=document.getElementById('photography-inquiry-form');
+        const confirmMsg=document.getElementById('photo-confirm-msg');
+
+        if (form) {
+          form.addEventListener('submit', (e)=> {
+              e.preventDefault();
+              const p1=document.getElementById('partner-1').value;
+              const p2=document.getElementById('partner-2').value;
+              const date=document.getElementById('form-wedding-date').value;
+              const venue=document.getElementById('form-wedding-venue').value;
+
+              confirmMsg.style.display='block';
+
+              confirmMsg.innerHTML=`✓ <strong>Congratulations $ {
+                p1
+              }
+
+              & $ {
+                p2
+              }
+
+              !</strong> Your date reservation request for <strong>$ {
+                date
+              }
+
+              at $ {
+                venue
+              }
+
+              </strong> has been logged in this demo. Aurora & Co. will reach out shortly !`;
+              form.reset();
+            });
+        }
+      });
+    </script></body></html>
