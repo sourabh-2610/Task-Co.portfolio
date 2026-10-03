@@ -1294,18 +1294,8 @@ function initContactForm() {
       return;
     }
 
-    showToast(`Thank you, ${clientName}! Your mockup request for "${bizName}" has been received.`);
+    showToast(`Thank you, ${clientName}! Your mockup request for "${bizName}" has been received. I'll get back to you shortly!`);
     playSound('success');
-
-    setTimeout(() => {
-      const waText = encodeURIComponent(
-        `Hi TASK & CO! My name is ${clientName} from ${bizName} (${industry}). I submitted a request for a website mockup. My notes: "${notes || 'Looking for a simple, fast website'}". Phone: ${phone}`
-      );
-      const confirmWa = confirm('Would you also like to open WhatsApp to chat with TASK & CO directly right now?');
-      if (confirmWa) {
-        window.open(`https://wa.me/?text=${waText}`, '_blank');
-      }
-    }, 800);
 
     form.reset();
   });
